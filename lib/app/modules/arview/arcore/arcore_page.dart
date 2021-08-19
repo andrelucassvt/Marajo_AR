@@ -49,6 +49,7 @@ class ArcorePageState extends State<ArcorePage> {
       body: ArCoreView(
         onArCoreViewCreated: _onArCoreViewCreated,
         enableTapRecognizer: true,
+        debug: false,        
       ),
     );
   }
