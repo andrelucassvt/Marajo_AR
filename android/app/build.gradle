@@ -66,3 +66,8 @@ dependencies {
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
     implementation 'com.google.ar.sceneform:core:1.15.0'
 }
+
+sceneform.asset('sampledata/queijo.fbx', // 'Source Asset Path' specified during import.
+        'default',                            // 'Material Path' specified during import.
+        'sampledata/queijo.sfa',         // '.sfa Output Path' specified during import.
+        'src/assets/queijo')    
