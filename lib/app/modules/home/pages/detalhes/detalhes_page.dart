@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:marajoar/app/core/colors.dart';
 import 'package:marajoar/app/modules/arview/arcore/arcore_page.dart';
+import 'package:marajoar/app/modules/arview/arkit/arkit_page.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
 
 class DetalhesPage extends StatefulWidget {
@@ -75,6 +78,11 @@ class DetalhesPageState extends State <DetalhesPage> {
         label: Text('Realidade aumentada'),
         backgroundColor: primaryColor,
         onPressed: (){
+          if (Platform.isIOS) {            
+            return Navigator.of(context).push(
+              MaterialPageRoute(builder: (_)=> ArkitPage())
+            );
+          }
           Navigator.of(context).push(
             MaterialPageRoute(builder: (_)=> ArcorePage(widget.model))
           );
