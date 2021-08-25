@@ -67,7 +67,12 @@ class DetalhesPageState extends State <DetalhesPage> {
             child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 10),
               children: [
-                Text(widget.model.descricao),
+                Text(
+                  widget.model.descricao,
+                  style: TextStyle(
+                    fontSize: 16
+                  ),
+                ),
               ],
             ),
           )
