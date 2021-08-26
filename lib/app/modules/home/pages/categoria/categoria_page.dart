@@ -4,6 +4,7 @@ import 'package:marajoar/app/modules/home/pages/categoria/controller/categoria_c
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
 import 'package:marajoar/app/shared/widgets/card_widget.dart';
+import 'package:marajoar/generated/l10n.dart';
 
 class CategoriaPage extends StatefulWidget {
   final CategoriasEnum categoriasEnum;
@@ -16,15 +17,14 @@ class CategoriaPage extends StatefulWidget {
 class _CategoriaPageState extends State<CategoriaPage> {
 
   CategoriaController _categoriaController = CategoriaController();
-
   String get title {
     switch (widget.categoriasEnum) {
       case CategoriasEnum.artesanato:
-        return 'Artesanato';
+        return LocaleProvider.of(context).HomeBodyIconsCategoriaArtesanato;
       case CategoriasEnum.animais:
-        return 'Animais';
+        return LocaleProvider.of(context).HomeBodyIconsCategoriaAnimais;
       case CategoriasEnum.comidas:
-        return 'Comidas';
+        return LocaleProvider.of(context).HomeBodyIconsCategoriaComidas;
     }
   }
 
@@ -49,7 +49,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
             );
           }
 
-          List<ArModel> dados = snapshot.data;
+          List<ArModel> dados = snapshot.data!;
 
           if (dados.isEmpty) {
             return Center(

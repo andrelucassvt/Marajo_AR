@@ -1,4 +1,4 @@
-import 'package:marajoar/app/core/data.dart';
+import 'package:marajoar/app/core/language/data/pt_br/data.dart';
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
 

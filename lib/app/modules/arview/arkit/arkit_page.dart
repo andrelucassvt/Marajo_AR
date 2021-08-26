@@ -11,7 +11,7 @@ class ArkitPage extends StatefulWidget {
 }
 
 class _ArkitPageState extends State<ArkitPage> {
-  ARKitController _arKitController;
+  late ARKitController _arKitController;
 
   @override
   void dispose() {

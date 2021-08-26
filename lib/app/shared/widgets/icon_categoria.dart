@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:marajoar/app/core/colors.dart';
 
@@ -10,11 +11,11 @@ class IconWidgetCategoria extends StatelessWidget {
 
   IconWidgetCategoria(
     {
-      @required this.nome, 
-      @required this.icone, 
-      @required this.containerColor, 
-      @required this.iconeColor,
-      @required this.ontap
+      required this.nome, 
+      required this.icone, 
+      required this.containerColor, 
+      required this.iconeColor,
+      required this.ontap
       }
   );
   @override
@@ -40,7 +41,10 @@ class IconWidgetCategoria extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10),
-                child: Text(nome),
+                child: AutoSizeText(
+                  nome,
+                  maxLines: 1,
+                ),
               )
             ],
           ),

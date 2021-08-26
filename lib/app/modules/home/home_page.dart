@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marajoar/app/core/language/conditional.dart';
 import 'package:marajoar/app/modules/home/controller/home_controller.dart';
 import 'package:marajoar/app/modules/home/pages/categoria/categoria_page.dart';
 import 'package:marajoar/app/modules/home/pages/sobre/sobre_page.dart';
@@ -6,6 +7,7 @@ import 'package:marajoar/app/shared/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
 import 'package:marajoar/app/shared/widgets/card_widget.dart';
 import 'package:marajoar/app/shared/widgets/icon_categoria.dart';
+import 'package:marajoar/generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,6 +25,7 @@ class _HomePageState extends State <HomePage> {
   }
   @override
   Widget build(BuildContext context) {
+    LocaleProvider localeProvider = LocaleProvider.of(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -62,7 +65,7 @@ class _HomePageState extends State <HomePage> {
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Text(
-                  'Categorias',
+                  localeProvider.HomeBodyCategoria,
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold
@@ -75,7 +78,7 @@ class _HomePageState extends State <HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconWidgetCategoria(
-                      nome: 'Artesanato', 
+                      nome: localeProvider.HomeBodyIconsCategoriaArtesanato, 
                       icone: Icons.panorama_vertical, 
                       containerColor: Colors.white,
                       iconeColor: Colors.black, 
@@ -85,7 +88,7 @@ class _HomePageState extends State <HomePage> {
                       }
                     ),
                     IconWidgetCategoria(
-                      nome: 'Animais', 
+                      nome: localeProvider.HomeBodyIconsCategoriaAnimais, 
                       icone: Icons.grass, 
                       containerColor: Colors.white,
                       iconeColor: Colors.black, 
@@ -95,7 +98,7 @@ class _HomePageState extends State <HomePage> {
                       }
                     ),
                     IconWidgetCategoria(
-                      nome: 'Comidas', 
+                      nome: localeProvider.HomeBodyIconsCategoriaComidas, 
                       icone: Icons.local_dining, 
                       containerColor: Colors.white,
                       iconeColor: Colors.black, 
@@ -108,9 +111,9 @@ class _HomePageState extends State <HomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.only(left: 10,top: 15, bottom: 20),
                 child: Text(
-                  'Recomendados',
+                  localeProvider.HomeBodyRecomendados,
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold
@@ -127,7 +130,7 @@ class _HomePageState extends State <HomePage> {
                         child: CircularProgressIndicator(),
                       );
                     }
-                    List<ArModel> dados = snapshot.data;
+                    List<ArModel> dados = snapshot.data!;
                     return ListView.builder(
                       itemCount: dados.length,
                       itemBuilder: (context,index){

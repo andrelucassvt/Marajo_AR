@@ -5,6 +5,7 @@ import 'package:marajoar/app/core/colors.dart';
 import 'package:marajoar/app/modules/arview/arcore/arcore_page.dart';
 import 'package:marajoar/app/modules/arview/arkit/arkit_page.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
+import 'package:marajoar/generated/l10n.dart';
 
 class DetalhesPage extends StatefulWidget {
   final ArModel model;
@@ -13,12 +14,13 @@ class DetalhesPage extends StatefulWidget {
   DetalhesPageState createState() => DetalhesPageState();
 }
 class DetalhesPageState extends State <DetalhesPage> {
-  
+
  @override
   Widget build(BuildContext context) {
+    LocaleProvider localeProvider = LocaleProvider.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalhes'),
+        title: Text(localeProvider.HomePagesDatalhesAppBarTitle),
         centerTitle: true,
       ),
       body: Column(
@@ -57,7 +59,7 @@ class DetalhesPageState extends State <DetalhesPage> {
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
-                'Descrição',
+                localeProvider.HomePagesDatalhesBodyDescricao,
                 style: TextStyle(fontSize: 30)
               ),
             ),
@@ -80,18 +82,11 @@ class DetalhesPageState extends State <DetalhesPage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
-        label: Text('Realidade aumentada'),
+        label: Text(localeProvider.HomePagesDatalhesFloatingButton),
         backgroundColor: primaryColor,
-        onPressed: (){
-          if (Platform.isIOS) {            
-            return Navigator.of(context).push(
-              MaterialPageRoute(builder: (_)=> ArkitPage())
-            );
-          }
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (_)=> ArcorePage(widget.model))
-          );
-        },
+        onPressed: Platform.isIOS
+          ? () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArkitPage()))
+          : () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArcorePage(widget.model)))
       ),
     );
   }

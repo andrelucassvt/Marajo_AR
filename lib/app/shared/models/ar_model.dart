@@ -1,22 +1,22 @@
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
 
 class ArModel {
-  int id;
-  String nome;
-  String descricao;
-  String foto;
-  String objeto;
-  bool isfavorito;
-  CategoriasEnum categoriasEnum;
+  late int id;
+  late String nome;
+  late String descricao;
+  late String foto;
+  late String objeto;
+  late bool isfavorito;
+  late CategoriasEnum categoriasEnum;
 
   ArModel({
-    this.id,
-    this.nome, 
-    this.descricao, 
-    this.foto, 
-    this.objeto,
-    this.isfavorito,
-    this.categoriasEnum,
+    required this.id,
+    required this.nome, 
+    required this.descricao, 
+    required this.foto, 
+    required this.objeto,
+    required this.isfavorito,
+    required this.categoriasEnum,
   });
 
   ArModel.fromJson(Map<String, dynamic> json) {
@@ -26,30 +26,6 @@ class ArModel {
     foto = json['foto'];
     objeto = json['objeto'];
     isfavorito = json['isfavorito'];
-  }
-
-  ArModel.fromMap(Map map){
-    id = map['id'];
-    nome = map['name'];
-    descricao = map['descricao'];
-    foto = map['foto'];
-    objeto = map['objeto'];
-    isfavorito = map['isfavorito'];
-  }
-
-  Map<String, Object> toMap(){
-    var map = <String, Object>{
-      'id': id,
-      'name': nome,
-      'descricao': descricao,
-      'foto': foto,
-      'objeto': objeto,
-      'isfavorito': isfavorito,
-    };
-    if(id != null){
-      map['id'] = id;
-    }
-    return map;
   }
 
   static List fromJsonList (List list){

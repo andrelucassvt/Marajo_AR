@@ -4,15 +4,14 @@ import 'package:marajoar/app/modules/arview/widgets/dialog_widget.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
 
 class ArcorePage extends StatefulWidget {
-  final String title;
   final ArModel model;
-  const ArcorePage(this.model,{Key key, this.title = 'Arcore'}) : super(key: key);
+  const ArcorePage(this.model);
 
   @override
   ArcorePageState createState() => ArcorePageState();
 }
 class ArcorePageState extends State<ArcorePage> {
-  ArCoreController arCoreController;
+  late ArCoreController arCoreController;
 
   @override
   void initState() {
@@ -37,7 +36,7 @@ class ArcorePageState extends State<ArcorePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Arcore'),
         centerTitle: true,
         actions: [
           IconButton(
