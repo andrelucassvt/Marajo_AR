@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:marajoar/app/core/colors.dart';
 import 'package:marajoar/app/modules/home/pages/categoria/controller/categoria_controller.dart';
@@ -33,12 +35,25 @@ class _CategoriaPageState extends State<CategoriaPage> {
     super.initState();
     _categoriaController.selectCategoriaList(widget.categoriasEnum);
   }
+  bool enableHero = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
         centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Platform.isIOS
+            ? Icons.arrow_back_ios
+            : Icons.keyboard_backspace
+          ),
+          onPressed: (){
+            setState(() {
+              enableHero = false;
+            });
+            Navigator.of(context).pop();
+          },
+        ),
       ),
       body: StreamBuilder<List<ArModel>>(
         stream: _categoriaController.dados.stream,
@@ -60,7 +75,9 @@ class _CategoriaPageState extends State<CategoriaPage> {
           return ListView.builder(
             itemCount: dados.length,
             itemBuilder: (context,index){
-              return CardWidget(dados[index]);
+              return HeroMode(
+                enabled: enableHero,
+                child: CardWidget(dados[index]));
             }
           );
         }

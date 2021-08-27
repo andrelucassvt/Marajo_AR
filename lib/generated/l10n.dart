@@ -130,6 +130,16 @@ class LocaleProvider {
     );
   }
 
+  /// `About Marajó AR`
+  String get HomePagesSobreAppBarTitle {
+    return Intl.message(
+      'About Marajó AR',
+      name: 'HomePagesSobreAppBarTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Next`
   String get WidgetsButtonNext {
     return Intl.message(

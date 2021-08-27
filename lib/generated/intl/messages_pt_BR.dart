@@ -38,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Descrição"),
         "HomePagesDatalhesFloatingButton":
             MessageLookupByLibrary.simpleMessage("Realidade aumentada"),
+        "HomePagesSobreAppBarTitle":
+            MessageLookupByLibrary.simpleMessage("Sobre o Marajó AR"),
         "WidgetsButtonNext": MessageLookupByLibrary.simpleMessage("Continuar")
       };
 }
