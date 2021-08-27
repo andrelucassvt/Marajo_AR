@@ -33,9 +33,9 @@ dependencies:
   auto_size_text: ^3.0.0-nullsafety.0
   responsive_framework: ^0.1.4
   arcore_flutter_plugin: ^0.1.0-null-safety.0
-  sqflite: ^2.0.0+4
   arkit_plugin: ^1.0.3
   intl_utils: ^2.4.0
+  ##ar_flutter_plugin: ^0.4.3
   flutter_localizations:
     sdk: flutter  
 
@@ -53,6 +53,7 @@ flutter:
    - assets/animais/
    - assets/comidas/
    - assets/objetos/
+   - assets/triangle.png
 
 flutter_intl:
   enabled: true 

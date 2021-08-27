@@ -129,6 +129,26 @@ class LocaleProvider {
       args: [],
     );
   }
+
+  /// `Next`
+  String get WidgetsButtonNext {
+    return Intl.message(
+      'Next',
+      name: 'WidgetsButtonNext',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attention`
+  String get ArviewWidgetsDialogTitle {
+    return Intl.message(
+      'Attention',
+      name: 'ArviewWidgetsDialogTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<LocaleProvider> {

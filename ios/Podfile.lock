@@ -2,35 +2,20 @@ PODS:
   - arkit_plugin (0.0.1):
     - Flutter
   - Flutter (1.0.0)
-  - FMDB (2.7.5):
-    - FMDB/standard (= 2.7.5)
-  - FMDB/standard (2.7.5)
-  - sqflite (0.0.2):
-    - Flutter
-    - FMDB (>= 2.7.5)
 
 DEPENDENCIES:
   - arkit_plugin (from `.symlinks/plugins/arkit_plugin/ios`)
   - Flutter (from `Flutter`)
-  - sqflite (from `.symlinks/plugins/sqflite/ios`)
-
-SPEC REPOS:
-  trunk:
-    - FMDB
 
 EXTERNAL SOURCES:
   arkit_plugin:
     :path: ".symlinks/plugins/arkit_plugin/ios"
   Flutter:
     :path: Flutter
-  sqflite:
-    :path: ".symlinks/plugins/sqflite/ios"
 
 SPEC CHECKSUMS:
   arkit_plugin: 3e42571e8be84adabb8a178bd51c22fa981e16bd
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
-  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
 
 PODFILE CHECKSUM: 7368163408c647b7eb699d0d788ba6718e18fb8d
 

@@ -60,7 +60,9 @@ class DetalhesPageState extends State <DetalhesPage> {
               padding: const EdgeInsets.all(10.0),
               child: Text(
                 localeProvider.HomePagesDatalhesBodyDescricao,
-                style: TextStyle(fontSize: 30)
+                style: TextStyle(
+                  fontSize: 30,
+                )
               ),
             ),
           ),
@@ -85,7 +87,7 @@ class DetalhesPageState extends State <DetalhesPage> {
         label: Text(localeProvider.HomePagesDatalhesFloatingButton),
         backgroundColor: primaryColor,
         onPressed: Platform.isIOS
-          ? () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArkitPage()))
+          ? () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArkitPage(widget.model)))
           : () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArcorePage(widget.model)))
       ),
     );

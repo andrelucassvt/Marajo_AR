@@ -21,6 +21,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "ArviewWidgetsDialogTitle":
+            MessageLookupByLibrary.simpleMessage("Atenção"),
         "HomeBodyCategoria": MessageLookupByLibrary.simpleMessage("Categorias"),
         "HomeBodyIconsCategoriaAnimais":
             MessageLookupByLibrary.simpleMessage("Animais"),
@@ -35,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "HomePagesDatalhesBodyDescricao":
             MessageLookupByLibrary.simpleMessage("Descrição"),
         "HomePagesDatalhesFloatingButton":
-            MessageLookupByLibrary.simpleMessage("Realidade aumentada")
+            MessageLookupByLibrary.simpleMessage("Realidade aumentada"),
+        "WidgetsButtonNext": MessageLookupByLibrary.simpleMessage("Continuar")
       };
 }

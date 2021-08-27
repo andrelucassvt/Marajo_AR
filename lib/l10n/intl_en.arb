@@ -8,5 +8,9 @@
 
     "HomePagesDatalhesAppBarTitle": "Details",
     "HomePagesDatalhesBodyDescricao": "Description",
-    "HomePagesDatalhesFloatingButton": "Augmented Reality"
+    "HomePagesDatalhesFloatingButton": "Augmented Reality",
+
+    "WidgetsButtonNext": "Next",
+
+    "ArviewWidgetsDialogTitle": "Attention"
 }

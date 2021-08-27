@@ -1,21 +1,27 @@
 import 'package:arkit_plugin/arkit_node.dart';
+import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:arkit_plugin/geometries/arkit_sphere.dart';
 import 'package:arkit_plugin/widget/arkit_scene_view.dart';
 import 'package:flutter/material.dart';
-import 'package:vector_math/vector_math_64.dart';
+import 'package:marajoar/app/shared/models/ar_model.dart';
+import 'package:vector_math/vector_math_64.dart' as vector;
 
 class ArkitPage extends StatefulWidget {
+  final ArModel model;
+
+  ArkitPage(this.model);
 
   @override
   _ArkitPageState createState() => _ArkitPageState();
 }
 
 class _ArkitPageState extends State<ArkitPage> {
-  late ARKitController _arKitController;
+  late ARKitController arkitController;
+  ARKitReferenceNode? node;
 
   @override
   void dispose() {
-    _arKitController.dispose();
+    arkitController.dispose();
     super.dispose();
   }
   @override
@@ -25,16 +31,36 @@ class _ArkitPageState extends State<ArkitPage> {
         title: Text('Arkit'),
         centerTitle: true,
        ),
-       body: ARKitSceneView(onARKitViewCreated: onARKitViewCreated),
+       body:Container(
+         child: ARKitSceneView(
+           onARKitViewCreated: onARKitViewCreated,
+           showFeaturePoints: true,
+           planeDetection: ARPlaneDetection.horizontal,
+         ),
+       ),
     );
   }
 
   void onARKitViewCreated(ARKitController arkitController) {
-    this._arKitController = arkitController;
-    final node = ARKitNode(
-      geometry: ARKitSphere(radius: 0.1), 
-      position: Vector3(0, 0, -0.5)
+    this.arkitController = arkitController;
+    this.arkitController.onAddNodeForAnchor = _handleAddAnchor;
+  }
+
+  void _handleAddAnchor(ARKitAnchor anchor) {
+    if (anchor is ARKitPlaneAnchor) {
+      _addPlane(arkitController, anchor);
+    }
+  }
+
+  void _addPlane(ARKitController controller, ARKitPlaneAnchor anchor) {
+    if (node != null) {
+      controller.remove(node!.name);
+    }
+    node = ARKitReferenceNode(
+      url: 'models.scnassets/queijo.dae',
+      position: vector.Vector3(0, 0, 0),
+      scale: vector.Vector3.all(0.3),
     );
-    this._arKitController.add(node);
+    controller.add(node!, parentNodeName: anchor.nodeName);
   }
 }
