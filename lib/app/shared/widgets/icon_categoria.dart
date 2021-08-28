@@ -4,7 +4,7 @@ import 'package:marajoar/app/core/colors.dart';
 
 class IconWidgetCategoria extends StatelessWidget {
   final String nome;
-  final IconData icone;
+  final String icone;
   final Color iconeColor;
   final Color containerColor;
   final VoidCallback ontap;
@@ -34,10 +34,11 @@ class IconWidgetCategoria extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              Icon(
+              Text(
                 icone,
-                size: 50,
-                color: iconeColor,
+                style: TextStyle(
+                  fontSize: 40
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10),

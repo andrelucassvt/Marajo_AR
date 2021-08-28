@@ -79,7 +79,7 @@ class _HomePageState extends State <HomePage> {
                   children: [
                     IconWidgetCategoria(
                       nome: localeProvider.HomeBodyIconsCategoriaArtesanato, 
-                      icone: Icons.panorama_vertical, 
+                      icone: '🏺', 
                       containerColor: Colors.white,
                       iconeColor: Colors.black, 
                       ontap: (){
@@ -89,7 +89,7 @@ class _HomePageState extends State <HomePage> {
                     ),
                     IconWidgetCategoria(
                       nome: localeProvider.HomeBodyIconsCategoriaAnimais, 
-                      icone: Icons.grass, 
+                      icone: '🐊', 
                       containerColor: Colors.white,
                       iconeColor: Colors.black, 
                       ontap: (){
@@ -99,7 +99,7 @@ class _HomePageState extends State <HomePage> {
                     ),
                     IconWidgetCategoria(
                       nome: localeProvider.HomeBodyIconsCategoriaComidas, 
-                      icone: Icons.local_dining, 
+                      icone: '🥘', 
                       containerColor: Colors.white,
                       iconeColor: Colors.black, 
                       ontap: (){
