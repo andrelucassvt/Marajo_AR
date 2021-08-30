@@ -1,7 +1,6 @@
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
 
 class ArModel {
-  late int id;
   late String nome;
   late String descricao;
   late String foto;
@@ -10,7 +9,6 @@ class ArModel {
   late CategoriasEnum categoriasEnum;
 
   ArModel({
-    required this.id,
     required this.nome, 
     required this.descricao, 
     required this.foto, 
@@ -20,7 +18,6 @@ class ArModel {
   });
 
   ArModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
     nome = json['nome'];
     descricao = json['descricao'];
     foto = json['foto'];

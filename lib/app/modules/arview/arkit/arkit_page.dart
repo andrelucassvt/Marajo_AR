@@ -57,7 +57,7 @@ class _ArkitPageState extends State<ArkitPage> {
       controller.remove(node!.name);
     }
     node = ARKitReferenceNode(
-      url: 'models.scnassets/queijo.obj',
+      url: widget.model.objeto,
       position: vector.Vector3(0, 0, 0),
       scale: vector.Vector3.all(0.3),
     );
