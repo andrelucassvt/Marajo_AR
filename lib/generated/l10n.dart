@@ -50,6 +50,26 @@ class LocaleProvider {
     return Localizations.of<LocaleProvider>(context, LocaleProvider);
   }
 
+  /// `Click here and learn more about the ''Marajó project in augmented reality''`
+  String get HomeTutorialTextAttention {
+    return Intl.message(
+      'Click here and learn more about the \'\'Marajó project in augmented reality\'\'',
+      name: 'HomeTutorialTextAttention',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tap to continue`
+  String get HomeTutorialTextTapNext {
+    return Intl.message(
+      'Tap to continue',
+      name: 'HomeTutorialTextTapNext',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Categories`
   String get HomeBodyCategoria {
     return Intl.message(

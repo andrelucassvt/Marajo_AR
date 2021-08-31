@@ -5,9 +5,12 @@ import 'package:marajoar/app/modules/home/pages/categoria/categoria_page.dart';
 import 'package:marajoar/app/modules/home/pages/sobre/sobre_page.dart';
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
+import 'package:marajoar/app/shared/shared_preference/shared_preference.dart';
 import 'package:marajoar/app/shared/widgets/card_widget.dart';
 import 'package:marajoar/app/shared/widgets/icon_categoria.dart';
 import 'package:marajoar/generated/l10n.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tutorial/tutorial.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,11 +18,58 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State <HomePage> {
-  
+  SharedPreferenceController sharedPreferenceController = SharedPreferenceController();
   HomeController controller = HomeController();
-
+  bool valid = false;
+  validar() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool result = prefs.getBool('valid') ?? false;
+    setState(() {
+      valid = result;
+      print(valid);
+    });
+  }
+  var keyAboutMarajoAR = GlobalKey();
+  List<TutorialItens> itens = [];
+  chamarTutorial(BuildContext context){
+    validar();
+    itens.addAll({
+      TutorialItens(
+        globalKey: keyAboutMarajoAR,
+        touchScreen: true,
+        top: 200,
+        left: 50,
+        children: [
+          Text(
+            LocaleProvider.of(context).HomeTutorialTextAttention,
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          SizedBox(
+            height: 100,
+          )
+        ],
+        widgetNext: Text(
+          LocaleProvider.of(context).HomeTutorialTextTapNext,
+          style: TextStyle(
+            color: Colors.red,
+            fontWeight: FontWeight.bold,
+            fontSize: 20
+          ),
+        ),
+        shapeFocus: ShapeFocus.oval),
+    });    
+    Future.delayed(Duration(microseconds: 200)).then((value) {
+      if (valid == false) {
+        Tutorial.showTutorial(context, itens);
+        sharedPreferenceController.salvarAcesso();
+      }
+    });
+  }
   @override
   void initState() {
+    Future.delayed(Duration.zero,(){
+      chamarTutorial(context);
+    });
     super.initState();
     controller.getRecomendados();
   }
@@ -53,7 +103,8 @@ class _HomePageState extends State <HomePage> {
                   IconButton(
                     onPressed: (){
                       Navigator.pushNamed(context, '/sobre');
-                    }, 
+                    },
+                    key: keyAboutMarajoAR, 
                     iconSize: 40,
                     icon: Icon(Icons.info_outline),
                   ),
