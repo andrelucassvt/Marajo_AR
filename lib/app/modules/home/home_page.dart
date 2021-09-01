@@ -1,4 +1,4 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:marajoar/app/modules/home/controller/home_controller.dart';
 import 'package:marajoar/app/modules/home/pages/categoria/categoria_page.dart';
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
