@@ -1,30 +1,31 @@
+import 'package:flutter/material.dart';
 import 'package:marajoar/app/core/data/data.dart';
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
 
 class CategoriaService {
   
-  Future<List<ArModel>> selectCategoriaList(CategoriasEnum categoriasEnum) async {
+  Future<List<ArModel>> selectCategoriaList(CategoriasEnum categoriasEnum,BuildContext context) async {
     switch (categoriasEnum) {
       case CategoriasEnum.artesanato:
-        return getArtesanato();
+        return getArtesanato(context);
       case CategoriasEnum.comidas:
-        return getComidas();
+        return getComidas(context);
       case CategoriasEnum.animais:
-        return getAnimais();
+        return getAnimais(context);
     }
   }
 
 
-  Future<List<ArModel>> getArtesanato() async {
-    return listaArModelGlobalBR.where((element) => element.categoriasEnum == CategoriasEnum.artesanato).toList();
+  Future<List<ArModel>> getArtesanato(BuildContext context) async {
+    return LanguageListArModel.listaArModelGlobal(context).where((element) => element.categoriasEnum == CategoriasEnum.artesanato).toList();
   }
 
-  Future<List<ArModel>> getAnimais() async {
-    return listaArModelGlobalBR.where((element) => element.categoriasEnum == CategoriasEnum.animais).toList();
+  Future<List<ArModel>> getAnimais(BuildContext context) async {
+    return LanguageListArModel.listaArModelGlobal(context).where((element) => element.categoriasEnum == CategoriasEnum.animais).toList();
   }
 
-  Future<List<ArModel>> getComidas() async {
-    return listaArModelGlobalBR.where((element) => element.categoriasEnum == CategoriasEnum.comidas).toList();
+  Future<List<ArModel>> getComidas(BuildContext context) async {
+    return LanguageListArModel.listaArModelGlobal(context).where((element) => element.categoriasEnum == CategoriasEnum.comidas).toList();
   }
 }

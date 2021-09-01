@@ -28,8 +28,9 @@ mixin _$HomeController on _HomeStoreBase, Store {
       AsyncAction('_HomeStoreBase.getRecomendados');
 
   @override
-  Future getRecomendados() {
-    return _$getRecomendadosAsyncAction.run(() => super.getRecomendados());
+  Future getRecomendados(BuildContext context) {
+    return _$getRecomendadosAsyncAction
+        .run(() => super.getRecomendados(context));
   }
 
   @override
