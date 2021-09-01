@@ -16,8 +16,8 @@ class ArkitPage extends StatefulWidget {
 }
 
 class _ArkitPageState extends State<ArkitPage> {
-  late ARKitController arkitController;
-  ARKitReferenceNode? node;
+  ARKitController arkitController;
+  ARKitReferenceNode node;
 
   @override
   void dispose() {
@@ -54,13 +54,13 @@ class _ArkitPageState extends State<ArkitPage> {
 
   void _addPlane(ARKitController controller, ARKitPlaneAnchor anchor) {
     if (node != null) {
-      controller.remove(node!.name);
+      controller.remove(node.name);
     }
     node = ARKitReferenceNode(
       url: widget.model.objeto,
       position: vector.Vector3(0, 0, 0),
       scale: vector.Vector3.all(0.3),
     );
-    controller.add(node!, parentNodeName: anchor.nodeName);
+    controller.add(node, parentNodeName: anchor.nodeName);
   }
 }

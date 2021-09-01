@@ -11,11 +11,11 @@ class IconWidgetCategoria extends StatelessWidget {
 
   IconWidgetCategoria(
     {
-      required this.nome, 
-      required this.icone, 
-      required this.containerColor, 
-      required this.iconeColor,
-      required this.ontap
+      @required this.nome, 
+      @required this.icone, 
+      @required this.containerColor, 
+      @required this.iconeColor,
+      @required this.ontap
       }
   );
   @override

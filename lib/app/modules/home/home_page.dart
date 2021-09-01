@@ -1,6 +1,4 @@
-import 'dart:io';
-
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:marajoar/app/modules/home/controller/home_controller.dart';
 import 'package:marajoar/app/modules/home/pages/categoria/categoria_page.dart';
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
@@ -106,7 +104,7 @@ class _HomePageState extends State <HomePage> {
                   IconButton(
                     onPressed: (){
                       Share.share(
-                        'Conheça um pouca da Ilha do Marajó em realidade aumentada/nBaixe o app:'
+                        'Conheça um pouca da Ilha do Marajó em realidade aumentada\nBaixe o app:'
                       );
                     },
                     iconSize: 40, 
@@ -185,7 +183,7 @@ class _HomePageState extends State <HomePage> {
                         child: CircularProgressIndicator(),
                       );
                     }
-                    List<ArModel> dados = snapshot.data!;
+                    List<ArModel> dados = snapshot.data;
                     return ListView.builder(
                       itemCount: dados.length,
                       itemBuilder: (context,index){

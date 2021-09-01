@@ -64,7 +64,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
             );
           }
 
-          List<ArModel> dados = snapshot.data!;
+          List<ArModel> dados = snapshot.data;
 
           if (dados.isEmpty) {
             return Center(

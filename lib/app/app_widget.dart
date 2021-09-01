@@ -24,7 +24,7 @@ class AppWidget extends StatelessWidget {
       ],
       supportedLocales: LocaleProvider.delegate.supportedLocales,
       builder: (context, widget) => ResponsiveWrapper.builder(
-        ClampingScrollWrapper.builder(context,widget!),
+        ClampingScrollWrapper.builder(context,widget),
         minWidth: 450,
         defaultScale: true,
         breakpoints: [

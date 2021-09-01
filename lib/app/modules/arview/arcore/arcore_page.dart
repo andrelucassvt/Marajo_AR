@@ -11,7 +11,7 @@ class ArcorePage extends StatefulWidget {
   ArcorePageState createState() => ArcorePageState();
 }
 class ArcorePageState extends State<ArcorePage> {
-  late ArCoreController arCoreController;
+  ArCoreController arCoreController;
 
   @override
   void initState() {
