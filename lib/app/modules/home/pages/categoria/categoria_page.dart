@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:marajoar/app/core/colors.dart';
 import 'package:marajoar/app/modules/home/pages/categoria/controller/categoria_controller.dart';
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
@@ -33,7 +32,9 @@ class _CategoriaPageState extends State<CategoriaPage> {
   @override
   void initState() {
     super.initState();
-    _categoriaController.selectCategoriaList(widget.categoriasEnum);
+    Future.delayed(Duration.zero,(){
+      _categoriaController.selectCategoriaList(widget.categoriasEnum,context);
+    });
   }
   bool enableHero = true;
   @override
@@ -64,7 +65,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
             );
           }
 
-          List<ArModel> dados = snapshot.data!;
+          List<ArModel> dados = snapshot.data;
 
           if (dados.isEmpty) {
             return Center(

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/material.dart';
 import 'package:marajoar/app/modules/home/pages/categoria/service/categoria_service.dart';
 import 'package:marajoar/app/modules/home/service/home_service.dart';
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
@@ -17,8 +18,8 @@ abstract class _CategoriaStoreBase with Store {
   StreamController<List<ArModel>> dados = StreamController<List<ArModel>>();
 
   @action
-  selectCategoriaList(CategoriasEnum categoriasEnum) async {
-    List<ArModel> response = await _categoriaService.selectCategoriaList(categoriasEnum);
+  selectCategoriaList(CategoriasEnum categoriasEnum,BuildContext context) async {
+    List<ArModel> response = await _categoriaService.selectCategoriaList(categoriasEnum,context);
     dados.add(response);
   }
 }

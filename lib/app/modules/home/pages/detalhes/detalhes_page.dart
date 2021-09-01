@@ -16,6 +16,11 @@ class DetalhesPage extends StatefulWidget {
 class DetalhesPageState extends State <DetalhesPage> {
 
  @override
+  void initState() {
+    super.initState();
+    print(widget.model.objeto);
+  }
+ @override
   Widget build(BuildContext context) {
     LocaleProvider localeProvider = LocaleProvider.of(context);
     return Scaffold(

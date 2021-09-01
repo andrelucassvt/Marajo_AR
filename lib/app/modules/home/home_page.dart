@@ -66,11 +66,11 @@ class _HomePageState extends State <HomePage> {
   }
   @override
   void initState() {
+    super.initState();
     Future.delayed(Duration.zero,(){
       chamarTutorial(context);
+      controller.getRecomendados(context);
     });
-    super.initState();
-    controller.getRecomendados();
   }
   @override
   Widget build(BuildContext context) {
@@ -104,7 +104,7 @@ class _HomePageState extends State <HomePage> {
                   IconButton(
                     onPressed: (){
                       Share.share(
-                        'Conheça um pouca da Ilha do Marajó em realidade aumentada/nBaixe o app:'
+                        'Conheça um pouca da Ilha do Marajó em realidade aumentada\nBaixe o app:'
                       );
                     },
                     iconSize: 40, 
@@ -142,7 +142,7 @@ class _HomePageState extends State <HomePage> {
                     ),
                     IconWidgetCategoria(
                       nome: localeProvider.HomeBodyIconsCategoriaAnimais, 
-                      icone: '🐊', 
+                      icone: '🐃', 
                       containerColor: Colors.white,
                       iconeColor: Colors.black, 
                       ontap: (){
@@ -183,7 +183,7 @@ class _HomePageState extends State <HomePage> {
                         child: CircularProgressIndicator(),
                       );
                     }
-                    List<ArModel> dados = snapshot.data!;
+                    List<ArModel> dados = snapshot.data;
                     return ListView.builder(
                       itemCount: dados.length,
                       itemBuilder: (context,index){

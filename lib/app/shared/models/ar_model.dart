@@ -1,20 +1,20 @@
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
 
 class ArModel {
-  late String nome;
-  late String descricao;
-  late String foto;
-  late String objeto;
-  late bool isfavorito;
-  late CategoriasEnum categoriasEnum;
+  String nome;
+  String descricao;
+  String foto;
+  String objeto;
+  bool isfavorito;
+  CategoriasEnum categoriasEnum;
 
   ArModel({
-    required this.nome, 
-    required this.descricao, 
-    required this.foto, 
-    required this.objeto,
-    required this.isfavorito,
-    required this.categoriasEnum,
+    this.nome, 
+    this.descricao, 
+    this.foto, 
+    this.objeto,
+    this.isfavorito,
+    this.categoriasEnum,
   });
 
   ArModel.fromJson(Map<String, dynamic> json) {

@@ -3,7 +3,7 @@
 
    <uses-permission android:name="android.permission.CAMERA" />
    <application
-        android:label="marajoar"
+        android:label="Marajó AR"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
