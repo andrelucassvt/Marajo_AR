@@ -32,7 +32,9 @@ class _CategoriaPageState extends State<CategoriaPage> {
   @override
   void initState() {
     super.initState();
-    _categoriaController.selectCategoriaList(widget.categoriasEnum);
+    Future.delayed(Duration.zero,(){
+      _categoriaController.selectCategoriaList(widget.categoriasEnum,context);
+    });
   }
   bool enableHero = true;
   @override

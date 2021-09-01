@@ -28,9 +28,10 @@ mixin _$CategoriaController on _CategoriaStoreBase, Store {
       AsyncAction('_CategoriaStoreBase.selectCategoriaList');
 
   @override
-  Future selectCategoriaList(CategoriasEnum categoriasEnum) {
+  Future selectCategoriaList(
+      CategoriasEnum categoriasEnum, BuildContext context) {
     return _$selectCategoriaListAsyncAction
-        .run(() => super.selectCategoriaList(categoriasEnum));
+        .run(() => super.selectCategoriaList(categoriasEnum, context));
   }
 
   @override

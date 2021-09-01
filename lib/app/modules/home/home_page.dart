@@ -66,11 +66,11 @@ class _HomePageState extends State <HomePage> {
   }
   @override
   void initState() {
+    super.initState();
     Future.delayed(Duration.zero,(){
       chamarTutorial(context);
+      controller.getRecomendados(context);
     });
-    super.initState();
-    controller.getRecomendados();
   }
   @override
   Widget build(BuildContext context) {
