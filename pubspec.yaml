@@ -33,11 +33,13 @@ dependencies:
   auto_size_text: ^3.0.0-nullsafety.0
   responsive_framework: ^0.1.4
   arcore_flutter_plugin: ^0.1.0-null-safety.3
+  ##ar_flutter_plugin: ^0.4.3
   arkit_plugin: ^1.0.3
   intl_utils: ^2.4.0
   shared_preferences: ^2.0.7
   ##ar_flutter_plugin: ^0.4.3
   tutorial: ^1.0.8
+  share: ^2.0.4 
   flutter_localizations:
     sdk: flutter  
 

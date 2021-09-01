@@ -1,14 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:marajoar/app/core/language/conditional.dart';
 import 'package:marajoar/app/modules/home/controller/home_controller.dart';
 import 'package:marajoar/app/modules/home/pages/categoria/categoria_page.dart';
-import 'package:marajoar/app/modules/home/pages/sobre/sobre_page.dart';
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
 import 'package:marajoar/app/shared/shared_preference/shared_preference.dart';
 import 'package:marajoar/app/shared/widgets/card_widget.dart';
 import 'package:marajoar/app/shared/widgets/icon_categoria.dart';
 import 'package:marajoar/generated/l10n.dart';
+import 'package:share/share.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tutorial/tutorial.dart';
 
@@ -86,12 +87,14 @@ class _HomePageState extends State <HomePage> {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
                 children: [
                   IconButton(
-                    onPressed: (){},
-                    iconSize: 40, 
-                    icon: Icon(Icons.share),
+                    onPressed: (){
+                      Navigator.pushNamed(context, '/sobre');
+                    },
+                    key: keyAboutMarajoAR, 
+                    iconSize: 40,
+                    icon: Icon(Icons.info_outline),
                   ),
                   Text(
                     'Ar Marajó',
@@ -102,11 +105,12 @@ class _HomePageState extends State <HomePage> {
                   ),
                   IconButton(
                     onPressed: (){
-                      Navigator.pushNamed(context, '/sobre');
+                      Share.share(
+                        'Conheça um pouca da Ilha do Marajó em realidade aumentada/nBaixe o app:'
+                      );
                     },
-                    key: keyAboutMarajoAR, 
-                    iconSize: 40,
-                    icon: Icon(Icons.info_outline),
+                    iconSize: 40, 
+                    icon: Icon(Icons.share),
                   ),
                 ],
               ),
