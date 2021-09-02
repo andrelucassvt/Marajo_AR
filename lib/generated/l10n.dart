@@ -100,11 +100,11 @@ class LocaleProvider {
     );
   }
 
-  /// `Animals`
-  String get HomeBodyIconsCategoriaAnimais {
+  /// `Fauna`
+  String get HomeBodyIconsCategoriaFauna {
     return Intl.message(
-      'Animals',
-      name: 'HomeBodyIconsCategoriaAnimais',
+      'Fauna',
+      name: 'HomeBodyIconsCategoriaFauna',
       desc: '',
       args: [],
     );
@@ -175,6 +175,116 @@ class LocaleProvider {
     return Intl.message(
       'Attention',
       name: 'ArviewWidgetsDialogTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Marajoara buffalo`
+  String get CoreDataListBuffaloName {
+    return Intl.message(
+      'Marajoara buffalo',
+      name: 'CoreDataListBuffaloName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get CoreDataListBuffaloDesc {
+    return Intl.message(
+      '',
+      name: 'CoreDataListBuffaloDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pineapple`
+  String get CoreDataListAbacaxiName {
+    return Intl.message(
+      'Pineapple',
+      name: 'CoreDataListAbacaxiName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get CoreDataListAbacaxiDesc {
+    return Intl.message(
+      '',
+      name: 'CoreDataListAbacaxiDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Marajó cheese`
+  String get CoreDataListQueijoName {
+    return Intl.message(
+      'Marajó cheese',
+      name: 'CoreDataListQueijoName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get CoreDataListQueijoDesc {
+    return Intl.message(
+      '',
+      name: 'CoreDataListQueijoDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Marajoara vase`
+  String get CoreDataListVasoName {
+    return Intl.message(
+      'Marajoara vase',
+      name: 'CoreDataListVasoName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get CoreDataListVasoDesc {
+    return Intl.message(
+      '',
+      name: 'CoreDataListVasoDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get CoreDataListPirarucuDesc {
+    return Intl.message(
+      '',
+      name: 'CoreDataListPirarucuDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crab`
+  String get CoreDataListCaranguejoName {
+    return Intl.message(
+      'Crab',
+      name: 'CoreDataListCaranguejoName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get CoreDataListCaranguejoDesc {
+    return Intl.message(
+      '',
+      name: 'CoreDataListCaranguejoDesc',
       desc: '',
       args: [],
     );

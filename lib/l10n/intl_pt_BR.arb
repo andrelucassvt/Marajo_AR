@@ -7,7 +7,7 @@
     "HomeBodyRecomendados": "Recomendados",
 
     "HomeBodyIconsCategoriaArtesanato": "Artesanato",
-    "HomeBodyIconsCategoriaAnimais": "Animais",
+    "HomeBodyIconsCategoriaFauna": "Fauna",
     "HomeBodyIconsCategoriaComidas": "Comidas",
 
     "HomePagesDatalhesAppBarTitle": "Detalhes",
@@ -18,5 +18,22 @@
 
     "WidgetsButtonNext": "Continuar",
 
-    "ArviewWidgetsDialogTitle": "Atenção"
+    "ArviewWidgetsDialogTitle": "Atenção",
+
+    "CoreDataListBuffaloName": "Búfalo Marajoara",
+    "CoreDataListBuffaloDesc": "",
+
+    "CoreDataListAbacaxiName": "Abacaxi",
+    "CoreDataListAbacaxiDesc": "",
+
+    "CoreDataListQueijoName": "Queijo do Marajó",
+    "CoreDataListQueijoDesc": "",
+
+    "CoreDataListVasoName": "Vaso Marajoara",
+    "CoreDataListVasoDesc": "",
+
+    "CoreDataListPirarucuDesc": "",
+
+    "CoreDataListCaranguejoName": "Caranguejo",
+    "CoreDataListCaranguejoDesc": ""
 }

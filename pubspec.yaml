@@ -55,8 +55,14 @@ flutter:
 
   assets:
    - assets/animais/
+   - assets/animais/buffalo/
+   - assets/animais/caranguejo/
+   - assets/animais/pirarucu/
    - assets/comidas/
+   - assets/comidas/abacaxi/
+   - assets/comidas/queijo/
    - assets/objetos/
+   - assets/objetos/vaso/
    - assets/triangle.png
 
 flutter_intl:

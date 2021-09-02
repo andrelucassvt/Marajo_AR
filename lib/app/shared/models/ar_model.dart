@@ -7,6 +7,7 @@ class ArModel {
   String objeto;
   bool isfavorito;
   CategoriasEnum categoriasEnum;
+  List<String> listaImagens; 
 
   ArModel({
     this.nome, 
@@ -15,20 +16,6 @@ class ArModel {
     this.objeto,
     this.isfavorito,
     this.categoriasEnum,
+    this.listaImagens,
   });
-
-  ArModel.fromJson(Map<String, dynamic> json) {
-    nome = json['nome'];
-    descricao = json['descricao'];
-    foto = json['foto'];
-    objeto = json['objeto'];
-    isfavorito = json['isfavorito'];
-  }
-
-  static List fromJsonList (List list){
-    if(list == null){
-      return [];
-    }
-    return list.map((e) => ArModel.fromJson(e)).toList();
-  }
 }

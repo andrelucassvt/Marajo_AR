@@ -141,7 +141,7 @@ class _HomePageState extends State <HomePage> {
                       }
                     ),
                     IconWidgetCategoria(
-                      nome: localeProvider.HomeBodyIconsCategoriaAnimais, 
+                      nome: localeProvider.HomeBodyIconsCategoriaFauna, 
                       icone: '🐃', 
                       containerColor: Colors.white,
                       iconeColor: Colors.black, 

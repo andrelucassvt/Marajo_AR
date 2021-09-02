@@ -23,13 +23,29 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "ArviewWidgetsDialogTitle":
             MessageLookupByLibrary.simpleMessage("Attention"),
+        "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListAbacaxiName":
+            MessageLookupByLibrary.simpleMessage("Pineapple"),
+        "CoreDataListBuffaloDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListBuffaloName":
+            MessageLookupByLibrary.simpleMessage("Marajoara buffalo"),
+        "CoreDataListCaranguejoDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListCaranguejoName":
+            MessageLookupByLibrary.simpleMessage("Crab"),
+        "CoreDataListPirarucuDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListQueijoDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListQueijoName":
+            MessageLookupByLibrary.simpleMessage("Marajó cheese"),
+        "CoreDataListVasoDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListVasoName":
+            MessageLookupByLibrary.simpleMessage("Marajoara vase"),
         "HomeBodyCategoria": MessageLookupByLibrary.simpleMessage("Categories"),
-        "HomeBodyIconsCategoriaAnimais":
-            MessageLookupByLibrary.simpleMessage("Animals"),
         "HomeBodyIconsCategoriaArtesanato":
             MessageLookupByLibrary.simpleMessage("Craftsmanship"),
         "HomeBodyIconsCategoriaComidas":
             MessageLookupByLibrary.simpleMessage("Food"),
+        "HomeBodyIconsCategoriaFauna":
+            MessageLookupByLibrary.simpleMessage("Fauna"),
         "HomeBodyRecomendados":
             MessageLookupByLibrary.simpleMessage("Recommended"),
         "HomePagesDatalhesAppBarTitle":

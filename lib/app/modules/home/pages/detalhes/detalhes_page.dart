@@ -24,65 +24,65 @@ class DetalhesPageState extends State <DetalhesPage> {
   Widget build(BuildContext context) {
     LocaleProvider localeProvider = LocaleProvider.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(localeProvider.HomePagesDatalhesAppBarTitle),
-        centerTitle: true,
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Hero(
-            tag: widget.model.nome,
-            child: Container(
-              height: MediaQuery.of(context).size.height * .4,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage(widget.model.foto)
-                )
+
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            pinned: true,
+            snap: false,
+            floating: false,
+            expandedHeight: 300,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(widget.model.nome),
+              background: Image.asset(
+                widget.model.foto,
+                fit: BoxFit.cover,
               ),
+            ),
+          ),
+
+          SliverFillRemaining(
+            child: SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
               child: Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text(
-                    widget.model.nome,
-                    style: TextStyle(
-                      fontSize: 35,
-                      color: Colors.white,
-                      inherit: false,
-                      fontWeight: FontWeight.bold
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      localeProvider.HomePagesDatalhesBodyDescricao,
+                      style: TextStyle(
+                        fontSize: 30
+                      ),
                     ),
-                  )
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      widget.model.descricao,
+                      style: TextStyle(
+                        fontSize: 17
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 250,
+                      child: ListView.builder(
+                        itemCount: widget.model.listaImagens.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context,index){
+                          return Container(
+                            margin: EdgeInsets.only(right: 10),
+                            child: Image.asset(widget.model.listaImagens[index]),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ),
-
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Text(
-                localeProvider.HomePagesDatalhesBodyDescricao,
-                style: TextStyle(
-                  fontSize: 30,
-                )
-              ),
-            ),
-          ),
-
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              children: [
-                Text(
-                  widget.model.descricao,
-                  style: TextStyle(
-                    fontSize: 16
-                  ),
-                ),
-              ],
             ),
           )
         ],

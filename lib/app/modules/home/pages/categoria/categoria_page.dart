@@ -23,7 +23,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
       case CategoriasEnum.artesanato:
         return LocaleProvider.of(context).HomeBodyIconsCategoriaArtesanato;
       case CategoriasEnum.animais:
-        return LocaleProvider.of(context).HomeBodyIconsCategoriaAnimais;
+        return LocaleProvider.of(context).HomeBodyIconsCategoriaFauna;
       case CategoriasEnum.comidas:
         return LocaleProvider.of(context).HomeBodyIconsCategoriaComidas;
     }

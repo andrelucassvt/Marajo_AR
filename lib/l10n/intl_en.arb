@@ -7,7 +7,7 @@
     "HomeBodyRecomendados": "Recommended",
 
     "HomeBodyIconsCategoriaArtesanato": "Craftsmanship",
-    "HomeBodyIconsCategoriaAnimais": "Animals",
+    "HomeBodyIconsCategoriaFauna": "Fauna",
     "HomeBodyIconsCategoriaComidas": "Food",
 
     "HomePagesDatalhesAppBarTitle": "Details",
@@ -18,5 +18,22 @@
 
     "WidgetsButtonNext": "Next",
 
-    "ArviewWidgetsDialogTitle": "Attention"
+    "ArviewWidgetsDialogTitle": "Attention",
+
+    "CoreDataListBuffaloName": "Marajoara buffalo",
+    "CoreDataListBuffaloDesc": "",
+
+    "CoreDataListAbacaxiName": "Pineapple",
+    "CoreDataListAbacaxiDesc": "",
+
+    "CoreDataListQueijoName": "Marajó cheese",
+    "CoreDataListQueijoDesc": "",
+
+    "CoreDataListVasoName": "Marajoara vase",
+    "CoreDataListVasoDesc": "",
+
+    "CoreDataListPirarucuDesc": "",
+
+    "CoreDataListCaranguejoName": "Crab",
+    "CoreDataListCaranguejoDesc": ""
 }
