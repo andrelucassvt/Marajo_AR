@@ -17,9 +17,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State <HomePage> {
+
   SharedPreferenceController sharedPreferenceController = SharedPreferenceController();
   HomeController controller = HomeController();
   bool valid = false;
+  var keyAboutMarajoAR = GlobalKey();
+  List<TutorialItens> itens = [];
+
+  //Pega o dado com a informacao se o tutorial já foi exibido ou não
   validar() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool result = prefs.getBool('valid') ?? false;
@@ -28,8 +33,7 @@ class _HomePageState extends State <HomePage> {
       print(valid);
     });
   }
-  var keyAboutMarajoAR = GlobalKey();
-  List<TutorialItens> itens = [];
+  
   chamarTutorial(BuildContext context){
     validar();
     itens.addAll({

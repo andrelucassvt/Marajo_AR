@@ -17,6 +17,7 @@ class _ImagePageState extends State<ImagePage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: Text(locale.HomePagesDatalhesAppBarTitle),
+        centerTitle: true,
       ),
       body: Center(
         child: InteractiveViewer(
