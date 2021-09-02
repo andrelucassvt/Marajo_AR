@@ -66,22 +66,3 @@ dependencies {
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
     implementation 'com.google.ar.sceneform:core:1.15.0'
 }
-sceneform.asset('sampledata/abacaxi.fbx',
-        'default',
-        'sampledata/abacaxi.sfa',
-        'src/main/assets/abacaxi')
-
-sceneform.asset('sampledata/buffalo.fbx',
-        'default',
-        'sampledata/buffalo.sfa',
-        'src/main/assets/buffalo')
-
-sceneform.asset('sampledata/pirarucu.fbx',
-        'default',
-        'sampledata/pirarucu.sfa',
-        'src/main/assets/pirarucu')
-
-sceneform.asset('sampledata/queijom.fbx',
-        'default',
-        'sampledata/queijom.sfa',
-        'src/main/assets/queijom')
