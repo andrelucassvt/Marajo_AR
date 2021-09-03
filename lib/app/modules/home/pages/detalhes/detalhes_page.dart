@@ -5,6 +5,7 @@ import 'package:marajoar/app/core/colors.dart';
 import 'package:marajoar/app/modules/arview/arcore/arcore_page.dart';
 import 'package:marajoar/app/modules/arview/arkit/arkit_page.dart';
 import 'package:marajoar/app/modules/home/pages/detalhes/image/image_page.dart';
+import 'package:marajoar/app/modules/home/pages/detalhes/widgets/card_image.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
 import 'package:marajoar/generated/l10n.dart';
 
@@ -16,11 +17,6 @@ class DetalhesPage extends StatefulWidget {
 }
 class DetalhesPageState extends State <DetalhesPage> {
 
- @override
-  void initState() {
-    super.initState();
-    print(widget.model.objeto);
-  }
  @override
   Widget build(BuildContext context) {
     LocaleProvider localeProvider = LocaleProvider.of(context);
@@ -97,20 +93,10 @@ class DetalhesPageState extends State <DetalhesPage> {
                     scrollDirection: Axis.horizontal,
                     itemCount: widget.model.listaImagens.length,
                     itemBuilder: (ctx,index){
-                      return InkWell(
-                        onTap: (){
-                          Navigator.of(context).push(
-                            MaterialPageRoute(builder: (_)=>ImagePage(widget.model.listaImagens[index]))
-                          );
-                        },
-                        child: Container(
-                          margin: EdgeInsets.only(right: 15),
-                          child: Image.asset(widget.model.listaImagens[index]),
-                        ),
-                      );
+                      return CardImage(widget.model.listaImagens[index]);
                     }
                   ),
-                )
+                ),
               ],
             ),
           )
