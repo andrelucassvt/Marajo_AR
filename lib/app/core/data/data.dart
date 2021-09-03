@@ -39,7 +39,7 @@ class LanguageListArModel {
       ArModel(
         nome: locale.CoreDataListAbacaxiName,
         foto: 'assets/comidas/abacaxi.jpeg',
-        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+        descricao: locale.CoreDataListAbacaxiDesc,
         objeto: Platform.isIOS ? 'models.scnassets/abacaxi.usdz' : 'abacaxi.sfb',
         isfavorito: true,
         categoriasEnum: CategoriasEnum.comidas,
@@ -52,7 +52,7 @@ class LanguageListArModel {
         nome: locale.CoreDataListVasoName,
         foto: 'assets/objetos/vaso_marajoara.jpg',
         descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-        objeto: 'models.scnassets/vaso3.usdz',
+        objeto: 'models.scnassets/vaso5.usdz',
         isfavorito: true,
         categoriasEnum: CategoriasEnum.artesanato,
         listaImagens: [

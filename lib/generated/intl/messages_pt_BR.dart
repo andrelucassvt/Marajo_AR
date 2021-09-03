@@ -23,7 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "ArviewWidgetsDialogTitle":
             MessageLookupByLibrary.simpleMessage("Atenção"),
-        "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(
+            "O Pará é o maior produtor de abacaxi no Brasil. A cidade de Salvaterra está entre as três cidades que mais produzem o fruto no Pará. Quem afirma é o Instituto Brasileiro de Geografia e Estatística (IBGE). Plantio é a principal atividade da agricultura familiar no município, responsável por mais de 80% do consumo em Belém, com 11 milhões de frutos ao ano. Como parte da cultura regional, a vila de Condeixa (em Salvaterra) realiza todo ano o Festival do Abacaxi."),
         "CoreDataListAbacaxiName":
             MessageLookupByLibrary.simpleMessage("Abacaxi"),
         "CoreDataListBuffaloDesc": MessageLookupByLibrary.simpleMessage(

@@ -23,7 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "ArviewWidgetsDialogTitle":
             MessageLookupByLibrary.simpleMessage("Attention"),
-        "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(
+            "Pará is the largest producer of pineapple in Brazil. The city of Salvaterra is among the three cities that produce the most fruit in Pará. The Brazilian Institute of Geography and Statistics (IBGE) claims it. Planting is the main activity of family farming in the city, responsible for more than 80% of consumption in Belém, with 11 million fruits a year. As part of the regional culture, the village of Condeixa (in Salvaterra) holds the Pineapple Festival every year."),
         "CoreDataListAbacaxiName":
             MessageLookupByLibrary.simpleMessage("Pineapple"),
         "CoreDataListBuffaloDesc": MessageLookupByLibrary.simpleMessage(

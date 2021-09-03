@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:marajoar/app/modules/home/controller/home_controller.dart';
 import 'package:marajoar/app/modules/home/pages/categoria/categoria_page.dart';
 import 'package:marajoar/app/shared/enums/categoria_enum.dart';
@@ -23,6 +24,7 @@ class _HomePageState extends State <HomePage> {
   bool valid = false;
   var keyAboutMarajoAR = GlobalKey();
   List<TutorialItens> itens = [];
+  InterstitialAd _interstitialAd;
 
   //Pega o dado com a informacao se o tutorial já foi exibido ou não
   validar() async {
@@ -74,6 +76,10 @@ class _HomePageState extends State <HomePage> {
     Future.delayed(Duration.zero,(){
       chamarTutorial(context);
       controller.getRecomendados(context);
+      iniciarAdmob();
+    });
+    Future.delayed(Duration(seconds: 10),(){
+      _interstitialAd.show();
     });
   }
   @override
@@ -203,5 +209,20 @@ class _HomePageState extends State <HomePage> {
         ),
       ),
     );
+  }
+
+  iniciarAdmob(){
+    InterstitialAd.load(
+      adUnitId: 'ca-app-pub-3940256099942544/4411468910',
+      request: AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (InterstitialAd ad) {
+          // Keep a reference to the ad so you can show it later.
+          this._interstitialAd = ad;
+        },
+        onAdFailedToLoad: (LoadAdError error) {
+          print('InterstitialAd failed to load: $error');
+        },
+      ));
   }
 }
