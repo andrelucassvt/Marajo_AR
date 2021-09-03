@@ -18,6 +18,7 @@ class CategoriaPage extends StatefulWidget {
 class _CategoriaPageState extends State<CategoriaPage> {
 
   CategoriaController _categoriaController = CategoriaController();
+  
   String get title {
     switch (widget.categoriasEnum) {
       case CategoriasEnum.artesanato:

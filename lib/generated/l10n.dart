@@ -190,10 +190,10 @@ class LocaleProvider {
     );
   }
 
-  /// ``
+  /// `The island of Marajó concentrates the largest herd of buffaloes in Brazil. About 3 buffaloes for every 1 inhabitant. Breeding buffalo does not only involve cattle raisers, as the animals provide meat, milk, leather and horns for restaurants, artisans, cheesemakers and other types of establishments. The animals are even used by the police in Soure (Capital do Marajó) in their patrols, something that amazes tourists and reassures the inhabitants.`
   String get CoreDataListBuffaloDesc {
     return Intl.message(
-      '',
+      'The island of Marajó concentrates the largest herd of buffaloes in Brazil. About 3 buffaloes for every 1 inhabitant. Breeding buffalo does not only involve cattle raisers, as the animals provide meat, milk, leather and horns for restaurants, artisans, cheesemakers and other types of establishments. The animals are even used by the police in Soure (Capital do Marajó) in their patrols, something that amazes tourists and reassures the inhabitants.',
       name: 'CoreDataListBuffaloDesc',
       desc: '',
       args: [],

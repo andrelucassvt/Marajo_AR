@@ -26,7 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(""),
         "CoreDataListAbacaxiName":
             MessageLookupByLibrary.simpleMessage("Abacaxi"),
-        "CoreDataListBuffaloDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListBuffaloDesc": MessageLookupByLibrary.simpleMessage(
+            "A ilha do Marajó concentra o maior rebanho de búfalos do Brasil. Cerca de 3 búfalos a cada 1 habitante. A criação de búfalos não envolve apenas os pecuaristas, já que os animais fornecem carne, leite, couro e chifres para restaurantes, artesãos, queijeiros e outros tipos de estabelecimentos. Os animais são utilizados até mesmo pela polícia de Soure(Capital do Marajó) em suas patrulhas, algo que maravilha os turistas e tranquiliza os habitantes."),
         "CoreDataListBuffaloName":
             MessageLookupByLibrary.simpleMessage("Búfalo Marajoara"),
         "CoreDataListCaranguejoDesc": MessageLookupByLibrary.simpleMessage(""),

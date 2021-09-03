@@ -81,18 +81,15 @@ class DetalhesPageState extends State <DetalhesPage> {
                 bottom: 100
               ),
               children: [
-
                 Text(
                   widget.model.descricao,
                   style: TextStyle(
                     fontSize: 16
                   ),
                 ),
-
                 SizedBox(
                   height: 30,
                 ),
-                
                 Container(
                   height: 200,
                   child: ListView.builder(

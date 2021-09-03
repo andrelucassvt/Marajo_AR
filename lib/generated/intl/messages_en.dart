@@ -26,7 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(""),
         "CoreDataListAbacaxiName":
             MessageLookupByLibrary.simpleMessage("Pineapple"),
-        "CoreDataListBuffaloDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListBuffaloDesc": MessageLookupByLibrary.simpleMessage(
+            "The island of Marajó concentrates the largest herd of buffaloes in Brazil. About 3 buffaloes for every 1 inhabitant. Breeding buffalo does not only involve cattle raisers, as the animals provide meat, milk, leather and horns for restaurants, artisans, cheesemakers and other types of establishments. The animals are even used by the police in Soure (Capital do Marajó) in their patrols, something that amazes tourists and reassures the inhabitants."),
         "CoreDataListBuffaloName":
             MessageLookupByLibrary.simpleMessage("Marajoara buffalo"),
         "CoreDataListCaranguejoDesc": MessageLookupByLibrary.simpleMessage(""),
