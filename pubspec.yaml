@@ -65,6 +65,7 @@ flutter:
    - assets/objetos/
    - assets/objetos/vaso/
    - assets/triangle.png
+   - assets/buffaloSobre.png
 
 flutter_intl:
   enabled: true 
