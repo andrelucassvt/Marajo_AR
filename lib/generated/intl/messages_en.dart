@@ -31,14 +31,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "The island of Marajó concentrates the largest herd of buffaloes in Brazil. About 3 buffaloes for every 1 inhabitant. Breeding buffalo does not only involve cattle raisers, as the animals provide meat, milk, leather and horns for restaurants, artisans, cheesemakers and other types of establishments. The animals are even used by the police in Soure (Capital do Marajó) in their patrols, something that amazes tourists and reassures the inhabitants."),
         "CoreDataListBuffaloName":
             MessageLookupByLibrary.simpleMessage("Marajoara buffalo"),
-        "CoreDataListCaranguejoDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListCaranguejoDesc": MessageLookupByLibrary.simpleMessage(
+            "The mangroves are one of the biggest employers in the city of Soure on Marajó Island, more than 400 families live off the sale and collection of crabs. It is forbidden to capture the crab in its walking period, when the male and female leave their burrows and walk through the mangrove swamp to mate and release the eggs. This walk takes place in the new and full moon phases, when the tide is high. Those who fail to comply with the closed season will have to return live animals to their natural habitat and are subject to the sanctions defined in Law No. 9,605, of February 12, 1998, and Decree No. 6,514, of July 22, 2008."),
         "CoreDataListCaranguejoName":
             MessageLookupByLibrary.simpleMessage("Crab"),
-        "CoreDataListPirarucuDesc": MessageLookupByLibrary.simpleMessage(""),
-        "CoreDataListQueijoDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListPirarucuDesc": MessageLookupByLibrary.simpleMessage(
+            "The pirarucu is one of the largest freshwater and lacustrine fish in Brazil. It can reach three meters and twenty centimeters and its weight can go up to 330 kg. It usually lives in lakes and rivers with clear and slightly alkaline water with temperatures ranging from 24 to 37 °C. Pirarucu is served as the main component in several typical dishes from Marajó."),
+        "CoreDataListQueijoDesc": MessageLookupByLibrary.simpleMessage(
+            "Made with buffalo milk, Queijo do Marajó is unique in the world. Winner of the Super Gold at the Queijo do Brasil Award, Queijo do Marajó takes its name from the fresh product traditionally and handcrafted with buffalo milk, for over 200 years, in the Ilha do Marajó archipelago, in the state of Pará .Its production is directly linked to the historical factors of Ilha do Marajó, but over the years, it was possible to improve production methods."),
         "CoreDataListQueijoName":
             MessageLookupByLibrary.simpleMessage("Marajó cheese"),
-        "CoreDataListVasoDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListVasoDesc": MessageLookupByLibrary.simpleMessage(
+            "Marajoara art represents the artistic creation of the inhabitants of Ilha de Marajó, Pará, in particular ceramics, considered the oldest ceramic art in Brazil and one of the oldest in the Americas. In ceramics, we can note that there is always a connection with Marajoara art, which is formed by drawings (symbols) that are characterized by zoomorphism (expression of an animal) or anthropomorphism (representation of a person or part of it) and a mixture of the two forms ( anthropozoomorphism)."),
         "CoreDataListVasoName":
             MessageLookupByLibrary.simpleMessage("Marajoara vase"),
         "HomeBodyCategoria": MessageLookupByLibrary.simpleMessage("Categories"),

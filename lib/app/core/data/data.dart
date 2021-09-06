@@ -26,7 +26,7 @@ class LanguageListArModel {
       ArModel(
         nome: locale.CoreDataListQueijoName,
         foto: 'assets/comidas/queijo.jpg',
-        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+        descricao: locale.CoreDataListQueijoDesc,
         objeto: Platform.isIOS ? 'models.scnassets/queijom.usdz' : 'queijom.sfb',
         isfavorito: true,
         categoriasEnum: CategoriasEnum.comidas,
@@ -51,7 +51,7 @@ class LanguageListArModel {
       ArModel(
         nome: locale.CoreDataListVasoName,
         foto: 'assets/objetos/vaso_marajoara.jpg',
-        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+        descricao: locale.CoreDataListVasoDesc,
         objeto: 'models.scnassets/vaso5.usdz',
         isfavorito: true,
         categoriasEnum: CategoriasEnum.artesanato,
@@ -64,7 +64,7 @@ class LanguageListArModel {
       ArModel(
         nome: 'Pirarucu',
         foto: 'assets/animais/pirarucu.jpeg',
-        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+        descricao: locale.CoreDataListPirarucuDesc,
         objeto: Platform.isIOS ?  'models.scnassets/pirarucu.usdz' : 'pirarucu.sfb',
         isfavorito: false,
         categoriasEnum: CategoriasEnum.animais,
@@ -77,7 +77,7 @@ class LanguageListArModel {
       ArModel(
         nome: locale.CoreDataListCaranguejoName,
         foto: 'assets/animais/caranguejo.jpeg',
-        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+        descricao: locale.CoreDataListCaranguejoDesc,
         objeto: Platform.isIOS ?  'models.scnassets/caranguejo3.usdz' : 'pirarucu.sfb',
         isfavorito: false,
         categoriasEnum: CategoriasEnum.animais,

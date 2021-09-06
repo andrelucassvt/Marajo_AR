@@ -31,14 +31,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "A ilha do Marajó concentra o maior rebanho de búfalos do Brasil. Cerca de 3 búfalos a cada 1 habitante. A criação de búfalos não envolve apenas os pecuaristas, já que os animais fornecem carne, leite, couro e chifres para restaurantes, artesãos, queijeiros e outros tipos de estabelecimentos. Os animais são utilizados até mesmo pela polícia de Soure(Capital do Marajó) em suas patrulhas, algo que maravilha os turistas e tranquiliza os habitantes."),
         "CoreDataListBuffaloName":
             MessageLookupByLibrary.simpleMessage("Búfalo Marajoara"),
-        "CoreDataListCaranguejoDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListCaranguejoDesc": MessageLookupByLibrary.simpleMessage(
+            "Os manguezais são um dos maiores empregadores da cidade de Soure na Ilha do Marajó, mais de 400 famílias vivem da venda e coleta de caranguejo.   É proibido capturar o caranguejo em seu período de andada, momento que o macho e a fêmea saem das tocas e andam pelo manguezal para o acasalamento e liberação dos ovos. Essa andada ocorre nas fases da lua nova e cheia, quando a maré está alta. Quem descumprir o período do defeso, terá de devolver os animais vivos ao habitat natural e ficam sujeitos às sanções definidas na Lei nº 9.605, de 12 de fevereiro de 1998, e no Decreto nº 6.514, de 22 de julho de 2008."),
         "CoreDataListCaranguejoName":
             MessageLookupByLibrary.simpleMessage("Caranguejo"),
-        "CoreDataListPirarucuDesc": MessageLookupByLibrary.simpleMessage(""),
-        "CoreDataListQueijoDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListPirarucuDesc": MessageLookupByLibrary.simpleMessage(
+            "O pirarucu é um dos maiores peixes de águas doces fluviais e lacustres do Brasil. Pode atingir três metros e vinte centímetros e seu peso pode ir até 330 kg. Costuma viver em lagos e rios de águas claras e ligeiramente alcalinas com temperaturas que variam de 24 a 37 °C. O pirarucu é servido como componente principal em diversos pratos típicos do Marajó"),
+        "CoreDataListQueijoDesc": MessageLookupByLibrary.simpleMessage(
+            "Produzido com leite de búfala, Queijo do Marajó é único no mundo. Vencedor do Super Ouro no Prêmio Queijo do Brasil, Queijo do Marajó leva esse nome por se referir ao produto fresco fabricado de forma tradicional e artesanal com leite de búfala, há mais de 200 anos, no arquipélago da Ilha do Marajó, no Estado do Pará.Sua produção está diretamente ligada aos fatores históricos da Ilha do Marajó, mas com o passar dos anos, foi possível aprimorar os métodos de produção."),
         "CoreDataListQueijoName":
             MessageLookupByLibrary.simpleMessage("Queijo do Marajó"),
-        "CoreDataListVasoDesc": MessageLookupByLibrary.simpleMessage(""),
+        "CoreDataListVasoDesc": MessageLookupByLibrary.simpleMessage(
+            "A arte marajoara representa a criação artística dos moradores da Ilha de Marajó, no Pará, em especial a cerâmica, considerada a mais antiga arte em cerâmica do Brasil e uma das mais antigas das Américas. Na cerâmica, podemos notar que sempre há uma ligação com arte marajoara que é formada por desenhos (símbolos) que se caracterizam pelo zoomorfismo (expressão de um animal) ou antropomorfismo (representação de uma pessoa ou parte dela) e uma mistura das duas formas (antropozoomorfismo)."),
         "CoreDataListVasoName":
             MessageLookupByLibrary.simpleMessage("Vaso Marajoara"),
         "HomeBodyCategoria": MessageLookupByLibrary.simpleMessage("Categorias"),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:marajoar/app/core/colors.dart';
 import 'package:marajoar/generated/l10n.dart';
 
 class SobrePage extends StatefulWidget {
@@ -42,7 +41,7 @@ class SobrePageState extends State <SobrePage> {
 }
 
 String textoBR = """
-Marajó AR (Marajó em realidade aumentada), tem como objetivo levar um pouco da cultura da marajoara através da realidade aumentada. A ideia surgiu para dar mais visibilidade à maior ilha fluviomarítima do Brasil e do Mundo. 
+Marajó AR (Marajó em realidade aumentada) tem como objetivo levar um pouco da cultura marajoara através da realidade aumentada. A ideia surgiu para dar mais visibilidade à maior ilha fluviomarítima do Brasil e do Mundo. 
 
 O projeto foi desenvolvido a todo esforço (sem apoio político) por duas pessoas que amam a Ilha do Marajó, terra onde nasceram e cresceram.
 As duas pessoas por trás desse projeto são:
