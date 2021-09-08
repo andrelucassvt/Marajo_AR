@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marajoar/app/core/language/conditional.dart';
 import 'package:marajoar/generated/l10n.dart';
 
 class SobrePage extends StatefulWidget {
@@ -28,7 +29,7 @@ class SobrePageState extends State <SobrePage> {
               ),
             ),
             Text(
-              textoBR,
+              ConditionalLanguage.getLanguage(context) == 'en' ? textoEN : textoBR,
               style: TextStyle(
                 fontSize: 20
               ),
@@ -49,4 +50,15 @@ André Salvador, analista de sistemas.
 Wendel Alves, estudante de engenharia de petróleo.
 
 Esse projeto teve apoio indispensável do professor universitário da UNAMA (Universidade da Amazônia) Alan Marciel de Souza. O professor acreditou na ideia e ajudou a registrar o sistema no INPI (Instituto nacional da propriedade industrial).
+""";
+
+String textoEN = """
+Marajó AR (Marajó in augmented reality) aims to take some of the Marajoara culture through augmented reality. The idea arose to give more visibility to the largest fluvio-maritime island in Brazil and in the world.
+
+The project was developed with every effort (without political support) by two people who love Ilha do Marajó, the land where they were born and raised.
+The two people behind this project are:
+André Salvador, systems analyst.
+Wendel Alves, petroleum engineering student.
+
+This project had the indispensable support of the university professor at UNAMA (University of the Amazon) Alan Marciel de Souza. The professor believed in the idea and helped to register the system with the INPI (National Institute of Industrial Property).
 """;

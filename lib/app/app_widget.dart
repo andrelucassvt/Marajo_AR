@@ -23,6 +23,7 @@ class AppWidget extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: LocaleProvider.delegate.supportedLocales,
+      debugShowCheckedModeBanner: false,
       builder: (context, widget) => ResponsiveWrapper.builder(
         ClampingScrollWrapper.builder(context,widget),
         minWidth: 450,
