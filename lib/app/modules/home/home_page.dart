@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:marajoar/app/modules/home/controller/home_controller.dart';
@@ -105,7 +107,7 @@ class _HomePageState extends State <HomePage> {
                     icon: Icon(Icons.info_outline),
                   ),
                   Text(
-                    'Ar Marajó',
+                    'Marajó AR',
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold
@@ -213,12 +215,14 @@ class _HomePageState extends State <HomePage> {
 
   iniciarAdmob(){
     InterstitialAd.load(
-      adUnitId: 'ca-app-pub-3652623512305285/6827768936',
+      adUnitId: Platform.isIOS ? 'ca-app-pub-3652623512305285/6827768936' : 'ca-app-pub-3652623512305285/1911527751',
       request: AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (InterstitialAd ad) {
           // Keep a reference to the ad so you can show it later.
-          this._interstitialAd = ad;
+          setState(() {
+            this._interstitialAd = ad;
+          });
         },
         onAdFailedToLoad: (LoadAdError error) {
           print('InterstitialAd failed to load: $error');
