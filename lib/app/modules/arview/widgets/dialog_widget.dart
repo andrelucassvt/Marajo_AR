@@ -8,7 +8,7 @@ class ShowMessageArview extends StatelessWidget {
     LocaleProvider localeProvider = LocaleProvider.of(context);
     return AlertDialog(
       title: Text(localeProvider.ArviewWidgetsDialogTitle,style: TextStyle(color: Colors.red)),
-      content: Text('Certifique-se que esteja em um local plano \nAguarde os pontos brancos e clique para ver o objeto'),
+      content: Text(localeProvider.ArViewWidgetsDialogTextContent),
       actions: [
         TextButton(
           onPressed: ()=> Navigator.of(context).pop(), 

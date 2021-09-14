@@ -170,6 +170,16 @@ class LocaleProvider {
     );
   }
 
+  /// `Make sure it's in a flat place. \nWait for the white dots and click to see the object`
+  String get ArViewWidgetsDialogTextContent {
+    return Intl.message(
+      'Make sure it\'s in a flat place. \nWait for the white dots and click to see the object',
+      name: 'ArViewWidgetsDialogTextContent',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Attention`
   String get ArviewWidgetsDialogTitle {
     return Intl.message(

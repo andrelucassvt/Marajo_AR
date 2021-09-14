@@ -21,6 +21,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "ArViewWidgetsDialogTextContent": MessageLookupByLibrary.simpleMessage(
+            "Make sure it\'s in a flat place. \nWait for the white dots and click to see the object"),
         "ArviewWidgetsDialogTitle":
             MessageLookupByLibrary.simpleMessage("Attention"),
         "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(

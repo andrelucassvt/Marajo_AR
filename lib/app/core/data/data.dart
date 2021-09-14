@@ -14,7 +14,7 @@ class LanguageListArModel {
         nome: locale.CoreDataListBuffaloName,
         foto: 'assets/animais/buffalo.png',
         descricao: locale.CoreDataListBuffaloDesc,
-        objeto: Platform.isIOS ? 'models.scnassets/buffalo.usdz' : 'buffalo.sfb',
+        objeto: Platform.isIOS ? 'models.scnassets/buffalo2.usdz' : 'buffalo.sfb',
         isfavorito: true,
         categoriasEnum: CategoriasEnum.animais,
         listaImagens: [
@@ -52,7 +52,7 @@ class LanguageListArModel {
         nome: locale.CoreDataListVasoName,
         foto: 'assets/objetos/vaso_marajoara.jpg',
         descricao: locale.CoreDataListVasoDesc,
-        objeto: 'models.scnassets/vaso5.usdz',
+        objeto: 'models.scnassets/vasoma.usdz',
         isfavorito: true,
         categoriasEnum: CategoriasEnum.artesanato,
         listaImagens: [
