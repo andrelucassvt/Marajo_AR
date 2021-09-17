@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:marajoar/app/core/language/conditional.dart';
 import 'package:marajoar/generated/l10n.dart';
-
+import 'dart:io';
 class SobrePage extends StatefulWidget {
   @override
   SobrePageState createState() => SobrePageState();
 }
 class SobrePageState extends State <SobrePage> {
 
+  AdWidget adWidget;
+  final BannerAd myBanner = BannerAd(
+    adUnitId: Platform.isIOS ? 'ca-app-pub-3652623512305285/9825004345' : 'ca-app-pub-3652623512305285/2014042487',
+    size: AdSize.banner,
+    request: AdRequest(),
+    listener: BannerAdListener(),
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    myBanner.load();
+    adWidget = AdWidget(ad: myBanner);
+  }
   @override
   Widget build(BuildContext context) {
     LocaleProvider locale = LocaleProvider.of(context);
@@ -34,6 +49,12 @@ class SobrePageState extends State <SobrePage> {
                 fontSize: 20
               ),
             ),
+            Container(
+              alignment: Alignment.center,
+              child: adWidget,
+              width: myBanner.size.width.toDouble(),
+              height: myBanner.size.height.toDouble(),
+            )
           ],
         ),
       ),

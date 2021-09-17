@@ -115,9 +115,9 @@ class _HomePageState extends State <HomePage> {
                   ),
                   IconButton(
                     onPressed: (){
-                      Share.share(
-                        'Conheça um pouca da Ilha do Marajó em realidade aumentada\nBaixe o app: https://apps.apple.com/us/app/marajó-ar/id1584863516'
-                      );
+                      Platform.isIOS 
+                       ? Share.share('Conheça um pouca da Ilha do Marajó em realidade aumentada\nBaixe o app: https://apps.apple.com/us/app/marajó-ar/id1584863516')
+                       : Share.share('Conheça um pouca da Ilha do Marajó em realidade aumentada\nBaixe o app: https://play.google.com/store/apps/details?id=com.andre.marajoar');
                     },
                     iconSize: 40, 
                     icon: Icon(Icons.share),
