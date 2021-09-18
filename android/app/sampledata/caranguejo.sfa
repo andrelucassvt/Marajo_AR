@@ -1,0 +1,159 @@
+{
+  animations: [
+    {
+      path: 'sampledata/caranguejo.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'body.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'BodyCol_4k',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'claws.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'legsCol_4k',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'blinn5.001',
+      parameters: [
+        {
+          baseColor: [
+            0.196078,
+            0.17469599999999999,
+            0.13456399999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/caranguejo.fbx',
+    name: 'caranguejo',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/caranguejo.fbm/legsSpec_4k.jpg',
+      name: 'legsSpec_4k',
+      pipeline_name: 'caranguejo.fbm/legsSpec_4k.jpg',
+    },
+    {
+      file: 'sampledata/caranguejo.fbm/legsCol_4k.jpg',
+      name: 'legsCol_4k',
+      pipeline_name: 'caranguejo.fbm/legsCol_4k.jpg',
+    },
+    {
+      file: 'sampledata/caranguejo.fbm/BodySpec_4k.jpg',
+      name: 'BodySpec_4k',
+      pipeline_name: 'caranguejo.fbm/BodySpec_4k.jpg',
+    },
+    {
+      file: 'sampledata/caranguejo.fbm/BodyCol_4k.jpg',
+      name: 'BodyCol_4k',
+      pipeline_name: 'caranguejo.fbm/BodyCol_4k.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

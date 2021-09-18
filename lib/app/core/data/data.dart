@@ -14,7 +14,7 @@ class LanguageListArModel {
         nome: locale.CoreDataListBuffaloName,
         foto: 'assets/animais/buffalo.png',
         descricao: locale.CoreDataListBuffaloDesc,
-        objeto: Platform.isIOS ? 'models.scnassets/buffalo2.usdz' : 'buffalo.sfb',
+        objeto: Platform.isIOS ? 'models.scnassets/bufalo5.usdz' : 'bufalo.sfb',
         isfavorito: true,
         categoriasEnum: CategoriasEnum.animais,
         listaImagens: [
@@ -27,7 +27,7 @@ class LanguageListArModel {
         nome: locale.CoreDataListQueijoName,
         foto: 'assets/comidas/queijo.jpg',
         descricao: locale.CoreDataListQueijoDesc,
-        objeto: Platform.isIOS ? 'models.scnassets/queijom.usdz' : 'queijom.sfb',
+        objeto: Platform.isIOS ? 'models.scnassets/queijom.usdz' : 'queijo.sfb',
         isfavorito: true,
         categoriasEnum: CategoriasEnum.comidas,
         listaImagens: [
@@ -52,7 +52,7 @@ class LanguageListArModel {
         nome: locale.CoreDataListVasoName,
         foto: 'assets/objetos/vaso_marajoara.jpg',
         descricao: locale.CoreDataListVasoDesc,
-        objeto: 'models.scnassets/vasoma.usdz',
+        objeto: Platform.isIOS ? 'models.scnassets/vaso1.usdz' : 'vaso.sfb',
         isfavorito: true,
         categoriasEnum: CategoriasEnum.artesanato,
         listaImagens: [
@@ -78,7 +78,7 @@ class LanguageListArModel {
         nome: locale.CoreDataListCaranguejoName,
         foto: 'assets/animais/caranguejo.jpeg',
         descricao: locale.CoreDataListCaranguejoDesc,
-        objeto: Platform.isIOS ?  'models.scnassets/caranguejo3.usdz' : 'pirarucu.sfb',
+        objeto: Platform.isIOS ?  'models.scnassets/caranguejo3.usdz' : 'caranguejo.sfb',
         isfavorito: false,
         categoriasEnum: CategoriasEnum.animais,
         listaImagens: [

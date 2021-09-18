@@ -26,6 +26,12 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 apply plugin: 'com.google.ar.sceneform.plugin'
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 android {
     compileSdkVersion 29
 
@@ -43,17 +49,23 @@ android {
         applicationId "com.andre.marajoar"
         minSdkVersion 29
         targetSdkVersion 30
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        versionCode 3
+        versionName 1.0.3
     }
 
-    buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
-        }
-    }
+   signingConfigs {
+       release {
+           keyAlias keystoreProperties['keyAlias']
+           keyPassword keystoreProperties['keyPassword']
+           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+           storePassword keystoreProperties['storePassword']
+       }
+   }
+   buildTypes {
+       release {
+           signingConfig signingConfigs.release
+       }
+   }
 }
 
 flutter {
@@ -67,7 +79,32 @@ dependencies {
     implementation 'com.google.ar.sceneform:core:1.15.0'
 }
 
-sceneform.asset('sampledata/crabB.fbx',
+sceneform.asset('sampledata/caranguejo.fbx',
         'default',
-        'sampledata/crabB.sfa',
-        'src/main/assets/crabB')
+        'sampledata/caranguejo.sfa',
+        'src/main/assets/caranguejo')
+        
+sceneform.asset('sampledata/abacaxi.fbx',
+        'default',
+        'sampledata/abacaxi.sfa',
+        'src/main/assets/abacaxi')
+
+sceneform.asset('sampledata/queijo.obj',
+        'default',
+        'sampledata/queijo.sfa',
+        'src/main/assets/queijo')
+
+sceneform.asset('sampledata/vaso3.gltf',
+        'default',
+        'sampledata/vaso3.sfa',
+        'src/main/assets/vaso')
+
+sceneform.asset('sampledata/bufalo1.fbx',
+        'default',
+        'sampledata/bufalo1.sfa',
+        'src/main/assets/bufalo')
+
+sceneform.asset('sampledata/pirarucu.fbx',
+        'default',
+        'sampledata/pirarucu.sfa',
+        'src/main/assets/pirarucu')
