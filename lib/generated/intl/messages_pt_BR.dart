@@ -21,10 +21,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "ArViewWidgetsDialogTextContent": MessageLookupByLibrary.simpleMessage(
+        "ArCoreWidgetsDialogTextContent": MessageLookupByLibrary.simpleMessage(
             "Certifique-se que esteja em um local plano \nAguarde os pontos brancos e clique para ver o objeto"),
-        "ArviewWidgetsDialogTitle":
-            MessageLookupByLibrary.simpleMessage("Atenção"),
+        "ArcoreErrorMessageContent": MessageLookupByLibrary.simpleMessage(
+            "Seu dispositivo não é compativel com a realidade aumentada"),
         "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(
             "O Pará é o maior produtor de abacaxi no Brasil. A cidade de Salvaterra está entre as três cidades que mais produzem o fruto no Pará. Quem afirma é o Instituto Brasileiro de Geografia e Estatística (IBGE). Plantio é a principal atividade da agricultura familiar no município, responsável por mais de 80% do consumo em Belém, com 11 milhões de frutos ao ano. Como parte da cultura regional, a vila de Condeixa (em Salvaterra) realiza todo ano o Festival do Abacaxi."),
         "CoreDataListAbacaxiName":
@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "A arte marajoara representa a criação artística dos moradores da Ilha de Marajó, no Pará, em especial a cerâmica, considerada a mais antiga arte em cerâmica do Brasil e uma das mais antigas das Américas. Na cerâmica, podemos notar que sempre há uma ligação com arte marajoara que é formada por desenhos (símbolos) que se caracterizam pelo zoomorfismo (expressão de um animal) ou antropomorfismo (representação de uma pessoa ou parte dela) e uma mistura das duas formas (antropozoomorfismo)."),
         "CoreDataListVasoName":
             MessageLookupByLibrary.simpleMessage("Vaso Marajoara"),
+        "DialogButtonNext": MessageLookupByLibrary.simpleMessage("Continuar"),
+        "DialogTitle": MessageLookupByLibrary.simpleMessage("Atenção"),
         "HomeBodyCategoria": MessageLookupByLibrary.simpleMessage("Categorias"),
         "HomeBodyIconsCategoriaArtesanato":
             MessageLookupByLibrary.simpleMessage("Artesanato"),
@@ -67,7 +69,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "HomeTutorialTextAttention": MessageLookupByLibrary.simpleMessage(
             "Clique aqui e saiba mais sobre o projeto \'\'Marajó em realidade aumentada\'\'"),
         "HomeTutorialTextTapNext":
-            MessageLookupByLibrary.simpleMessage("Toque para continuar"),
-        "WidgetsButtonNext": MessageLookupByLibrary.simpleMessage("Continuar")
+            MessageLookupByLibrary.simpleMessage("Toque para continuar")
       };
 }

@@ -7,8 +7,8 @@ import 'package:marajoar/app/modules/arview/arcore/arcore_page.dart';
 import 'package:marajoar/app/modules/arview/arkit/arkit_page.dart';
 import 'package:marajoar/app/modules/home/pages/detalhes/image/image_page.dart';
 import 'package:marajoar/app/modules/home/pages/detalhes/widgets/card_image.dart';
-import 'package:marajoar/app/modules/home/pages/detalhes/widgets/showDialogErrorArcore.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
+import 'package:marajoar/app/shared/widgets/show_dialog_widget.dart';
 import 'package:marajoar/generated/l10n.dart';
 
 class DetalhesPage extends StatefulWidget {
@@ -114,7 +114,10 @@ class DetalhesPageState extends State <DetalhesPage> {
             if (await ArCoreController.checkArCoreAvailability() == false) {
               return showDialog(
                 context: context, 
-                builder: (_)=> ShowDialogErrorArcore());
+                builder: (_)=> ShowDialogWidget(
+                  title: localeProvider.DialogTitle,
+                  content: localeProvider.ArcoreErrorMessageContent,
+                ));
             } 
             Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArcorePage(widget.model)));
           }

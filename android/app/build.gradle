@@ -49,8 +49,8 @@ android {
         applicationId "com.andre.marajoar"
         minSdkVersion 29
         targetSdkVersion 30
-        versionCode 4
-        versionName "1.0.4"
+        versionCode 5
+        versionName "1.0.5"
     }
 
    signingConfigs {

@@ -161,30 +161,40 @@ class LocaleProvider {
   }
 
   /// `Next`
-  String get WidgetsButtonNext {
+  String get DialogButtonNext {
     return Intl.message(
       'Next',
-      name: 'WidgetsButtonNext',
+      name: 'DialogButtonNext',
       desc: '',
       args: [],
     );
   }
 
   /// `Make sure it's in a flat place. \nWait for the white dots and click to see the object`
-  String get ArViewWidgetsDialogTextContent {
+  String get ArCoreWidgetsDialogTextContent {
     return Intl.message(
       'Make sure it\'s in a flat place. \nWait for the white dots and click to see the object',
-      name: 'ArViewWidgetsDialogTextContent',
+      name: 'ArCoreWidgetsDialogTextContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your device does not support augmented reality`
+  String get ArcoreErrorMessageContent {
+    return Intl.message(
+      'Your device does not support augmented reality',
+      name: 'ArcoreErrorMessageContent',
       desc: '',
       args: [],
     );
   }
 
   /// `Attention`
-  String get ArviewWidgetsDialogTitle {
+  String get DialogTitle {
     return Intl.message(
       'Attention',
-      name: 'ArviewWidgetsDialogTitle',
+      name: 'DialogTitle',
       desc: '',
       args: [],
     );

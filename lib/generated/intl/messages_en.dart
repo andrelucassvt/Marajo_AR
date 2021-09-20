@@ -21,10 +21,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "ArViewWidgetsDialogTextContent": MessageLookupByLibrary.simpleMessage(
+        "ArCoreWidgetsDialogTextContent": MessageLookupByLibrary.simpleMessage(
             "Make sure it\'s in a flat place. \nWait for the white dots and click to see the object"),
-        "ArviewWidgetsDialogTitle":
-            MessageLookupByLibrary.simpleMessage("Attention"),
+        "ArcoreErrorMessageContent": MessageLookupByLibrary.simpleMessage(
+            "Your device does not support augmented reality"),
         "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(
             "Pará is the largest producer of pineapple in Brazil. The city of Salvaterra is among the three cities that produce the most fruit in Pará. The Brazilian Institute of Geography and Statistics (IBGE) claims it. Planting is the main activity of family farming in the city, responsible for more than 80% of consumption in Belém, with 11 million fruits a year. As part of the regional culture, the village of Condeixa (in Salvaterra) holds the Pineapple Festival every year."),
         "CoreDataListAbacaxiName":
@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Marajoara art represents the artistic creation of the inhabitants of Ilha de Marajó, Pará, in particular ceramics, considered the oldest ceramic art in Brazil and one of the oldest in the Americas. In ceramics, we can note that there is always a connection with Marajoara art, which is formed by drawings (symbols) that are characterized by zoomorphism (expression of an animal) or anthropomorphism (representation of a person or part of it) and a mixture of the two forms ( anthropozoomorphism)."),
         "CoreDataListVasoName":
             MessageLookupByLibrary.simpleMessage("Marajoara vase"),
+        "DialogButtonNext": MessageLookupByLibrary.simpleMessage("Next"),
+        "DialogTitle": MessageLookupByLibrary.simpleMessage("Attention"),
         "HomeBodyCategoria": MessageLookupByLibrary.simpleMessage("Categories"),
         "HomeBodyIconsCategoriaArtesanato":
             MessageLookupByLibrary.simpleMessage("Craftsmanship"),
@@ -67,7 +69,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "HomeTutorialTextAttention": MessageLookupByLibrary.simpleMessage(
             "Click here and learn more about the \'\'Marajó project in augmented reality\'\'"),
         "HomeTutorialTextTapNext":
-            MessageLookupByLibrary.simpleMessage("Tap to continue"),
-        "WidgetsButtonNext": MessageLookupByLibrary.simpleMessage("Next")
+            MessageLookupByLibrary.simpleMessage("Tap to continue")
       };
 }

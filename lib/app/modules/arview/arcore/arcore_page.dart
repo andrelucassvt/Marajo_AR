@@ -1,7 +1,8 @@
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/material.dart';
-import 'package:marajoar/app/modules/arview/widgets/dialog_widget.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
+import 'package:marajoar/app/shared/widgets/show_dialog_widget.dart';
+import 'package:marajoar/generated/l10n.dart';
 
 class ArcorePage extends StatefulWidget {
   final ArModel model;
@@ -17,7 +18,7 @@ class ArcorePageState extends State<ArcorePage> {
   void initState() {
     super.initState();
     Future.delayed((Duration.zero),(){
-      _showMessage();
+      _showMessage(context);
     });
   }
   @override
@@ -26,10 +27,14 @@ class ArcorePageState extends State<ArcorePage> {
     super.dispose();
   }
 
-  _showMessage(){
+  _showMessage(BuildContext context){
+    LocaleProvider localeProvider = LocaleProvider.of(context);
     showDialog(
       context: context, 
-      builder: (_) => ShowMessageArview()
+      builder: (_) => ShowDialogWidget(
+        title: localeProvider.DialogTitle,
+        content: localeProvider.ArCoreWidgetsDialogTextContent,
+      )
     );
   }
   @override
@@ -40,7 +45,7 @@ class ArcorePageState extends State<ArcorePage> {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: _showMessage,
+            onPressed: () => _showMessage,
             icon: Icon(Icons.info)
           )
         ],
