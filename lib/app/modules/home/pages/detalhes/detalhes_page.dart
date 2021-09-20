@@ -1,11 +1,13 @@
 import 'dart:io';
 
+import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:marajoar/app/core/colors.dart';
 import 'package:marajoar/app/modules/arview/arcore/arcore_page.dart';
 import 'package:marajoar/app/modules/arview/arkit/arkit_page.dart';
 import 'package:marajoar/app/modules/home/pages/detalhes/image/image_page.dart';
 import 'package:marajoar/app/modules/home/pages/detalhes/widgets/card_image.dart';
+import 'package:marajoar/app/modules/home/pages/detalhes/widgets/showDialogErrorArcore.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
 import 'package:marajoar/generated/l10n.dart';
 
@@ -108,7 +110,14 @@ class DetalhesPageState extends State <DetalhesPage> {
         backgroundColor: primaryColor,
         onPressed: Platform.isIOS
           ? () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArkitPage(widget.model)))
-          : () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArcorePage(widget.model)))
+          : () async {
+            if (await ArCoreController.checkArCoreAvailability() == false) {
+              return showDialog(
+                context: context, 
+                builder: (_)=> ShowDialogErrorArcore());
+            } 
+            Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArcorePage(widget.model)));
+          }
       ),
     );
   }
