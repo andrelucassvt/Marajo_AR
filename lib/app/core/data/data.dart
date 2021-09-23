@@ -27,7 +27,7 @@ class LanguageListArModel {
         nome: locale.CoreDataListQueijoName,
         foto: 'assets/comidas/queijo.jpg',
         descricao: locale.CoreDataListQueijoDesc,
-        objeto: Platform.isIOS ? 'models.scnassets/queijom.usdz' : 'queijo.sfb',
+        objeto: Platform.isIOS ? 'models.scnassets/queijom2.usdz' : 'queijo.sfb',
         isfavorito: true,
         categoriasEnum: CategoriasEnum.comidas,
         listaImagens: [
