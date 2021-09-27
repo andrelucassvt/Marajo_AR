@@ -81,7 +81,7 @@ class _HomePageState extends State <HomePage> {
       controller.getRecomendados(context);
       iniciarAdmob();
     });
-    Future.delayed(Duration(seconds: 10),(){
+    Future.delayed(Duration(seconds: 30),(){
       _interstitialAd.show();
     });
   }
