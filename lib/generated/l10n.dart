@@ -190,6 +190,26 @@ class LocaleProvider {
     );
   }
 
+  /// `Error while capturing screen :(`
+  String get ArViewControllerErrorScreenshotText {
+    return Intl.message(
+      'Error while capturing screen :(',
+      name: 'ArViewControllerErrorScreenshotText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Screenshot has been saved :)`
+  String get ArViewControllerSucessScreenshotText {
+    return Intl.message(
+      'Screenshot has been saved :)',
+      name: 'ArViewControllerSucessScreenshotText',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Attention`
   String get DialogTitle {
     return Intl.message(
@@ -305,6 +325,26 @@ class LocaleProvider {
     return Intl.message(
       'The mangroves are one of the biggest employers in the city of Soure on Marajó Island, more than 400 families live off the sale and collection of crabs. It is forbidden to capture the crab in its walking period, when the male and female leave their burrows and walk through the mangrove swamp to mate and release the eggs. This walk takes place in the new and full moon phases, when the tide is high. Those who fail to comply with the closed season will have to return live animals to their natural habitat and are subject to the sanctions defined in Law No. 9,605, of February 12, 1998, and Decree No. 6,514, of July 22, 2008.',
       name: 'CoreDataListCaranguejoDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover a little of Marajoara culture through augmented reality`
+  String get CoreTextShareTitulo {
+    return Intl.message(
+      'Discover a little of Marajoara culture through augmented reality',
+      name: 'CoreTextShareTitulo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download Marajó AR`
+  String get CoreTextShareDownload {
+    return Intl.message(
+      'Download Marajó AR',
+      name: 'CoreTextShareDownload',
       desc: '',
       args: [],
     );

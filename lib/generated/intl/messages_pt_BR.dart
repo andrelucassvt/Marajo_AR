@@ -23,6 +23,11 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "ArCoreWidgetsDialogTextContent": MessageLookupByLibrary.simpleMessage(
             "Certifique-se que esteja em um local plano \nAguarde os pontos brancos e clique para ver o objeto"),
+        "ArViewControllerErrorScreenshotText":
+            MessageLookupByLibrary.simpleMessage("Error ao capturar tela :("),
+        "ArViewControllerSucessScreenshotText":
+            MessageLookupByLibrary.simpleMessage(
+                "A captura de tela foi salva :)"),
         "ArcoreErrorMessageContent": MessageLookupByLibrary.simpleMessage(
             "Seu dispositivo não é compativel com a realidade aumentada"),
         "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(
@@ -47,6 +52,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "A arte marajoara representa a criação artística dos moradores da Ilha de Marajó, no Pará, em especial a cerâmica, considerada a mais antiga arte em cerâmica do Brasil e uma das mais antigas das Américas. Na cerâmica, podemos notar que sempre há uma ligação com arte marajoara que é formada por desenhos (símbolos) que se caracterizam pelo zoomorfismo (expressão de um animal) ou antropomorfismo (representação de uma pessoa ou parte dela) e uma mistura das duas formas (antropozoomorfismo)."),
         "CoreDataListVasoName":
             MessageLookupByLibrary.simpleMessage("Vaso Marajoara"),
+        "CoreTextShareDownload":
+            MessageLookupByLibrary.simpleMessage("Baixe o Marajó AR"),
+        "CoreTextShareTitulo": MessageLookupByLibrary.simpleMessage(
+            "Conheça um pouco da cultura marajoara através da realidade aumentada"),
         "DialogButtonNext": MessageLookupByLibrary.simpleMessage("Continuar"),
         "DialogTitle": MessageLookupByLibrary.simpleMessage("Atenção"),
         "HomeBodyCategoria": MessageLookupByLibrary.simpleMessage("Categorias"),

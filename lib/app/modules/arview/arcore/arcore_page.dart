@@ -1,5 +1,6 @@
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/material.dart';
+import 'package:marajoar/app/modules/arview/controller/ar_controller.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
 import 'package:marajoar/app/shared/widgets/show_dialog_widget.dart';
 import 'package:marajoar/generated/l10n.dart';
@@ -13,6 +14,7 @@ class ArcorePage extends StatefulWidget {
 }
 class ArcorePageState extends State<ArcorePage> {
   ArCoreController arCoreController;
+  ArController arControllerMarajo = ArController();
 
   @override
   void initState() {
@@ -41,7 +43,7 @@ class ArcorePageState extends State<ArcorePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Arcore'),
+        title: Text('Marajó AR'),
         centerTitle: true,
         actions: [
           IconButton(
@@ -54,6 +56,12 @@ class ArcorePageState extends State<ArcorePage> {
         onArCoreViewCreated: _onArCoreViewCreated,
         enableTapRecognizer: true,
         debug: false,        
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.camera_alt_outlined),
+        onPressed: (){
+          arControllerMarajo.arScreenshot(context);
+        },
       ),
     );
   }

@@ -19,6 +19,8 @@
     "DialogButtonNext": "Next",
     "ArCoreWidgetsDialogTextContent" : "Make sure it's in a flat place. \nWait for the white dots and click to see the object",
     "ArcoreErrorMessageContent": "Your device does not support augmented reality",
+    "ArViewControllerErrorScreenshotText": "Error while capturing screen :(",
+    "ArViewControllerSucessScreenshotText": "Screenshot has been saved :)",
     "DialogTitle": "Attention",
 
     "CoreDataListBuffaloName": "Marajoara buffalo",
@@ -36,5 +38,8 @@
     "CoreDataListPirarucuDesc": "The pirarucu is one of the largest freshwater and lacustrine fish in Brazil. It can reach three meters and twenty centimeters and its weight can go up to 330 kg. It usually lives in lakes and rivers with clear and slightly alkaline water with temperatures ranging from 24 to 37 °C. Pirarucu is served as the main component in several typical dishes from Marajó.",
 
     "CoreDataListCaranguejoName": "Crab",
-    "CoreDataListCaranguejoDesc": "The mangroves are one of the biggest employers in the city of Soure on Marajó Island, more than 400 families live off the sale and collection of crabs. It is forbidden to capture the crab in its walking period, when the male and female leave their burrows and walk through the mangrove swamp to mate and release the eggs. This walk takes place in the new and full moon phases, when the tide is high. Those who fail to comply with the closed season will have to return live animals to their natural habitat and are subject to the sanctions defined in Law No. 9,605, of February 12, 1998, and Decree No. 6,514, of July 22, 2008."
+    "CoreDataListCaranguejoDesc": "The mangroves are one of the biggest employers in the city of Soure on Marajó Island, more than 400 families live off the sale and collection of crabs. It is forbidden to capture the crab in its walking period, when the male and female leave their burrows and walk through the mangrove swamp to mate and release the eggs. This walk takes place in the new and full moon phases, when the tide is high. Those who fail to comply with the closed season will have to return live animals to their natural habitat and are subject to the sanctions defined in Law No. 9,605, of February 12, 1998, and Decree No. 6,514, of July 22, 2008.",
+
+    "CoreTextShareTitulo": "Discover a little of Marajoara culture through augmented reality",
+    "CoreTextShareDownload": "Download Marajó AR"
 }

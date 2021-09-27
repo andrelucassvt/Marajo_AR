@@ -3,7 +3,10 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:arkit_plugin/geometries/arkit_sphere.dart';
 import 'package:arkit_plugin/widget/arkit_scene_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:marajoar/app/modules/arview/controller/ar_controller.dart';
 import 'package:marajoar/app/shared/models/ar_model.dart';
+import 'package:mobx/mobx.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
 class ArkitPage extends StatefulWidget {
@@ -18,6 +21,7 @@ class ArkitPage extends StatefulWidget {
 class _ArkitPageState extends State<ArkitPage> {
   ARKitController arkitController;
   ARKitReferenceNode node;
+  ArController arControllerMarajo = ArController();
 
   @override
   void dispose() {
@@ -28,7 +32,7 @@ class _ArkitPageState extends State<ArkitPage> {
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(
-        title: Text('Arkit'),
+        title: Text('Marajó AR'),
         centerTitle: true,
        ),
        body:Container(
@@ -38,6 +42,10 @@ class _ArkitPageState extends State<ArkitPage> {
            planeDetection: ARPlaneDetection.horizontal,
          ),
        ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.camera_alt_outlined),
+        onPressed: () => arControllerMarajo.arScreenshot(context) 
+      ),
     );
   }
 

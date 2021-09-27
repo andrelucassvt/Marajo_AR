@@ -23,6 +23,12 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "ArCoreWidgetsDialogTextContent": MessageLookupByLibrary.simpleMessage(
             "Make sure it\'s in a flat place. \nWait for the white dots and click to see the object"),
+        "ArViewControllerErrorScreenshotText":
+            MessageLookupByLibrary.simpleMessage(
+                "Error while capturing screen :("),
+        "ArViewControllerSucessScreenshotText":
+            MessageLookupByLibrary.simpleMessage(
+                "Screenshot has been saved :)"),
         "ArcoreErrorMessageContent": MessageLookupByLibrary.simpleMessage(
             "Your device does not support augmented reality"),
         "CoreDataListAbacaxiDesc": MessageLookupByLibrary.simpleMessage(
@@ -47,6 +53,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Marajoara art represents the artistic creation of the inhabitants of Ilha de Marajó, Pará, in particular ceramics, considered the oldest ceramic art in Brazil and one of the oldest in the Americas. In ceramics, we can note that there is always a connection with Marajoara art, which is formed by drawings (symbols) that are characterized by zoomorphism (expression of an animal) or anthropomorphism (representation of a person or part of it) and a mixture of the two forms ( anthropozoomorphism)."),
         "CoreDataListVasoName":
             MessageLookupByLibrary.simpleMessage("Marajoara vase"),
+        "CoreTextShareDownload":
+            MessageLookupByLibrary.simpleMessage("Download Marajó AR"),
+        "CoreTextShareTitulo": MessageLookupByLibrary.simpleMessage(
+            "Discover a little of Marajoara culture through augmented reality"),
         "DialogButtonNext": MessageLookupByLibrary.simpleMessage("Next"),
         "DialogTitle": MessageLookupByLibrary.simpleMessage("Attention"),
         "HomeBodyCategoria": MessageLookupByLibrary.simpleMessage("Categories"),

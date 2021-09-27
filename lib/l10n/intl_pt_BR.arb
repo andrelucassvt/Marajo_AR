@@ -19,6 +19,8 @@
     "DialogButtonNext": "Continuar",
     "ArCoreWidgetsDialogTextContent" : "Certifique-se que esteja em um local plano \nAguarde os pontos brancos e clique para ver o objeto",
     "ArcoreErrorMessageContent": "Seu dispositivo não é compativel com a realidade aumentada",
+    "ArViewControllerErrorScreenshotText": "Error ao capturar tela :(",
+    "ArViewControllerSucessScreenshotText": "A captura de tela foi salva :)",
     "DialogTitle": "Atenção",
 
     "CoreDataListBuffaloName": "Búfalo Marajoara",
@@ -36,5 +38,8 @@
     "CoreDataListPirarucuDesc": "O pirarucu é um dos maiores peixes de águas doces fluviais e lacustres do Brasil. Pode atingir três metros e vinte centímetros e seu peso pode ir até 330 kg. Costuma viver em lagos e rios de águas claras e ligeiramente alcalinas com temperaturas que variam de 24 a 37 °C. O pirarucu é servido como componente principal em diversos pratos típicos do Marajó",
 
     "CoreDataListCaranguejoName": "Caranguejo",
-    "CoreDataListCaranguejoDesc": "Os manguezais são um dos maiores empregadores da cidade de Soure na Ilha do Marajó, mais de 400 famílias vivem da venda e coleta de caranguejo.   É proibido capturar o caranguejo em seu período de andada, momento que o macho e a fêmea saem das tocas e andam pelo manguezal para o acasalamento e liberação dos ovos. Essa andada ocorre nas fases da lua nova e cheia, quando a maré está alta. Quem descumprir o período do defeso, terá de devolver os animais vivos ao habitat natural e ficam sujeitos às sanções definidas na Lei nº 9.605, de 12 de fevereiro de 1998, e no Decreto nº 6.514, de 22 de julho de 2008."
+    "CoreDataListCaranguejoDesc": "Os manguezais são um dos maiores empregadores da cidade de Soure na Ilha do Marajó, mais de 400 famílias vivem da venda e coleta de caranguejo.   É proibido capturar o caranguejo em seu período de andada, momento que o macho e a fêmea saem das tocas e andam pelo manguezal para o acasalamento e liberação dos ovos. Essa andada ocorre nas fases da lua nova e cheia, quando a maré está alta. Quem descumprir o período do defeso, terá de devolver os animais vivos ao habitat natural e ficam sujeitos às sanções definidas na Lei nº 9.605, de 12 de fevereiro de 1998, e no Decreto nº 6.514, de 22 de julho de 2008.",
+    
+    "CoreTextShareTitulo": "Conheça um pouco da cultura marajoara através da realidade aumentada",
+    "CoreTextShareDownload": "Baixe o Marajó AR"
 }
