@@ -25,7 +25,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Describe why your app needs AR here.</string>
+	<string>The app needs camera access to be able to show augmented reality</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Take pretty screenshots and save it to the PhotoLibrary.</string>
 	<key>SKAdNetworkItems</key>
