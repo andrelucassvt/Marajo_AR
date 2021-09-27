@@ -49,7 +49,7 @@ android {
         applicationId "com.andre.marajoar"
         minSdkVersion 24
         targetSdkVersion 29
-        versionCode 8
+        versionCode 9
         versionName "1.0.8"
     }
 
