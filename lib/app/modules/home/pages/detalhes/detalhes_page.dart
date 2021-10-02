@@ -22,9 +22,9 @@ class DetalhesPageState extends State <DetalhesPage> {
  @override
   Widget build(BuildContext context) {
     LocaleProvider localeProvider = LocaleProvider.of(context);
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,24 +132,24 @@ class DetalhesPageState extends State <DetalhesPage> {
             ],
           ),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: FloatingActionButton.extended(
-          label: Text(localeProvider.HomePagesDatalhesFloatingButton),
-          backgroundColor: primaryColor,
-          onPressed: Platform.isIOS
-            ? () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArkitPage(widget.model)))
-            : () async {
-              if (await ArCoreController.checkArCoreAvailability() == false) {
-                return showDialog(
-                  context: context, 
-                  builder: (_)=> ShowDialogWidget(
-                    title: localeProvider.DialogTitle,
-                    content: localeProvider.ArcoreErrorMessageContent,
-                  ));
-              } 
-              Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArcorePage(widget.model)));
-            }
-        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        label: Text(localeProvider.HomePagesDatalhesFloatingButton),
+        backgroundColor: primaryColor,
+        onPressed: Platform.isIOS
+          ? () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArkitPage(widget.model)))
+          : () async {
+            if (await ArCoreController.checkArCoreAvailability() == false) {
+              return showDialog(
+                context: context, 
+                builder: (_)=> ShowDialogWidget(
+                  title: localeProvider.DialogTitle,
+                  content: localeProvider.ArcoreErrorMessageContent,
+                ));
+            } 
+            Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArcorePage(widget.model)));
+          }
       ),
     );
   }
