@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:marajoar/app/core/colors.dart';
-import 'package:marajoar/app/modules/home/home_page.dart';
-import 'package:marajoar/app/modules/home/pages/sobre/sobre_page.dart';
+import 'package:marajoar/app/modules/home/presenter/pages/home/home_page.dart';
+import 'package:marajoar/app/modules/home/presenter/pages/sobre/sobre_page.dart';
+import 'package:marajoar/app/shared/core/colors.dart';
 import 'package:marajoar/generated/l10n.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
