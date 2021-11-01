@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:marajoar/app/modules/home/pages/detalhes/detalhes_page.dart';
-import 'package:marajoar/app/shared/models/ar_model.dart';
+import 'package:marajoar/app/modules/home/presenter/pages/detalhes/detalhes_page.dart';
+import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 
 class CardWidget extends StatelessWidget {
   final ArModel model;

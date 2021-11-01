@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:marajoar/app/core/colors.dart';
+import 'package:marajoar/app/shared/core/colors.dart';
 
 class IconWidgetCategoria extends StatelessWidget {
   final String nome;
