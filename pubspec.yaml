@@ -34,7 +34,7 @@ dependencies:
   responsive_framework: ^0.1.4
   arcore_flutter_plugin: ^0.0.11
   ##ar_flutter_plugin: ^0.4.3
-  arkit_plugin: ^1.0.0
+  arkit_plugin: ^1.0.5
   intl_utils: ^2.4.0
   shared_preferences: ^2.0.7
   ##ar_flutter_plugin: ^0.4.3
@@ -42,7 +42,6 @@ dependencies:
   share: ^2.0.4
   google_mobile_ads: ^0.13.4 
   native_screenshot: ^1.0.0
-  permission_handler: ^8.2.5
   flutter_localizations:
     sdk: flutter  
 
@@ -52,11 +51,6 @@ dev_dependencies:
   mobx_codegen: ^2.0.2
   build_runner: ^2.1.1
   flutter_launcher_icons: "^0.9.2"
-
-flutter_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/Image.jpeg"
 
 flutter:
 

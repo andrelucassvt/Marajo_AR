@@ -5,15 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Marajo_AR",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "Marajo_AR (profile mode)",
+            "name": "Marajo_ar PROD",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "program": "lib/main.dart",
+            "args": [
+              "--flavor",
+              "prod"
+            ]
+        },
+
+        {
+            "name": "Marajo_ar BETA",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "args": [
+              "--flavor",
+              "beta"
+            ]
         }
     ]
 }
