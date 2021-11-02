@@ -35,6 +35,10 @@ if (keystorePropertiesFile.exists()) {
 android {
     compileSdkVersion 29
 
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -53,6 +57,19 @@ android {
         versionName "1.0.9"
     }
 
+    flavorDimensions "app"
+    productFlavors {
+ 
+        beta {
+            dimension "app"
+            applicationId "com.andre.marajoar.beta"
+        }
+ 
+        prod {
+            dimension "app"
+            applicationId "com.andre.marajoar"
+        }
+    }
    signingConfigs {
        release {
            keyAlias keystoreProperties['keyAlias']

@@ -1,7 +1,4 @@
-import 'package:arkit_plugin/arkit_node.dart';
 import 'package:arkit_plugin/arkit_plugin.dart';
-import 'package:arkit_plugin/geometries/arkit_sphere.dart';
-import 'package:arkit_plugin/widget/arkit_scene_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:marajoar/app/modules/arview/infra/drives/ar_screenshot.dart';
