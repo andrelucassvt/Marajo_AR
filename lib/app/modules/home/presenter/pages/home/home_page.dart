@@ -39,8 +39,8 @@ class _HomePageState extends State <HomePage> {
     });
   }
   
-  chamarTutorial(BuildContext context){
-    validar();
+  chamarTutorial(BuildContext context) async {
+    await validar();
     itens.addAll({
       TutorialItens(
         globalKey: keyAboutMarajoAR,
@@ -212,7 +212,7 @@ class _HomePageState extends State <HomePage> {
     );
   }
 
-  iniciarAdmob(){
+  iniciarAdmob() async {
     InterstitialAd.load(
       adUnitId: Platform.isIOS ? 'ca-app-pub-3652623512305285/6827768936' : 'ca-app-pub-3652623512305285/1911527751',
       request: AdRequest(),
