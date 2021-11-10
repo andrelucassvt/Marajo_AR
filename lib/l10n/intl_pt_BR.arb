@@ -40,6 +40,9 @@
     "CoreDataListCaranguejoName": "Caranguejo",
     "CoreDataListCaranguejoDesc": "Os manguezais são um dos maiores empregadores da cidade de Soure na Ilha do Marajó, mais de 400 famílias vivem da venda e coleta de caranguejo.   É proibido capturar o caranguejo em seu período de andada, momento que o macho e a fêmea saem das tocas e andam pelo manguezal para o acasalamento e liberação dos ovos. Essa andada ocorre nas fases da lua nova e cheia, quando a maré está alta. Quem descumprir o período do defeso, terá de devolver os animais vivos ao habitat natural e ficam sujeitos às sanções definidas na Lei nº 9.605, de 12 de fevereiro de 1998, e no Decreto nº 6.514, de 22 de julho de 2008.",
     
+    "CoreDataListAcaiName": "",
+    "CoreDataListAcaiDesc": "",
+
     "CoreTextShareTitulo": "Conheça um pouco da cultura marajoara através da realidade aumentada",
     "CoreTextShareDownload": "Baixe o Marajó AR"
 }
