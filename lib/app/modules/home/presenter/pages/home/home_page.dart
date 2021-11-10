@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_page.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/home/home_controller.dart';
+import 'package:marajoar/app/modules/home/presenter/pages/seach/seach_page.dart';
 import 'package:marajoar/app/shared/core/text.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
@@ -123,9 +124,31 @@ class _HomePageState extends State <HomePage> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 30,
+
+              InkWell(
+                onTap: (){
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => SeachPage())
+                  );
+                },
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.symmetric(horizontal: 10,vertical: 20),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(15)
+                  ),
+                  child: TextFormField(
+                    enabled: false,
+                    decoration: InputDecoration(
+                      hintText: 'Pesquisar',
+                      border: InputBorder.none,
+                      prefixIcon: Icon(Icons.search),
+                    ),
+                  ),
+                ),
               ),
+
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Text(
@@ -212,7 +235,7 @@ class _HomePageState extends State <HomePage> {
     );
   }
 
-  iniciarAdmob() async {
+  iniciarAdmob(){
     InterstitialAd.load(
       adUnitId: Platform.isIOS ? 'ca-app-pub-3652623512305285/6827768936' : 'ca-app-pub-3652623512305285/1911527751',
       request: AdRequest(),
