@@ -26,6 +26,9 @@ class _SeachPageState extends State<SeachPage> {
   getDados() async {
     _allArModel = await _controller.getDados(context);
   }
+
+  bool enableHero = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +58,9 @@ class _SeachPageState extends State<SeachPage> {
         centerTitle: true,
         leading: IconButton(
           onPressed: (){
+            setState(() {
+              enableHero = false;
+            });
             Navigator.of(context).pop();
           },
           icon: Icon(Icons.arrow_back),
@@ -74,15 +80,18 @@ class _SeachPageState extends State<SeachPage> {
                 ? ListView.builder(
                     itemCount: _filtroArModel.length,
                     itemBuilder: (context, index) {
-                      return CardWidget(_filtroArModel[index]);
+                      return HeroMode(
+                        enabled: enableHero,
+                        child: CardWidget(_filtroArModel[index])
+                      );
                     }
                   )
-                : const Center(
-                  child: Text(
+                : Center(
+                    child: Text(
                       'Sem resultados',
                       style: TextStyle(fontSize: 24),
                     ),
-                ),
+                  ),
             ),
           ],
         ),

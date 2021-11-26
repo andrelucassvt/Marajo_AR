@@ -6,9 +6,9 @@ import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_pa
 import 'package:marajoar/app/modules/home/presenter/pages/home/home_controller.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/seach/seach_page.dart';
 import 'package:marajoar/app/shared/core/text.dart';
+import 'package:marajoar/app/shared/data/get_first_acess.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
-import 'package:marajoar/app/shared/infra/datasources/shared_preference.dart';
 import 'package:marajoar/app/shared/widgets/card_widget.dart';
 import 'package:marajoar/app/shared/widgets/icon_categoria.dart';
 import 'package:marajoar/generated/l10n.dart';
@@ -23,7 +23,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State <HomePage> {
 
-  SharedPreferenceController sharedPreferenceController = SharedPreferenceController();
+  GetFirstAcess firstAcess = GetFirstAcess();
   HomeController controller = HomeController();
   bool valid = false;
   var keyAboutMarajoAR = GlobalKey();
@@ -70,7 +70,7 @@ class _HomePageState extends State <HomePage> {
     Future.delayed(Duration(microseconds: 200)).then((value) {
       if (valid == false) {
         Tutorial.showTutorial(context, itens);
-        sharedPreferenceController.salvarAcesso();
+        firstAcess.salvarAcesso();
       }
     });
   }
@@ -142,6 +142,7 @@ class _HomePageState extends State <HomePage> {
                     enabled: false,
                     decoration: InputDecoration(
                       hintText: 'Pesquisar',
+                      contentPadding: EdgeInsets.only(top: 15 ),
                       border: InputBorder.none,
                       prefixIcon: Icon(Icons.search),
                     ),

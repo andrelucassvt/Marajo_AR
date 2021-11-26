@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:marajoar/app/shared/infra/datasources/conditional.dart';
+import 'package:marajoar/app/shared/data/get_local_language.dart';
 import 'package:marajoar/generated/l10n.dart';
 import 'dart:io';
 class SobrePage extends StatefulWidget {
@@ -44,7 +44,7 @@ class SobrePageState extends State <SobrePage> {
               ),
             ),
             Text(
-              ConditionalLanguage.getLanguage(context) == 'en' ? textoEN : textoBR,
+              GetLocalLanguage.getLanguage(context) == 'en' ? textoEN : textoBR,
               style: TextStyle(
                 fontSize: 20
               ),

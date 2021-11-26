@@ -6,8 +6,8 @@ import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 import 'package:marajoar/generated/l10n.dart';
 
 
-class LanguageListArModel {
-  static List<ArModel> listaArModelGlobal(BuildContext context){
+class DataArModel {
+  static List<ArModel> getDataListArModel(BuildContext context){
     LocaleProvider locale = LocaleProvider.of(context);
     return [
       ArModel(
