@@ -1,8 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_page.dart';
+import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_module.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/home/home_controller.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/seach/seach_page.dart';
 import 'package:marajoar/app/shared/core/text.dart';
@@ -24,7 +25,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State <HomePage> {
 
   GetFirstAcess firstAcess = GetFirstAcess();
-  HomeController controller = HomeController();
+  final controller = Modular.get<HomeController>();
   bool valid = false;
   var keyAboutMarajoAR = GlobalKey();
   List<TutorialItens> itens = [];
@@ -127,9 +128,7 @@ class _HomePageState extends State <HomePage> {
 
               InkWell(
                 onTap: (){
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => SeachPage())
-                  );
+                  Navigator.pushNamed(context, '/seach');
                 },
                 child: Container(
                   padding: EdgeInsets.all(10),
@@ -172,7 +171,7 @@ class _HomePageState extends State <HomePage> {
                       iconeColor: Colors.black, 
                       ontap: (){
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (_)=> CategoriaPage(CategoriasEnum.artesanato)));
+                          MaterialPageRoute(builder: (_)=> CategoriaModule(CategoriasEnum.artesanato)));
                       }
                     ),
                     IconWidgetCategoria(
@@ -182,7 +181,7 @@ class _HomePageState extends State <HomePage> {
                       iconeColor: Colors.black, 
                       ontap: (){
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (_)=> CategoriaPage(CategoriasEnum.animais)));
+                          MaterialPageRoute(builder: (_)=> CategoriaModule(CategoriasEnum.animais)));
                       }
                     ),
                     IconWidgetCategoria(
@@ -192,7 +191,7 @@ class _HomePageState extends State <HomePage> {
                       iconeColor: Colors.black, 
                       ontap: (){
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (_)=> CategoriaPage(CategoriasEnum.comidas)));
+                          MaterialPageRoute(builder: (_)=> CategoriaModule(CategoriasEnum.comidas)));
                       }
                     ),
                   ],

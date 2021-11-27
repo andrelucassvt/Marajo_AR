@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_controller.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
@@ -26,7 +27,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
     listener: BannerAdListener(),
   );
 
-  CategoriaController _categoriaController = CategoriaController();
+  final _categoriaController = Modular.get<CategoriaController>();
   
   String get title {
     switch (widget.categoriasEnum) {
@@ -49,6 +50,12 @@ class _CategoriaPageState extends State<CategoriaPage> {
     });
   }
   bool enableHero = true;
+
+  @override
+  void dispose() {
+    _categoriaController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

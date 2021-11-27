@@ -1,7 +1,7 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:marajoar/app/modules/arview/external/drives/screenshot_driver_imp.dart';
+import 'package:marajoar/app/modules/arview/helper/screenshot.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 import 'package:mobx/mobx.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
@@ -18,7 +18,6 @@ class ArkitPage extends StatefulWidget {
 class _ArkitPageState extends State<ArkitPage> {
   ARKitController arkitController;
   ARKitReferenceNode node;
-  ScreenshotDriverImp arControllerMarajo = ScreenshotDriverImp();
 
   @override
   void dispose() {
@@ -41,7 +40,7 @@ class _ArkitPageState extends State<ArkitPage> {
        ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.camera_alt_outlined),
-        onPressed: () => arControllerMarajo.screenshot(context)
+        onPressed: () => Screenshot.screenshot(context)
       ),
     );
   }

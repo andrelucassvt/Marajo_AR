@@ -7,7 +7,6 @@ abstract class GetRecomendados {
   Future<List<ArModel>> call(BuildContext context){}
 }
 
-@Injectable(singleton: false)
 class GetRecomendadosImpl implements GetRecomendados {
 
   final HomeRepository repository;

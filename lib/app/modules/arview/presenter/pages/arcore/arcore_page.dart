@@ -1,6 +1,6 @@
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/material.dart';
-import 'package:marajoar/app/modules/arview/external/drives/screenshot_driver_imp.dart';
+import 'package:marajoar/app/modules/arview/helper/screenshot.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 import 'package:marajoar/app/modules/arview/presenter/widgets/show_dialog_widget.dart';
 import 'package:marajoar/generated/l10n.dart';
@@ -14,7 +14,6 @@ class ArcorePage extends StatefulWidget {
 }
 class ArcorePageState extends State<ArcorePage> {
   ArCoreController arCoreController;
-  ScreenshotDriverImp arControllerMarajo = ScreenshotDriverImp();
 
   @override
   void initState() {
@@ -59,9 +58,7 @@ class ArcorePageState extends State<ArcorePage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.camera_alt_outlined),
-        onPressed: (){
-          arControllerMarajo.screenshot(context);
-        },
+        onPressed: () => Screenshot.screenshot(context)
       ),
     );
   }

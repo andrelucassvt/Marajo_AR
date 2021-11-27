@@ -8,7 +8,6 @@ abstract class GetCategorias {
   Future<List<ArModel>> call(CategoriasEnum categoriasEnum,BuildContext context){}
 }
 
-@Injectable(singleton: false)
 class GetCategoriasImpl implements GetCategorias {
 
   final CategoriaRepository repository;
