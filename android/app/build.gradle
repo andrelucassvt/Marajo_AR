@@ -52,8 +52,8 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.andre.marajoar"
         minSdkVersion 24
-        versionCode 14
-        versionName "1.0.11"
+        versionCode 15
+        versionName "1.0.12"
     }
 
     flavorDimensions "app"
