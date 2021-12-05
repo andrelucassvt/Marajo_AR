@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 @Injectable(singleton: true)
 class GetFirstAcess {
 
-  salvarAcesso() async {
+  static salvarAcesso() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool('valid', true);
   }

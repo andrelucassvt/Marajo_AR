@@ -1,4 +1,4 @@
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
 import 'package:marajoar/app/modules/home/infra/datasource/home_recomendados_datasource.dart';
 import 'package:marajoar/app/shared/data/data.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';

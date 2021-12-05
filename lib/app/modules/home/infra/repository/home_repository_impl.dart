@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:marajoar/app/modules/home/domain/error/home_recomendados_error.dart';
 import 'package:marajoar/app/modules/home/domain/repository/home_repository.dart';
 import 'package:marajoar/app/modules/home/external/datasource/home_recomendados_datasource_impl.dart';
 import 'package:marajoar/app/modules/home/infra/datasource/home_recomendados_datasource.dart';
@@ -11,11 +13,12 @@ class HomeRepositoryImpl implements HomeRepository{
   HomeRepositoryImpl(this.homeDataSourece);
 
   @override
-  Future<List<ArModel>> getRecomendados(BuildContext context) async {
+  Future<Either<HomeRecomendadosError,List<ArModel>>> getRecomendados(BuildContext context) async {
     try {
-      return await homeDataSourece.getRecomendados(context);
-    } on GlobalError catch (e) {
-      throw GlobalError('Erro ao carregar recomendados');
+      var recomendados = await homeDataSourece.getRecomendados(context);
+      return Right(recomendados);
+    } on HomeRecomendadosError catch (e) {
+      throw Left(HomeRecomendadosError('Erro ao carregar recomendados'));
     }
   }
   

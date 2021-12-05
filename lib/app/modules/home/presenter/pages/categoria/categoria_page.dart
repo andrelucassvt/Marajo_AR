@@ -27,7 +27,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
     listener: BannerAdListener(),
   );
 
-  final _categoriaController = Modular.get<CategoriaController>();
+  final controller = Modular.get<CategoriaController>();
   
   String get title {
     switch (widget.categoriasEnum) {
@@ -44,7 +44,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
   void initState() {
     super.initState();
     Future.delayed(Duration.zero,(){
-      _categoriaController.selectCategoriaList(widget.categoriasEnum,context);
+      controller.selectCategoriaList(widget.categoriasEnum,context);
       myBanner.load();
       adWidget = AdWidget(ad: myBanner);
     });
@@ -53,7 +53,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
 
   @override
   void dispose() {
-    _categoriaController.dispose();
+    controller.categoriaController.close();
     super.dispose();
   }
   @override
@@ -76,8 +76,15 @@ class _CategoriaPageState extends State<CategoriaPage> {
         ),
       ),
       body: StreamBuilder<List<ArModel>>(
-        stream: _categoriaController.dados.stream,
+        stream: controller.categoriaOut,
         builder: (context, snapshot) {
+
+          if (snapshot.hasError) {
+            return Center(
+              child: Text('Erro ao carregar categoria :('),
+            );
+          }
+          
           if (!snapshot.hasData) {
             return Center(
               child: CircularProgressIndicator(),

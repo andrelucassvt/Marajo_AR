@@ -9,18 +9,19 @@ part of 'categoria_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$CategoriaController on _CategoriaStoreBase, Store {
-  final _$dadosAtom = Atom(name: '_CategoriaStoreBase.dados');
+  final _$categoriaControllerAtom =
+      Atom(name: '_CategoriaStoreBase.categoriaController');
 
   @override
-  StreamController<List<ArModel>> get dados {
-    _$dadosAtom.reportRead();
-    return super.dados;
+  StreamController<List<ArModel>> get categoriaController {
+    _$categoriaControllerAtom.reportRead();
+    return super.categoriaController;
   }
 
   @override
-  set dados(StreamController<List<ArModel>> value) {
-    _$dadosAtom.reportWrite(value, super.dados, () {
-      super.dados = value;
+  set categoriaController(StreamController<List<ArModel>> value) {
+    _$categoriaControllerAtom.reportWrite(value, super.categoriaController, () {
+      super.categoriaController = value;
     });
   }
 
@@ -37,7 +38,7 @@ mixin _$CategoriaController on _CategoriaStoreBase, Store {
   @override
   String toString() {
     return '''
-dados: ${dados}
+categoriaController: ${categoriaController}
     ''';
   }
 }
