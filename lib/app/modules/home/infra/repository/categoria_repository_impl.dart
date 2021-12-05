@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:marajoar/app/modules/home/domain/error/categoria_error.dart';
 import 'package:marajoar/app/modules/home/domain/repository/categoria_repository.dart';
 import 'package:marajoar/app/modules/home/infra/datasource/categoria_datasource.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
@@ -11,11 +13,12 @@ class CategoriaRepositoryImpl implements CategoriaRepository {
   CategoriaRepositoryImpl(this.categoriaDataSource);
 
   @override
-  Future<List<ArModel>> selectCategoriaList(CategoriasEnum categoriasEnum, BuildContext context) {
+  Future<Either<CategoriaError,List<ArModel>>> selectCategoriaList(CategoriasEnum categoriasEnum, BuildContext context) async {
     try {
-      return categoriaDataSource.selectCategoriaList(categoriasEnum, context);
-    } on GlobalError catch (e) {
-      throw GlobalError('Erro ao carregar categorias');
+      var categoria = await categoriaDataSource.selectCategoriaList(categoriasEnum, context);
+      return Right(categoria);
+    } on CategoriaError catch (e) {
+      throw Left(CategoriaError('Erro ao carregar categorias'));
     }
   }
 }

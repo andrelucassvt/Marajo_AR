@@ -5,17 +5,13 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_module.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/home/home_controller.dart';
-import 'package:marajoar/app/modules/home/presenter/pages/seach/seach_page.dart';
 import 'package:marajoar/app/shared/core/text.dart';
-import 'package:marajoar/app/shared/data/get_first_acess.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 import 'package:marajoar/app/shared/widgets/card_widget.dart';
 import 'package:marajoar/app/shared/widgets/icon_categoria.dart';
 import 'package:marajoar/generated/l10n.dart';
 import 'package:share/share.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tutorial/tutorial.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -24,68 +20,26 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State <HomePage> {
 
-  GetFirstAcess firstAcess = GetFirstAcess();
   final controller = Modular.get<HomeController>();
-  bool valid = false;
-  var keyAboutMarajoAR = GlobalKey();
-  List<TutorialItens> itens = [];
   InterstitialAd _interstitialAd;
 
-  //Pega o dado com a informacao se o tutorial já foi exibido ou não
-  validar() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool result = prefs.getBool('valid') ?? false;
-    setState(() {
-      valid = result;
-      print(valid);
-    });
-  }
-  
-  chamarTutorial(BuildContext context) async {
-    await validar();
-    itens.addAll({
-      TutorialItens(
-        globalKey: keyAboutMarajoAR,
-        touchScreen: true,
-        top: 200,
-        left: 50,
-        children: [
-          Text(
-            LocaleProvider.of(context).HomeTutorialTextAttention,
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          SizedBox(
-            height: 100,
-          )
-        ],
-        widgetNext: Text(
-          LocaleProvider.of(context).HomeTutorialTextTapNext,
-          style: TextStyle(
-            color: Colors.red,
-            fontWeight: FontWeight.bold,
-            fontSize: 20
-          ),
-        ),
-        shapeFocus: ShapeFocus.oval),
-    });    
-    Future.delayed(Duration(microseconds: 200)).then((value) {
-      if (valid == false) {
-        Tutorial.showTutorial(context, itens);
-        firstAcess.salvarAcesso();
-      }
-    });
-  }
   @override
   void initState() {
     super.initState();
     Future.delayed(Duration.zero,(){
-      chamarTutorial(context);
+      controller.chamarTutorial(context);
       controller.getRecomendados(context);
       iniciarAdmob();
     });
     Future.delayed(Duration(seconds: 30),(){
-      _interstitialAd.show();
+      //_interstitialAd.show();
     });
+  }
+
+  @override
+  void dispose() {
+    controller.homeController.close();
+    super.dispose();
   }
   @override
   Widget build(BuildContext context) {
@@ -105,7 +59,7 @@ class _HomePageState extends State <HomePage> {
                     onPressed: (){
                       Navigator.pushNamed(context, '/sobre');
                     },
-                    key: keyAboutMarajoAR, 
+                    key: controller.keyAboutMarajoAR, 
                     iconSize: 40,
                     icon: Icon(Icons.info_outline),
                   ),
@@ -210,8 +164,15 @@ class _HomePageState extends State <HomePage> {
 
               Expanded(
                 child: StreamBuilder<List<ArModel>>(
-                  stream: controller.dados.stream,
+                  stream: controller.homeOut,
                   builder: (context, snapshot) {
+
+                    if(snapshot.hasError){
+                      return Center(
+                        child: Text('Erro ao recarregar dados :('),
+                      );
+                    }
+
                     if(!snapshot.hasData){
                       return Center(
                         child: CircularProgressIndicator(),

@@ -1,10 +1,12 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:marajoar/app/modules/home/domain/error/home_recomendados_error.dart';
 import 'package:marajoar/app/modules/home/domain/repository/home_repository.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 
 abstract class GetRecomendados {
-  Future<List<ArModel>> call(BuildContext context){}
+  Future<Either<HomeRecomendadosError,List<ArModel>>> call(BuildContext context);
 }
 
 class GetRecomendadosImpl implements GetRecomendados {
@@ -13,7 +15,7 @@ class GetRecomendadosImpl implements GetRecomendados {
   GetRecomendadosImpl(this.repository);
 
   @override
-  Future<List<ArModel>> call(BuildContext context) async {
+  Future<Either<HomeRecomendadosError,List<ArModel>>> call(BuildContext context) async {
     return await repository.getRecomendados(context);
   }
   

@@ -43,6 +43,7 @@ dependencies:
   share: ^2.0.4
   google_mobile_ads: ^0.13.4 
   native_screenshot: ^1.0.0
+  dartz: ^0.10.1
   flutter_localizations:
     sdk: flutter  
 
