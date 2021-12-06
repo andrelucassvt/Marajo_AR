@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:marajoar/app/modules/home/domain/dto/categoria_dto.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_controller.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
@@ -44,7 +45,10 @@ class _CategoriaPageState extends State<CategoriaPage> {
   void initState() {
     super.initState();
     Future.delayed(Duration.zero,(){
-      controller.selectCategoriaList(widget.categoriasEnum,context);
+      controller.selectCategoriaList(CategoriaDto(
+        categoriasEnum: widget.categoriasEnum,
+        context: context
+      ));
       myBanner.load();
       adWidget = AdWidget(ad: myBanner);
     });

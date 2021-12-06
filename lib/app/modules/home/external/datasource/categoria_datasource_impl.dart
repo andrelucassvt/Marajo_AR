@@ -1,4 +1,5 @@
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
+import 'package:marajoar/app/modules/home/domain/dto/categoria_dto.dart';
 import 'package:marajoar/app/modules/home/infra/datasource/categoria_datasource.dart';
 import 'package:marajoar/app/shared/data/data.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
@@ -6,14 +7,14 @@ import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 
 class CategoriaDatasourceImpl implements CategoriaDatasource{
   @override
-  Future<List<ArModel>> selectCategoriaList(CategoriasEnum categoriasEnum, BuildContext context) async {
-    switch (categoriasEnum) {
+  Future<List<ArModel>> selectCategoriaList(CategoriaDto categoriaDto) async {
+    switch (categoriaDto.categoriasEnum) {
       case CategoriasEnum.artesanato:
-        return getArtesanato(context);
+        return getArtesanato(categoriaDto.context);
       case CategoriasEnum.comidas:
-        return getComidas(context);
+        return getComidas(categoriaDto.context);
       case CategoriasEnum.animais:
-        return getAnimais(context);
+        return getAnimais(categoriaDto.context);
     }
   }
 
