@@ -22,7 +22,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
   
   AdWidget adWidget;
   final BannerAd myBanner = BannerAd(
-    adUnitId: Platform.isIOS ? 'ca-app-pub-3652623512305285/2053989791' : 'ca-app-pub-3652623512305285/1463318072',
+    adUnitId: Platform.isIOS ? 'ca-app-pub-3652623512305285/2053989791' : 'ca-app-pub-3652623512305285/1107829897',
     size: AdSize.banner,
     request: AdRequest(),
     listener: BannerAdListener(),

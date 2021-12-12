@@ -32,7 +32,7 @@ class _HomePageState extends State <HomePage> {
       iniciarAdmob();
     });
     Future.delayed(Duration(seconds: 30),(){
-      //_interstitialAd.show();
+      _interstitialAd.show();
     });
   }
 
@@ -198,7 +198,7 @@ class _HomePageState extends State <HomePage> {
 
   iniciarAdmob(){
     InterstitialAd.load(
-      adUnitId: Platform.isIOS ? 'ca-app-pub-3652623512305285/6827768936' : 'ca-app-pub-3652623512305285/1911527751',
+      adUnitId: Platform.isIOS ? 'ca-app-pub-3652623512305285/6827768936' : 'ca-app-pub-3652623512305285/3678863352',
       request: AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (InterstitialAd ad) {

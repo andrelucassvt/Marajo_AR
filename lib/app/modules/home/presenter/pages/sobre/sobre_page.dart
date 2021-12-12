@@ -11,7 +11,7 @@ class SobrePageState extends State <SobrePage> {
 
   AdWidget adWidget;
   final BannerAd myBanner = BannerAd(
-    adUnitId: Platform.isIOS ? 'ca-app-pub-3652623512305285/9825004345' : 'ca-app-pub-3652623512305285/2014042487',
+    adUnitId: Platform.isIOS ? 'ca-app-pub-3652623512305285/9825004345' : 'ca-app-pub-3652623512305285/3582752327',
     size: AdSize.banner,
     request: AdRequest(),
     listener: BannerAdListener(),
