@@ -10,9 +10,9 @@ import 'package:marajoar/app/modules/home/presenter/pages/sobre/sobre_page.dart'
 class AppModule extends Module {
   @override
   List<Bind> get binds => [
-    Bind.factory((i) => HomeRecomendadosDatasourceImpl()),
-    Bind.factory((i) => HomeRepositoryImpl(i<HomeRecomendadosDatasourceImpl>())),
-    Bind.factory((i) => GetRecomendadosImpl(i<HomeRepositoryImpl>())),
+    Bind((i) => HomeRecomendadosDatasourceImpl()),
+    Bind((i) => HomeRepositoryImpl(i<HomeRecomendadosDatasourceImpl>())),
+    Bind((i) => GetRecomendadosImpl(i<HomeRepositoryImpl>())),
     Bind.singleton((i) => HomeController(i()))
   ];
 

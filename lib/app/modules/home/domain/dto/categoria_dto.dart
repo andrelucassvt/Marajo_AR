@@ -9,5 +9,4 @@ class CategoriaDto {
     this.categoriasEnum,
     this.context
   });
-  
 }

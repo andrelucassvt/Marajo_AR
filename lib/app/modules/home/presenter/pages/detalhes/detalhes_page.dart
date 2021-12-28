@@ -145,7 +145,8 @@ class DetalhesPageState extends State <DetalhesPage> {
                 builder: (_)=> ShowDialogWidget(
                   title: localeProvider.DialogTitle,
                   content: localeProvider.ArcoreErrorMessageContent,
-                ));
+                ),
+              );
             } 
             Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArcorePage(widget.model)));
           }
