@@ -1,0 +1,99 @@
+{
+  animations: [
+    {
+      path: 'sampledata/acai3.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'porcelain white',
+      parameters: [
+        {
+          baseColor: [
+            0.077753000000000003,
+            0.032603,
+            0.011467,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Material.002',
+      parameters: [
+        {
+          baseColor: [
+            0.033874000000000001,
+            0.0097350000000000006,
+            0.055530000000000003,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/acai3.fbx',
+    name: 'acai3',
+    recenter: 'root',
+  },
+  version: '0.54:2',
+}

@@ -34,6 +34,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "O Pará é o maior produtor de abacaxi no Brasil. A cidade de Salvaterra está entre as três cidades que mais produzem o fruto no Pará. Quem afirma é o Instituto Brasileiro de Geografia e Estatística (IBGE). Plantio é a principal atividade da agricultura familiar no município, responsável por mais de 80% do consumo em Belém, com 11 milhões de frutos ao ano. Como parte da cultura regional, a vila de Condeixa (em Salvaterra) realiza todo ano o Festival do Abacaxi."),
         "CoreDataListAbacaxiName":
             MessageLookupByLibrary.simpleMessage("Abacaxi"),
+        "CoreDataListAcaiDesc":
+            MessageLookupByLibrary.simpleMessage("Açaí marajoara"),
+        "CoreDataListAcaiName": MessageLookupByLibrary.simpleMessage("Açaí"),
         "CoreDataListBuffaloDesc": MessageLookupByLibrary.simpleMessage(
             "A ilha do Marajó concentra o maior rebanho de búfalos do Brasil. Cerca de 3 búfalos a cada 1 habitante. A criação de búfalos não envolve apenas os pecuaristas, já que os animais fornecem carne, leite, couro e chifres para restaurantes, artesãos, queijeiros e outros tipos de estabelecimentos. Os animais são utilizados até mesmo pela polícia de Soure(Capital do Marajó) em suas patrulhas, algo que maravilha os turistas e tranquiliza os habitantes."),
         "CoreDataListBuffaloName":

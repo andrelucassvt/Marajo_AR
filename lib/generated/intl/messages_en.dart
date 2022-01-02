@@ -35,6 +35,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Pará is the largest producer of pineapple in Brazil. The city of Salvaterra is among the three cities that produce the most fruit in Pará. The Brazilian Institute of Geography and Statistics (IBGE) claims it. Planting is the main activity of family farming in the city, responsible for more than 80% of consumption in Belém, with 11 million fruits a year. As part of the regional culture, the village of Condeixa (in Salvaterra) holds the Pineapple Festival every year."),
         "CoreDataListAbacaxiName":
             MessageLookupByLibrary.simpleMessage("Pineapple"),
+        "CoreDataListAcaiDesc":
+            MessageLookupByLibrary.simpleMessage("Açaí marajoara"),
+        "CoreDataListAcaiName": MessageLookupByLibrary.simpleMessage("Açaí"),
         "CoreDataListBuffaloDesc": MessageLookupByLibrary.simpleMessage(
             "The island of Marajó concentrates the largest herd of buffaloes in Brazil. About 3 buffaloes for every 1 inhabitant. Breeding buffalo does not only involve cattle raisers, as the animals provide meat, milk, leather and horns for restaurants, artisans, cheesemakers and other types of establishments. The animals are even used by the police in Soure (Capital do Marajó) in their patrols, something that amazes tourists and reassures the inhabitants."),
         "CoreDataListBuffaloName":

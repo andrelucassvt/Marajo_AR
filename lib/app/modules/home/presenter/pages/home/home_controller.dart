@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:marajoar/app/modules/home/domain/error/home_recomendados_error.dart';
 import 'package:marajoar/app/modules/home/domain/usecases/get_recomendados.dart';
 import 'package:marajoar/app/shared/data/get_first_acess.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';

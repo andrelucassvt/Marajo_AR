@@ -86,6 +86,15 @@ class DataArModel {
           'assets/animais/caranguejo/crab_2.jpeg',
         ]
       ),
+      ArModel(
+        nome: locale.CoreDataListAcaiName,
+        foto: 'assets/comidas/acai.png',
+        descricao: locale.CoreDataListAcaiDesc,
+        objeto: Platform.isIOS ?  'models.scnassets/acai4.usdz' : 'acai.sfb',
+        isfavorito: false,
+        categoriasEnum: CategoriasEnum.comidas,
+        listaImagens: []
+      ),
     ];
   } 
 }

@@ -52,7 +52,7 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.andre.marajoar"
         minSdkVersion 24
-        versionCode 16
+        versionCode 17
         versionName "1.0.13"
     }
 
@@ -125,7 +125,7 @@ sceneform.asset('sampledata/pirarucu.fbx',
         'sampledata/pirarucu.sfa',
         'src/main/assets/pirarucu')
 
-/* sceneform.asset('sampledata/acai.fbx',
+sceneform.asset('sampledata/acai3.fbx',
         'default',
-        'sampledata/acai.sfa',
-        'src/main/assets/acai') */
+        'sampledata/acai3.sfa',
+        'src/main/assets/acai')

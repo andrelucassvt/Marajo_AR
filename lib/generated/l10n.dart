@@ -330,6 +330,26 @@ class LocaleProvider {
     );
   }
 
+  /// `Açaí`
+  String get CoreDataListAcaiName {
+    return Intl.message(
+      'Açaí',
+      name: 'CoreDataListAcaiName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Açaí marajoara`
+  String get CoreDataListAcaiDesc {
+    return Intl.message(
+      'Açaí marajoara',
+      name: 'CoreDataListAcaiDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Discover a little of Marajoara culture through augmented reality`
   String get CoreTextShareTitulo {
     return Intl.message(
