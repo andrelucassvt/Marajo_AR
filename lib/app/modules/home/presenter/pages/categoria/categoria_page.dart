@@ -1,10 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:marajoar/app/modules/home/domain/dto/categoria_dto.dart';
-import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_controller.dart';
+import 'package:marajoar/app/modules/home/presenter/blocs/categoria_filter/categoria_filter_cubit.dart';
+import 'package:marajoar/app/modules/home/presenter/blocs/categoria_filter/categoria_filter_state.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 import 'package:marajoar/app/shared/widgets/card_widget.dart';
@@ -28,7 +30,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
     listener: BannerAdListener(),
   );
 
-  final controller = Modular.get<CategoriaController>();
+  final controller = Modular.get<CategoriaFilterCubit>();
   
   String get title {
     switch (widget.categoriasEnum) {
@@ -41,25 +43,31 @@ class _CategoriaPageState extends State<CategoriaPage> {
     }
   }
 
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration.zero,(){
-      controller.selectCategoriaList(CategoriaDto(
-        categoriasEnum: widget.categoriasEnum,
-        context: context
-      ));
-      myBanner.load();
-      adWidget = AdWidget(ad: myBanner);
-    });
-  }
   bool enableHero = true;
 
   @override
+  void initState() {
+    super.initState();
+    myBanner.load();
+    adWidget = AdWidget(ad: myBanner);
+  }
+
+  @override
+  void didChangeDependencies() {
+    controller.getCategoriaList(CategoriaDto(
+      categoriasEnum: widget.categoriasEnum,
+      context: context
+    ));
+    super.didChangeDependencies();
+  }
+
+
+  @override
   void dispose() {
-    controller.categoriaController.close();
+    controller.close();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,52 +87,48 @@ class _CategoriaPageState extends State<CategoriaPage> {
           },
         ),
       ),
-      body: StreamBuilder<List<ArModel>>(
-        stream: controller.categoriaOut,
-        builder: (context, snapshot) {
+      body: BlocBuilder<CategoriaFilterCubit, CategortiaFilterState>(
+        bloc: controller,
+        builder: (context, state) {
 
-          if (snapshot.hasError) {
+          if (state is CategortiaFilterFailure) {
             return Center(
               child: Text('Erro ao carregar categoria :('),
             );
           }
           
-          if (!snapshot.hasData) {
+          if (state is CategortiaFilterLoading) {
             return Center(
               child: CircularProgressIndicator(),
             );
           }
 
-          List<ArModel> dados = snapshot.data;
-
-          if (dados.isEmpty) {
-            return Center(
-              child: Text('Sem dados cadastrados',style: TextStyle(fontSize: 20)),
+          if (state is CategortiaFilterSucess) {
+            List<ArModel> dados = state.list;
+            return ListView(
+              children: [
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: dados.length,
+                  itemBuilder: (context,index){
+                    return HeroMode(
+                      enabled: enableHero,
+                      child: CardWidget(dados[index]));
+                  }
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: adWidget,
+                    width: myBanner.size.width.toDouble(),
+                    height: myBanner.size.height.toDouble(),
+                  ),
+                )
+              ],
             );
           }
-
-          return ListView(
-            children: [
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: dados.length,
-                itemBuilder: (context,index){
-                  return HeroMode(
-                    enabled: enableHero,
-                    child: CardWidget(dados[index]));
-                }
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  alignment: Alignment.center,
-                  child: adWidget,
-                  width: myBanner.size.width.toDouble(),
-                  height: myBanner.size.height.toDouble(),
-                ),
-              )
-            ],
-          );
+          return Container();
         }
       )
     );
