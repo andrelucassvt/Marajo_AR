@@ -1,9 +1,7 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:marajoar/app/modules/arview/helper/screenshot.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
-import 'package:mobx/mobx.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
 class ArkitPage extends StatefulWidget {

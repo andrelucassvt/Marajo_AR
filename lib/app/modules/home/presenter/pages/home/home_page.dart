@@ -1,10 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:marajoar/app/modules/home/presenter/blocs/home_recomendados/home_recomendados_cubit.dart';
+import 'package:marajoar/app/modules/home/presenter/blocs/home_recomendados/home_recomendados_state.dart';
+import 'package:marajoar/app/modules/home/presenter/blocs/home_tutorial/home_tutorial_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_module.dart';
-import 'package:marajoar/app/modules/home/presenter/pages/home/home_controller.dart';
 import 'package:marajoar/app/shared/core/text.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
@@ -20,25 +23,30 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State <HomePage> {
 
-  final controller = Modular.get<HomeController>();
+  final homeCubit = Modular.get<HomeRecomendadosCubit>();
+  final homeTutorial = Modular.get<HomeTutorialCubit>();
+
   InterstitialAd _interstitialAd;
 
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration.zero,(){
-      controller.chamarTutorial(context);
-      controller.getRecomendados(context);
-      iniciarAdmob();
-    });
     Future.delayed(Duration(seconds: 30),(){
       _interstitialAd.show();
     });
   }
 
   @override
+  void didChangeDependencies() {
+    homeCubit.getRecomendados(context);
+    homeTutorial.chamarTutorial(context);
+    iniciarAdmob();
+    super.didChangeDependencies();
+  }
+  @override
   void dispose() {
-    controller.homeController.close();
+    homeCubit.close();
+    homeTutorial.close();
     super.dispose();
   }
   @override
@@ -59,7 +67,7 @@ class _HomePageState extends State <HomePage> {
                     onPressed: (){
                       Navigator.pushNamed(context, '/sobre');
                     },
-                    key: controller.keyAboutMarajoAR, 
+                    key: homeTutorial.keyAboutMarajoAR, 
                     iconSize: 40,
                     icon: Icon(Icons.info_outline),
                   ),
@@ -163,28 +171,33 @@ class _HomePageState extends State <HomePage> {
               ),
 
               Expanded(
-                child: StreamBuilder<List<ArModel>>(
-                  stream: controller.homeOut,
-                  builder: (context, snapshot) {
+                child: BlocBuilder<HomeRecomendadosCubit,HomeRecomendadosState>(
+                  bloc: homeCubit,
+                  builder: (context, state) {
 
-                    if(snapshot.hasError){
+                    if(state is HomeRecomendadosFailure){
                       return Center(
                         child: Text('Erro ao recarregar dados :('),
                       );
                     }
 
-                    if(!snapshot.hasData){
+                    if(state is HomeRecomendadosLoading){
                       return Center(
                         child: CircularProgressIndicator(),
                       );
                     }
-                    List<ArModel> dados = snapshot.data;
-                    return ListView.builder(
-                      itemCount: dados.length,
-                      itemBuilder: (context,index){
-                        return CardWidget(dados[index]);
-                      },
-                    );
+
+                    if(state is HomeRecomendadosSucess){
+                      List<ArModel> dados = state.list;
+                      return ListView.builder(
+                        itemCount: dados.length,
+                        itemBuilder: (context,index){
+                          return CardWidget(dados[index]);
+                        },
+                      );
+                    }
+
+                    return Container();
                   }
                 )
               )
