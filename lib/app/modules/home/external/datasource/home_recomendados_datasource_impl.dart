@@ -9,5 +9,13 @@ class HomeRecomendadosDatasourceImpl implements HomeRecomendadosDatasource{
   Future<List<ArModel>> getRecomendados(BuildContext context) async {
     return DataArModel.getDataListArModel(context).where((element) => element.isfavorito).toList();
   }
-  
+
+  @override
+  Future<List<ArModel>> search(String seach,BuildContext context) async {
+    print(seach);
+   return DataArModel.getDataListArModel(context)
+    .where((element) => element.nome.toLowerCase()
+    .contains(seach.toLowerCase()))
+    .toList();
+  }
 }

@@ -32,7 +32,7 @@ class _HomePageState extends State <HomePage> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 30),(){
-      _interstitialAd.show();
+      //_interstitialAd.show();
     });
   }
 
@@ -90,7 +90,7 @@ class _HomePageState extends State <HomePage> {
 
               InkWell(
                 onTap: (){
-                  Navigator.pushNamed(context, '/seach');
+                  Navigator.pushNamed(context, '/search');
                 },
                 child: Container(
                   padding: EdgeInsets.all(10),

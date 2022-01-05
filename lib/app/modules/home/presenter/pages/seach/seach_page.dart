@@ -1,32 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:marajoar/app/modules/home/presenter/pages/seach/seach_controller.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:marajoar/app/modules/home/presenter/blocs/search/search_cubit.dart';
+import 'package:marajoar/app/modules/home/presenter/blocs/search/search_state.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 import 'package:marajoar/app/shared/widgets/card_widget.dart';
 
-class SeachPage extends StatefulWidget {
+class SearchPage extends StatefulWidget {
 
   @override
-  _SeachPageState createState() => _SeachPageState();
+  _SearchPageState createState() => _SearchPageState();
 }
 
-class _SeachPageState extends State<SeachPage> {
-  SeachController _controller = SeachController();
+class _SearchPageState extends State<SearchPage> {
 
-  List<ArModel> _allArModel = [];
-  List<ArModel> _filtroArModel = [];
-
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration.zero,(){
-      getDados();
-    });
-  }
-
-  getDados() async {
-    _allArModel = await _controller.getDados(context);
-  }
-
+  final searchCubit = Modular.get<SearchCubit>();
   bool enableHero = true;
 
   @override
@@ -44,7 +32,7 @@ class _SeachPageState extends State<SeachPage> {
             color: Colors.white,
             child: TextField(
               autofocus: true,
-              onChanged: (value) => onSearchTextChanged(value),
+              onChanged: (value) => searchCubit.search(value,context),
               decoration: const InputDecoration(
                 labelText: 'Pesquisar', 
                 suffixIcon: Icon(Icons.search),
@@ -70,44 +58,50 @@ class _SeachPageState extends State<SeachPage> {
 
       body: Padding(
         padding: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            Expanded(
-              child: _filtroArModel.isNotEmpty
-                ? ListView.builder(
-                    itemCount: _filtroArModel.length,
-                    itemBuilder: (context, index) {
-                      return HeroMode(
-                        enabled: enableHero,
-                        child: CardWidget(_filtroArModel[index])
-                      );
-                    }
-                  )
-                : Center(
-                    child: Text(
-                      'Sem resultados',
-                      style: TextStyle(fontSize: 24),
-                    ),
+        child: BlocBuilder<SearchCubit, SearchState>(
+          bloc: searchCubit,
+          builder: (context,state){
+
+            if (state is SearchErrorState) {
+              return Center(
+                child: Text(state.error.message),
+              );
+            }
+
+            if (state is SearchLoading) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+
+            if (state is SearchNotResult) {
+              return Center(
+                child: Text('Sem resultados',
+                  style: TextStyle(
+                    fontSize: 20
                   ),
-            ),
-          ],
+                ),
+              );
+            }
+
+            if (state is SearchSucess) {
+
+              List<ArModel> dados = state.list;
+
+              return ListView.builder(
+                itemCount: dados.length,
+                itemBuilder: (context,index){
+                  return HeroMode(
+                    enabled: enableHero,
+                    child: CardWidget(dados[index])
+                  );
+                },
+              );
+            }
+            return Container();
+          },
         ),
       ),
     );
-  }
-  onSearchTextChanged(String text) async {
-    List<ArModel> results = [];
-    if (text.isEmpty) {
-      results = _allArModel;
-    } else {
-      results = _allArModel.where((data) =>
-        data.nome.toLowerCase().contains(text.toLowerCase())).toList();
-    }
-    setState(() {
-      _filtroArModel = results;
-    });
   }
 }
