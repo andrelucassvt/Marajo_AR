@@ -3,4 +3,5 @@ import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 
 abstract class HomeRecomendadosDatasource {
   Future<List<ArModel>> getRecomendados(BuildContext context);
+  Future<List<ArModel>> search(String seach, BuildContext context); 
 }
