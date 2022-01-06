@@ -11,7 +11,7 @@ class SearchCubit extends Cubit<SearchState> {
   Future<void> search(String busca,BuildContext context) async {
     emit(SearchLoading());
     var result = await searchData(busca,context);
-    if(busca == ''){
+    if(busca.isEmpty){
       emit(SearchNotResult());
       return;
     }

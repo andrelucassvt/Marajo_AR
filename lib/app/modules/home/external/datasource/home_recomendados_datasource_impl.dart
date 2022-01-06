@@ -1,3 +1,4 @@
+import 'package:diacritic/diacritic.dart';
 import 'package:flutter/material.dart';
 import 'package:marajoar/app/modules/home/infra/datasource/home_recomendados_datasource.dart';
 import 'package:marajoar/app/shared/data/data.dart';
@@ -14,8 +15,8 @@ class HomeRecomendadosDatasourceImpl implements HomeRecomendadosDatasource{
   Future<List<ArModel>> search(String seach,BuildContext context) async {
     print(seach);
    return DataArModel.getDataListArModel(context)
-    .where((element) => element.nome.toLowerCase()
-    .contains(seach.toLowerCase()))
+    .where((element) => removeDiacritics(element.nome.toLowerCase()) 
+    .contains(removeDiacritics(seach.toLowerCase())))
     .toList();
   }
 }
