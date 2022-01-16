@@ -5,50 +5,46 @@ import 'package:marajoar/app/shared/core/colors.dart';
 class IconWidgetCategoria extends StatelessWidget {
   final String nome;
   final String icone;
-  final Color iconeColor;
-  final Color containerColor;
   final VoidCallback ontap;
 
   IconWidgetCategoria(
     {
       @required this.nome, 
-      @required this.icone, 
-      @required this.containerColor, 
-      @required this.iconeColor,
+      @required this.icone,  
       @required this.ontap
-      }
+    }
   );
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: ()=> this.ontap(),
+      onTap: () => this.ontap,
       child: Container(
         width: 100,
         padding: EdgeInsets.all(10),
         margin: EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
-          color: containerColor,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: primaryColor,width: 1)
+          border: Border.all(
+            color: Theme.of(context).primaryColor,
+            width: 1,
+          )
         ),
-        child: Center(
-          child: Column(
-            children: [
-              Text(
-                icone,
-                style: TextStyle(
-                  fontSize: 40
-                ),
+        child: Column(
+          children: [
+            Text(
+              icone,
+              style: TextStyle(
+                fontSize: 40
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: AutoSizeText(
-                  nome,
-                  maxLines: 1,
-                ),
-              )
-            ],
-          ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: AutoSizeText(
+                nome,
+                maxLines: 1,
+              ),
+            )
+          ],
         ),
       ),
     );

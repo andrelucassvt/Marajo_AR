@@ -13,7 +13,6 @@ class HomeRecomendadosDatasourceImpl implements HomeRecomendadosDatasource{
 
   @override
   Future<List<ArModel>> search(String seach,BuildContext context) async {
-    print(seach);
    return DataArModel.getDataListArModel(context)
     .where((element) => removeDiacritics(element.nome.toLowerCase()) 
     .contains(removeDiacritics(seach.toLowerCase())))

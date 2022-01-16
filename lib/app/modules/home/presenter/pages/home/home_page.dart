@@ -52,10 +52,10 @@ class _HomePageState extends State <HomePage> {
   @override
   Widget build(BuildContext context) {
     LocaleProvider localeProvider = LocaleProvider.of(context);
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Padding(
+    return Scaffold(
+      body: SafeArea(
+        bottom: false,
+        child: Padding(
           padding: const EdgeInsets.only(top: 10,right: 10,left: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,13 +99,16 @@ class _HomePageState extends State <HomePage> {
                     color: Colors.grey[300],
                     borderRadius: BorderRadius.circular(15)
                   ),
-                  child: TextFormField(
-                    enabled: false,
-                    decoration: InputDecoration(
-                      hintText: 'Pesquisar',
-                      contentPadding: EdgeInsets.only(top: 15 ),
-                      border: InputBorder.none,
-                      prefixIcon: Icon(Icons.search),
+                  child: Theme(
+                    data: ThemeData(),
+                    child: TextFormField(
+                      enabled: false,
+                      decoration: InputDecoration(
+                        hintText: 'Pesquisar',
+                        contentPadding: EdgeInsets.only(top: 15 ),
+                        border: InputBorder.none,
+                        prefixIcon: Icon(Icons.search),
+                      ),
                     ),
                   ),
                 ),
@@ -129,8 +132,6 @@ class _HomePageState extends State <HomePage> {
                     IconWidgetCategoria(
                       nome: localeProvider.HomeBodyIconsCategoriaArtesanato, 
                       icone: '🏺', 
-                      containerColor: Colors.white,
-                      iconeColor: Colors.black, 
                       ontap: (){
                         Navigator.of(context).push(
                           MaterialPageRoute(builder: (_)=> CategoriaModule(CategoriasEnum.artesanato)));
@@ -139,8 +140,6 @@ class _HomePageState extends State <HomePage> {
                     IconWidgetCategoria(
                       nome: localeProvider.HomeBodyIconsCategoriaFauna, 
                       icone: '🐃', 
-                      containerColor: Colors.white,
-                      iconeColor: Colors.black, 
                       ontap: (){
                         Navigator.of(context).push(
                           MaterialPageRoute(builder: (_)=> CategoriaModule(CategoriasEnum.animais)));
@@ -149,8 +148,6 @@ class _HomePageState extends State <HomePage> {
                     IconWidgetCategoria(
                       nome: localeProvider.HomeBodyIconsCategoriaComidas, 
                       icone: '🥘', 
-                      containerColor: Colors.white,
-                      iconeColor: Colors.black, 
                       ontap: (){
                         Navigator.of(context).push(
                           MaterialPageRoute(builder: (_)=> CategoriaModule(CategoriasEnum.comidas)));
@@ -191,6 +188,9 @@ class _HomePageState extends State <HomePage> {
                       List<ArModel> dados = state.list;
                       return ListView.builder(
                         itemCount: dados.length,
+                        padding: EdgeInsets.only(
+                          bottom: 50
+                        ),
                         itemBuilder: (context,index){
                           return CardWidget(dados[index]);
                         },
