@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:marajoar/app/modules/home/presenter/pages/home/home_page.dart';
-import 'package:marajoar/app/modules/home/presenter/pages/sobre/sobre_page.dart';
-import 'package:marajoar/app/shared/core/colors.dart';
 import 'package:marajoar/generated/l10n.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
@@ -12,7 +9,31 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: primaryColor),
+      theme: ThemeData(
+        primaryColor: Colors.black,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        appBarTheme: AppBarTheme(
+          color: Colors.red,
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.red,
+          foregroundColor: Colors.white
+        ),
+        iconTheme: IconThemeData(
+          color: Colors.black
+        )
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.white,
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.red,
+          foregroundColor: Colors.white
+        ),
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        )
+      ),
       localizationsDelegates: [
         LocaleProvider.delegate,
         GlobalMaterialLocalizations.delegate,

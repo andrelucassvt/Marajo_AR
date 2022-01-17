@@ -32,9 +32,12 @@ class _SearchPageState extends State<SearchPage> {
             color: Colors.white,
             child: TextField(
               autofocus: true,
+              style: TextStyle(
+                color: Colors.black
+              ),
               onChanged: (value) => searchCubit.search(value,context),
               decoration: const InputDecoration(
-                labelText: 'Pesquisar', 
+                labelText: 'Pesquisar',
                 suffixIcon: Icon(Icons.search),
                 border: InputBorder.none,
                 focusedBorder: InputBorder.none,

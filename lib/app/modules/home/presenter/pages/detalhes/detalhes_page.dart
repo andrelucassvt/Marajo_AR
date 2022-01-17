@@ -57,6 +57,7 @@ class DetalhesPageState extends State <DetalhesPage> {
                         onPressed: (){
                           Navigator.of(context).pop();
                         },
+                        color: Colors.black,
                         icon: Icon(Icons.arrow_back_ios)
                       ),
                     ),
@@ -135,7 +136,6 @@ class DetalhesPageState extends State <DetalhesPage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         label: Text(localeProvider.HomePagesDatalhesFloatingButton),
-        backgroundColor: primaryColor,
         onPressed: Platform.isIOS
           ? () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ArkitPage(widget.model)))
           : () async {

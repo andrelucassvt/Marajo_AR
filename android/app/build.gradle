@@ -52,8 +52,10 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.andre.marajoar"
         minSdkVersion 24
-        versionCode 16
-        versionName "1.0.13"
+        // TODO: Ativar targetSdkVersion 30 APENAS para rodar no emulador
+        //targetSdkVersion 30
+        versionCode 17
+        versionName "1.0.14"
     }
 
     flavorDimensions "app"

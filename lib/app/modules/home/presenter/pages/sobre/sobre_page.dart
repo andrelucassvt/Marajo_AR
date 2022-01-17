@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:marajoar/app/shared/data/get_local_language.dart';
@@ -16,7 +17,6 @@ class SobrePageState extends State <SobrePage> {
     request: AdRequest(),
     listener: BannerAdListener(),
   );
-
   @override
   void initState() {
     super.initState();
