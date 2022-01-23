@@ -83,7 +83,7 @@ class _HomePageState extends State <HomePage> {
                        Share.share(TextShare.textoShare(context));
                     },
                     iconSize: 40, 
-                    icon: Icon(Icons.share),
+                    icon: Icon(Platform.isAndroid ? Icons.share : Icons.ios_share),
                   ),
                 ],
               ),

@@ -54,7 +54,7 @@ android {
         minSdkVersion 24
         // TODO: Ativar targetSdkVersion 30 APENAS para rodar no emulador
         //targetSdkVersion 30
-        versionCode 18
+        versionCode 19
         versionName "1.0.14"
     }
 
