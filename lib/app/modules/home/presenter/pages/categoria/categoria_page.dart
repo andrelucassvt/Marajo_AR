@@ -64,6 +64,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
 
   @override
   void dispose() {
+    myBanner.dispose();
     controller.close();
     super.dispose();
   }

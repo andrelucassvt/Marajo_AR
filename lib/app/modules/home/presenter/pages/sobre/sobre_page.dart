@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:marajoar/app/shared/core/text.dart';
 import 'package:marajoar/app/shared/data/get_local_language.dart';
 import 'package:marajoar/generated/l10n.dart';
 import 'dart:io';
+
+import 'package:share/share.dart';
 class SobrePage extends StatefulWidget {
   @override
   SobrePageState createState() => SobrePageState();
@@ -23,6 +26,12 @@ class SobrePageState extends State <SobrePage> {
     myBanner.load();
     adWidget = AdWidget(ad: myBanner);
   }
+
+  @override
+  void dispose() {
+    myBanner.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     LocaleProvider locale = LocaleProvider.of(context);
@@ -30,6 +39,13 @@ class SobrePageState extends State <SobrePage> {
       appBar: AppBar(
         title: Text(locale.HomePagesSobreAppBarTitle),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () => Share.share(TextShare.textoShare(context)),
+            iconSize: 35, 
+            icon: Icon(Platform.isAndroid ? Icons.share : Icons.ios_share_sharp),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
