@@ -60,7 +60,7 @@ class SobrePageState extends State <SobrePage> {
               ),
             ),
             Text(
-              GetLocalLanguage.getLanguage(context) == 'en' ? textoEN : textoBR,
+              GetLocalLanguage.getLanguage(context) == LanguagesApp.en ? textoEN : textoBR,
               style: TextStyle(
                 fontSize: 20
               ),

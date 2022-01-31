@@ -9,6 +9,7 @@ import 'package:marajoar/app/modules/home/presenter/blocs/home_recomendados/home
 import 'package:marajoar/app/modules/home/presenter/blocs/home_tutorial/home_tutorial_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_module.dart';
 import 'package:marajoar/app/shared/core/text.dart';
+import 'package:marajoar/app/shared/data/get_local_language.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 import 'package:marajoar/app/shared/widgets/card_widget.dart';
@@ -32,7 +33,7 @@ class _HomePageState extends State <HomePage> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 30),(){
-      _interstitialAd.show();
+     // _interstitialAd.show();
     });
   }
 
@@ -49,6 +50,7 @@ class _HomePageState extends State <HomePage> {
     homeTutorial.close();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     LocaleProvider localeProvider = LocaleProvider.of(context);
@@ -56,64 +58,62 @@ class _HomePageState extends State <HomePage> {
       body: SafeArea(
         bottom: false,
         child: Padding(
-          padding: const EdgeInsets.only(top: 10,right: 10,left: 10),
+          padding: const EdgeInsets.only(top: 10,right: 15,left: 15),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IconButton(
-                    onPressed: (){
-                      Navigator.pushNamed(context, '/sobre');
-                    },
-                    key: homeTutorial.keyAboutMarajoAR, 
-                    iconSize: 40,
-                    icon: Icon(Icons.info_outline),
-                  ),
-                  Text(
-                    'Marajó AR',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold
+                  Expanded(
+                    child: Text(
+                      'Marajó AR',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold
+                      ),
                     ),
                   ),
-                  IconButton(
-                    onPressed: (){
-                       Share.share(TextShare.textoShare(context));
-                    },
-                    iconSize: 40, 
-                    icon: Icon(Platform.isAndroid ? Icons.share : Icons.ios_share),
+                  Tooltip(
+                    message: GetLocalLanguage.getLanguage(context) == LanguagesApp.en ? 'Search' : 'Pesquisa',
+                    child: IconButton(
+                      onPressed: () => Navigator.pushNamed(context, '/search'),
+                      iconSize: 40,
+                      icon: Icon(Icons.search),
+                    ),
+                  ),
+                  PopupMenuButton<CategoriasEnum>(
+                    tooltip: GetLocalLanguage.getLanguage(context) == LanguagesApp.en ? 'Filter' : 'Filtro',
+                    icon: Icon(Icons.filter_list),
+                    iconSize: 40,
+                    onSelected: (CategoriasEnum enuns) => Navigator.of(context).push(MaterialPageRoute(builder: (_)=> CategoriaModule(enuns))),
+                    itemBuilder: (context) => <PopupMenuEntry<CategoriasEnum>> [
+                      PopupMenuItem<CategoriasEnum>(
+                        value: CategoriasEnum.artesanato,
+                        child: Text('🏺 ${localeProvider.HomeBodyIconsCategoriaArtesanato}'),
+                      ),
+                      PopupMenuItem<CategoriasEnum>(
+                        value: CategoriasEnum.animais,
+                        child: Text('🐃 ${localeProvider.HomeBodyIconsCategoriaFauna}'),
+                      ),
+                      PopupMenuItem<CategoriasEnum>(
+                        value: CategoriasEnum.comidas,
+                        child: Text('🥘 ${localeProvider.HomeBodyIconsCategoriaComidas}'),
+                      ),
+                    ]
+                  ),
+                  Tooltip(
+                    message: GetLocalLanguage.getLanguage(context) == LanguagesApp.en ? 'About' : 'Sobre',
+                    child: IconButton(
+                      onPressed: () => Navigator.pushNamed(context, '/sobre'),
+                      key: homeTutorial.keyAboutMarajoAR, 
+                      iconSize: 40,
+                      icon: Icon(Icons.info_outline),
+                    ),
                   ),
                 ],
               ),
 
-              InkWell(
-                onTap: (){
-                  Navigator.pushNamed(context, '/search');
-                },
-                child: Container(
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.symmetric(horizontal: 10,vertical: 20),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(15)
-                  ),
-                  child: Theme(
-                    data: ThemeData(),
-                    child: TextFormField(
-                      enabled: false,
-                      decoration: InputDecoration(
-                        hintText: 'Pesquisar',
-                        contentPadding: EdgeInsets.only(top: 15 ),
-                        border: InputBorder.none,
-                        prefixIcon: Icon(Icons.search),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
+/*
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Text(
@@ -155,17 +155,7 @@ class _HomePageState extends State <HomePage> {
                     ),
                   ],
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10,top: 15, bottom: 20),
-                child: Text(
-                  localeProvider.HomeBodyRecomendados,
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold
-                  ),
-                ),
-              ),
+              ), */
 
               Expanded(
                 child: BlocBuilder<HomeRecomendadosCubit,HomeRecomendadosState>(
@@ -196,7 +186,6 @@ class _HomePageState extends State <HomePage> {
                         },
                       );
                     }
-
                     return SizedBox.shrink();
                   }
                 )

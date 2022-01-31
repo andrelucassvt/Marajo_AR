@@ -8,7 +8,7 @@ class HomeRecomendadosDatasourceImpl implements HomeRecomendadosDatasource{
   
   @override
   Future<List<ArModel>> getRecomendados(BuildContext context) async {
-    return DataArModel.getDataListArModel(context).where((element) => element.isfavorito).toList();
+    return DataArModel.getDataListArModel(context);
   }
 
   @override

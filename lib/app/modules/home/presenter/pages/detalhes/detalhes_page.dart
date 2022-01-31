@@ -8,6 +8,7 @@ import 'package:marajoar/app/modules/home/presenter/widgets/card_image.dart';
 import 'package:marajoar/app/shared/core/colors.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 import 'package:marajoar/app/modules/arview/presenter/widgets/show_dialog_widget.dart';
+import 'package:marajoar/app/shared/widgets/border_text.dart';
 import 'package:marajoar/generated/l10n.dart';
 
 class DetalhesPage extends StatefulWidget {
@@ -65,25 +66,29 @@ class DetalhesPageState extends State <DetalhesPage> {
                   Positioned(
                     right: 30,
                     top: 15,
-                    child: Text(
-                      localeProvider.HomePagesDatalhesAppBarTitle,
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
+                    child: BorderTextMarajo(
+                      child: Text(
+                        localeProvider.HomePagesDatalhesAppBarTitle,
+                        style: TextStyle(
+                          fontSize: 30,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                        ),
                       ),
                     )
                   ),
                   Positioned(
                     bottom: 10,
                     left: 20,
-                    child: Text(
-                      widget.model.nome,
-                      style: TextStyle(
-                        fontSize: 32,
-                        color: Colors.white,
-                        inherit: false,
-                        fontWeight: FontWeight.bold
+                    child: BorderTextMarajo(
+                      child: Text(
+                        widget.model.nome,
+                        style: TextStyle(
+                          fontSize: 32,
+                          color: Colors.white,
+                          inherit: false,
+                          fontWeight: FontWeight.bold
+                        ),
                       ),
                     ),
                   ),
