@@ -330,6 +330,26 @@ class LocaleProvider {
     );
   }
 
+  /// `Açaí Marajoara`
+  String get CoreDataListAcaiName {
+    return Intl.message(
+      'Açaí Marajoara',
+      name: 'CoreDataListAcaiName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Açaí became popular and became a food base for all populations around the Amazon, a habit that spans centuries and still remains in the local culture. Not just by tradition, but because the fruit is full of nutrients, as was later discovered by scientific research. In some populations, açaí is eaten for breakfast, lunch and dinner. At the beginning of the day, it is cooked with tapioca or rice and seasoned with salt.`
+  String get CoreDataListAcaiDesc {
+    return Intl.message(
+      'Açaí became popular and became a food base for all populations around the Amazon, a habit that spans centuries and still remains in the local culture. Not just by tradition, but because the fruit is full of nutrients, as was later discovered by scientific research. In some populations, açaí is eaten for breakfast, lunch and dinner. At the beginning of the day, it is cooked with tapioca or rice and seasoned with salt.',
+      name: 'CoreDataListAcaiDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Discover a little of Marajoara culture through augmented reality`
   String get CoreTextShareTitulo {
     return Intl.message(
