@@ -30,8 +30,8 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 30), () {
-      //TODO: Desativar propaganda
-      // _interstitialAd.show();
+      //TODO: Ativar propaganda
+      //_interstitialAd.show();
     });
   }
 
