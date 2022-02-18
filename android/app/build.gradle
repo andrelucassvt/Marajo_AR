@@ -33,7 +33,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 31
 
     lintOptions {
         checkReleaseBuilds false
@@ -54,7 +54,7 @@ android {
         minSdkVersion 24
         // TODO: Ativar targetSdkVersion 30 APENAS para rodar no emulador
         //targetSdkVersion 30
-        versionCode flutterVersionCode
+        versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 

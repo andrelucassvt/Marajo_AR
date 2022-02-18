@@ -3,8 +3,8 @@ import 'package:marajoar/app/modules/home/domain/usecases/get_recomendados.dart'
 import 'package:marajoar/app/modules/home/domain/usecases/seach_data.dart';
 import 'package:marajoar/app/modules/home/external/datasource/home_recomendados_datasource_impl.dart';
 import 'package:marajoar/app/modules/home/infra/repository/home_repository_impl.dart';
+import 'package:marajoar/app/modules/home/presenter/blocs/home_enable_filter/home_enable_filter_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/home_recomendados/home_recomendados_cubit.dart';
-import 'package:marajoar/app/modules/home/presenter/blocs/home_tutorial/home_tutorial_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/search/search_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/home/home_page.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/seach/seach_page.dart';
@@ -19,7 +19,7 @@ class AppModule extends Module {
     Bind((i) => SearchDataImpl(i<HomeRepositoryImpl>())),
     Bind.factory((i) => SearchCubit(i<SearchDataImpl>())),
     Bind.factory((i) => HomeRecomendadosCubit(i<GetRecomendadosImpl>())),
-    Bind.singleton((i) => HomeTutorialCubit())
+    Bind.factory((i) => HomeEnableFilterCubit())
   ];
 
   @override
