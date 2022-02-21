@@ -64,6 +64,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
 
   @override
   void dispose() {
+    myBanner.dispose();
     controller.close();
     super.dispose();
   }
@@ -109,6 +110,9 @@ class _CategoriaPageState extends State<CategoriaPage> {
               children: [
                 ListView.builder(
                   shrinkWrap: true,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 15
+                  ),
                   itemCount: dados.length,
                   itemBuilder: (context,index){
                     return HeroMode(
@@ -117,7 +121,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
                   }
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Container(
                     alignment: Alignment.center,
                     child: adWidget,

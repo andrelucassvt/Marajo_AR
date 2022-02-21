@@ -53,8 +53,8 @@ android {
         applicationId "com.andre.marajoar"
         minSdkVersion 24
         // TODO: Ativar targetSdkVersion 30 APENAS para rodar no emulador
-        //targetSdkVersion 30
-        versionCode flutterVersionCode
+        // targetSdkVersion 29
+        versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 
