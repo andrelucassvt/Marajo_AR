@@ -56,12 +56,15 @@ class _HomePageState extends State<HomePage> {
         centerTitle: false,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
+        actionsIconTheme: IconThemeData(
+          color: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white 
+        ),
         title: Text(
           'Marajó AR',
           style: TextStyle(
             fontSize: 30, 
-            fontWeight: FontWeight.bold, 
-            color: Colors.black
+            fontWeight: FontWeight.bold,
+            color: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white  
           ),
         ),
         actions: [
@@ -72,7 +75,6 @@ class _HomePageState extends State<HomePage> {
             child: IconButton(
               onPressed: () => Navigator.pushNamed(context, '/search'),
               iconSize: 40,
-              color: Colors.black,
               icon: Icon(Icons.search),
             ),
           ),
@@ -83,7 +85,6 @@ class _HomePageState extends State<HomePage> {
             child: IconButton(
               onPressed: () => homeEnableFilterCubit.enableFilter(),
               iconSize: 40,
-              color: Colors.black,
               icon: Icon(Icons.filter_list),
             ),
           ),
@@ -94,7 +95,6 @@ class _HomePageState extends State<HomePage> {
             child: IconButton(
               onPressed: () => Navigator.pushNamed(context, '/sobre'),
               iconSize: 40,
-              color: Colors.black,
               icon: Icon(Icons.info_outline),
             ),
           ),

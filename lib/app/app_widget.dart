@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:marajoar/generated/l10n.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
@@ -12,8 +15,10 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.black,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        brightness: Brightness.light,
         appBarTheme: AppBarTheme(
           color: Colors.red,
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
         ),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: Colors.red,
