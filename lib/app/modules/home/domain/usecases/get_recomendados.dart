@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:marajoar/app/modules/home/domain/error/home_recomendados_error.dart';
 import 'package:marajoar/app/modules/home/domain/repository/home_repository.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';

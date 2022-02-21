@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get_it/get_it.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/search/search_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/search/search_state.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
@@ -14,7 +14,7 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
 
-  final searchCubit = Modular.get<SearchCubit>();
+  final searchCubit = GetIt.I.get<SearchCubit>();
   bool enableHero = true;
 
   @override

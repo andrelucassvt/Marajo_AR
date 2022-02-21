@@ -2,12 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get_it/get_it.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/home_enable_filter/home_enable_filter_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/home_recomendados/home_recomendados_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/home_recomendados/home_recomendados_state.dart';
-import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_module.dart';
 import 'package:marajoar/app/shared/data/get_local_language.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
@@ -21,8 +20,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final homeCubit = Modular.get<HomeRecomendadosCubit>();
-  final homeEnableFilterCubit = Modular.get<HomeEnableFilterCubit>();
+  final homeCubit = GetIt.I.get<HomeRecomendadosCubit>();
+  final homeEnableFilterCubit = GetIt.I.get<HomeEnableFilterCubit>();
 
   InterstitialAd _interstitialAd;
 
@@ -117,26 +116,17 @@ class _HomePageState extends State<HomePage> {
                         IconWidgetCategoria(
                           nome: localeProvider.HomeBodyIconsCategoriaArtesanato,
                           icone: '🏺',
-                          ontap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (_) => CategoriaModule(CategoriasEnum.artesanato)));
-                          }
+                          ontap: () => Navigator.pushNamed(context, '/categoria', arguments: CategoriasEnum.artesanato),
                         ),
                         IconWidgetCategoria(
                           nome: localeProvider.HomeBodyIconsCategoriaFauna,
                           icone: '🐃',
-                          ontap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (_) => CategoriaModule(CategoriasEnum.animais)));
-                          }
+                          ontap: () => Navigator.pushNamed(context, '/categoria', arguments: CategoriasEnum.animais),
                         ),
                         IconWidgetCategoria(
                           nome: localeProvider.HomeBodyIconsCategoriaComidas,
                           icone: '🥘',
-                          ontap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (_) => CategoriaModule(CategoriasEnum.comidas)));
-                          }
+                          ontap: () => Navigator.pushNamed(context, '/categoria', arguments: CategoriasEnum.comidas),
                         ),
                       ],
                     );

@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get_it/get_it.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:marajoar/app/modules/home/domain/dto/categoria_dto.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/categoria_filter/categoria_filter_cubit.dart';
@@ -13,14 +13,14 @@ import 'package:marajoar/app/shared/widgets/card_widget.dart';
 import 'package:marajoar/generated/l10n.dart';
 
 class CategoriaPage extends StatefulWidget {
-  final CategoriasEnum categoriasEnum;
-  const CategoriaPage(this.categoriasEnum);
 
   @override
   _CategoriaPageState createState() => _CategoriaPageState();
 }
 
 class _CategoriaPageState extends State<CategoriaPage> {
+  // variavel de Parametros passados para a tela via rota nomeada
+  var params;
   
   AdWidget adWidget;
   final BannerAd myBanner = BannerAd(
@@ -30,10 +30,11 @@ class _CategoriaPageState extends State<CategoriaPage> {
     listener: BannerAdListener(),
   );
 
-  final controller = Modular.get<CategoriaFilterCubit>();
+  final controller = GetIt.I.get<CategoriaFilterCubit>();
+
   
   String get title {
-    switch (widget.categoriasEnum) {
+    switch (params) {
       case CategoriasEnum.artesanato:
         return LocaleProvider.of(context).HomeBodyIconsCategoriaArtesanato;
       case CategoriasEnum.animais:
@@ -54,8 +55,9 @@ class _CategoriaPageState extends State<CategoriaPage> {
 
   @override
   void didChangeDependencies() {
+    params = ModalRoute.of(context).settings.arguments as CategoriasEnum;
     controller.getCategoriaList(CategoriaDto(
-      categoriasEnum: widget.categoriasEnum,
+      categoriasEnum: params,
       context: context
     ));
     super.didChangeDependencies();
@@ -71,6 +73,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),

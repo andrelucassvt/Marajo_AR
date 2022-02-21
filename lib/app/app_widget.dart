@@ -2,11 +2,15 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:marajoar/app/modules/home/presenter/pages/categoria/categoria_page.dart';
+import 'package:marajoar/app/modules/home/presenter/pages/home/home_page.dart';
+import 'package:marajoar/app/modules/home/presenter/pages/seach/seach_page.dart';
 import 'package:marajoar/generated/l10n.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+
+import 'modules/home/presenter/pages/sobre/sobre_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -56,6 +60,12 @@ class AppWidget extends StatelessWidget {
           ResponsiveBreakpoint.autoScale(800, name: TABLET),
         ],
         background: Container(color: Color(0xFFF5F5F5))),
-    ).modular();
+      routes: {
+        '/': (BuildContext context) => HomePage(),
+        '/sobre': (BuildContext context) => SobrePage(),
+        '/search': (BuildContext context) => SearchPage(),
+        '/categoria': (BuildContext context) => CategoriaPage(),
+      },
+    );
   }
 }
