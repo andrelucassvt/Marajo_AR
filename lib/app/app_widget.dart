@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,7 +6,6 @@ import 'package:marajoar/app/modules/home/presenter/pages/home/home_page.dart';
 import 'package:marajoar/app/modules/home/presenter/pages/seach/seach_page.dart';
 import 'package:marajoar/generated/l10n.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'modules/home/presenter/pages/sobre/sobre_page.dart';

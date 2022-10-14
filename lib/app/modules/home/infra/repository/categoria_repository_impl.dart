@@ -6,16 +6,17 @@ import 'package:marajoar/app/modules/home/infra/datasource/categoria_datasource.
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 
 class CategoriaRepositoryImpl implements CategoriaRepository {
-
   final CategoriaDatasource categoriaDataSource;
   CategoriaRepositoryImpl(this.categoriaDataSource);
 
   @override
-  Future<Either<CategoriaError,List<ArModel>>> selectCategoriaList(CategoriaDto categoriaDto) async {
+  Future<Either<CategoriaError, List<ArModel>>> selectCategoriaList(
+      CategoriaDto categoriaDto) async {
     try {
-      var categoria = await categoriaDataSource.selectCategoriaList(categoriaDto);
+      var categoria =
+          await categoriaDataSource.selectCategoriaList(categoriaDto);
       return Right(categoria);
-    } on CategoriaError catch (e) {
+    } on CategoriaError {
       throw Left(CategoriaError('Erro ao carregar categorias'));
     }
   }

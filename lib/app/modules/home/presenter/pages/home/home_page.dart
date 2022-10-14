@@ -4,12 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:marajoar/app/modules/home/presenter/blocs/home_enable_filter/home_enable_filter_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/home_recomendados/home_recomendados_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/home_recomendados/home_recomendados_state.dart';
 import 'package:marajoar/app/shared/data/get_local_language.dart';
-import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
+import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/widgets/card_widget.dart';
 import 'package:marajoar/app/shared/widgets/icon_categoria.dart';
 import 'package:marajoar/generated/l10n.dart';
@@ -21,7 +20,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final homeCubit = GetIt.I.get<HomeRecomendadosCubit>();
-  final homeEnableFilterCubit = GetIt.I.get<HomeEnableFilterCubit>();
 
   InterstitialAd _interstitialAd;
 
@@ -29,7 +27,6 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 30), () {
-      // TODO: Ativar propaganda
       _interstitialAd.show();
     });
   }
@@ -40,12 +37,14 @@ class _HomePageState extends State<HomePage> {
     iniciarAdmob();
     super.didChangeDependencies();
   }
+
   @override
   void dispose() {
     homeCubit.close();
-    homeEnableFilterCubit.close();
     super.dispose();
   }
+
+  bool enableFilter = false;
 
   @override
   Widget build(BuildContext context) {
@@ -56,21 +55,23 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         actionsIconTheme: IconThemeData(
-          color: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white 
-        ),
+            color: Theme.of(context).brightness == Brightness.light
+                ? Colors.black
+                : Colors.white),
         title: Text(
           'Marajó AR',
           style: TextStyle(
-            fontSize: 30, 
-            fontWeight: FontWeight.bold,
-            color: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white  
-          ),
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).brightness == Brightness.light
+                  ? Colors.black
+                  : Colors.white),
         ),
         actions: [
           Tooltip(
             message: GetLocalLanguage.getLanguage(context) == LanguagesApp.en
-              ? 'Search'
-              : 'Pesquisa',
+                ? 'Search'
+                : 'Pesquisa',
             child: IconButton(
               onPressed: () => Navigator.pushNamed(context, '/search'),
               iconSize: 40,
@@ -79,18 +80,26 @@ class _HomePageState extends State<HomePage> {
           ),
           Tooltip(
             message: GetLocalLanguage.getLanguage(context) == LanguagesApp.en
-              ? 'Filter'
-              : 'Filtro',
+                ? 'Filter'
+                : 'Filtro',
             child: IconButton(
-              onPressed: () => homeEnableFilterCubit.enableFilter(),
+              onPressed: () {
+                setState(() {
+                  if (enableFilter) {
+                    enableFilter = false;
+                  } else {
+                    enableFilter = true;
+                  }
+                });
+              },
               iconSize: 40,
               icon: Icon(Icons.filter_list),
             ),
           ),
           Tooltip(
             message: GetLocalLanguage.getLanguage(context) == LanguagesApp.en
-              ? 'About'
-              : 'Sobre',
+                ? 'About'
+                : 'Sobre',
             child: IconButton(
               onPressed: () => Navigator.pushNamed(context, '/sobre'),
               iconSize: 40,
@@ -106,64 +115,59 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              BlocBuilder<HomeEnableFilterCubit, HomeEnableFilterState>(
-                bloc: homeEnableFilterCubit,
-                builder: (context, state) {
-                  if (state is HomeEnableFilterTrue) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconWidgetCategoria(
-                          nome: localeProvider.HomeBodyIconsCategoriaArtesanato,
-                          icone: '🏺',
-                          ontap: () => Navigator.pushNamed(context, '/categoria', arguments: CategoriasEnum.artesanato),
-                        ),
-                        IconWidgetCategoria(
-                          nome: localeProvider.HomeBodyIconsCategoriaFauna,
-                          icone: '🐃',
-                          ontap: () => Navigator.pushNamed(context, '/categoria', arguments: CategoriasEnum.animais),
-                        ),
-                        IconWidgetCategoria(
-                          nome: localeProvider.HomeBodyIconsCategoriaComidas,
-                          icone: '🥘',
-                          ontap: () => Navigator.pushNamed(context, '/categoria', arguments: CategoriasEnum.comidas),
-                        ),
-                      ],
-                    );
-                  }
-                  return SizedBox.shrink();
-                },
-              ),
+              if (enableFilter)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconWidgetCategoria(
+                      nome: localeProvider.HomeBodyIconsCategoriaArtesanato,
+                      icone: '🏺',
+                      ontap: () => Navigator.pushNamed(context, '/categoria',
+                          arguments: CategoriasEnum.artesanato),
+                    ),
+                    IconWidgetCategoria(
+                      nome: localeProvider.HomeBodyIconsCategoriaFauna,
+                      icone: '🐃',
+                      ontap: () => Navigator.pushNamed(context, '/categoria',
+                          arguments: CategoriasEnum.animais),
+                    ),
+                    IconWidgetCategoria(
+                      nome: localeProvider.HomeBodyIconsCategoriaComidas,
+                      icone: '🥘',
+                      ontap: () => Navigator.pushNamed(context, '/categoria',
+                          arguments: CategoriasEnum.comidas),
+                    ),
+                  ],
+                ),
               Expanded(
-                child: BlocBuilder<HomeRecomendadosCubit, HomeRecomendadosState>(
-                  bloc: homeCubit,
-                  builder: (context, state) {
-                    if (state is HomeRecomendadosFailure) {
-                      return Center(
-                        child: Text('Erro ao recarregar dados :('),
-                      );
-                    }
+                  child:
+                      BlocBuilder<HomeRecomendadosCubit, HomeRecomendadosState>(
+                          bloc: homeCubit,
+                          builder: (context, state) {
+                            if (state is HomeRecomendadosFailure) {
+                              return Center(
+                                child: Text('Erro ao recarregar dados :('),
+                              );
+                            }
 
-                    if (state is HomeRecomendadosLoading) {
-                      return Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
+                            if (state is HomeRecomendadosLoading) {
+                              return Center(
+                                child: CircularProgressIndicator(),
+                              );
+                            }
 
-                    if (state is HomeRecomendadosSucess) {
-                      List<ArModel> dados = state.list;
-                      return ListView.builder(
-                        itemCount: dados.length,
-                        padding: EdgeInsets.only(bottom: 50),
-                        itemBuilder: (context, index) {
-                          return CardWidget(dados[index]);
-                        },
-                      );
-                    }
-                    return SizedBox.shrink();
-                  }
-                )
-              )
+                            if (state is HomeRecomendadosSucess) {
+                              List<ArModel> dados = state.list;
+                              return ListView.builder(
+                                itemCount: dados.length,
+                                padding: EdgeInsets.only(bottom: 50),
+                                itemBuilder: (context, index) {
+                                  return CardWidget(dados[index]);
+                                },
+                              );
+                            }
+                            return SizedBox.shrink();
+                          }))
             ],
           ),
         ),

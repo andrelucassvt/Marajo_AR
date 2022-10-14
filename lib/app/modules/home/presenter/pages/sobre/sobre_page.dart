@@ -1,21 +1,23 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:marajoar/app/shared/core/text.dart';
 import 'package:marajoar/app/shared/data/get_local_language.dart';
 import 'package:marajoar/generated/l10n.dart';
-import 'dart:io';
-
 import 'package:share/share.dart';
+
 class SobrePage extends StatefulWidget {
   @override
   SobrePageState createState() => SobrePageState();
 }
-class SobrePageState extends State <SobrePage> {
 
+class SobrePageState extends State<SobrePage> {
   AdWidget adWidget;
   final BannerAd myBanner = BannerAd(
-    adUnitId: Platform.isIOS ? 'ca-app-pub-3652623512305285/9825004345' : 'ca-app-pub-3652623512305285/3582752327',
+    adUnitId: Platform.isIOS
+        ? 'ca-app-pub-3652623512305285/9825004345'
+        : 'ca-app-pub-3652623512305285/3582752327',
     size: AdSize.banner,
     request: AdRequest(),
     listener: BannerAdListener(),
@@ -32,6 +34,7 @@ class SobrePageState extends State <SobrePage> {
     myBanner.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     LocaleProvider locale = LocaleProvider.of(context);
@@ -42,8 +45,9 @@ class SobrePageState extends State <SobrePage> {
         actions: [
           IconButton(
             onPressed: () => Share.share(TextShare.textoShare(context)),
-            iconSize: 35, 
-            icon: Icon(Platform.isAndroid ? Icons.share : Icons.ios_share_sharp),
+            iconSize: 35,
+            icon:
+                Icon(Platform.isAndroid ? Icons.share : Icons.ios_share_sharp),
           ),
         ],
       ),
@@ -54,16 +58,14 @@ class SobrePageState extends State <SobrePage> {
             Container(
               height: 150,
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/buffaloSobre.png')
-                )
-              ),
+                  image: DecorationImage(
+                      image: AssetImage('assets/buffaloSobre.png'))),
             ),
             Text(
-              GetLocalLanguage.getLanguage(context) == LanguagesApp.en ? textoEN : textoBR,
-              style: TextStyle(
-                fontSize: 20
-              ),
+              GetLocalLanguage.getLanguage(context) == LanguagesApp.en
+                  ? textoEN
+                  : textoBR,
+              style: TextStyle(fontSize: 20),
             ),
             Container(
               alignment: Alignment.center,

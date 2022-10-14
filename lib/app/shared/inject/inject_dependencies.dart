@@ -11,46 +11,33 @@ import 'package:marajoar/app/modules/home/infra/datasource/home_recomendados_dat
 import 'package:marajoar/app/modules/home/infra/repository/categoria_repository_impl.dart';
 import 'package:marajoar/app/modules/home/infra/repository/home_repository_impl.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/categoria_filter/categoria_filter_cubit.dart';
-import 'package:marajoar/app/modules/home/presenter/blocs/home_enable_filter/home_enable_filter_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/home_recomendados/home_recomendados_cubit.dart';
 import 'package:marajoar/app/modules/home/presenter/blocs/search/search_cubit.dart';
 
 class InjectDependencies {
-  
-  static void init(){
+  static void init() {
     final getIt = GetIt.instance;
-    
-    //Datasource 
+
+    //Datasource
     getIt.registerFactory<HomeRecomendadosDatasource>(
-      () => HomeRecomendadosDatasourceImpl());
-    getIt.registerFactory<CategoriaDatasource>(
-      () => CategoriaDatasourceImpl());
-    
+        () => HomeRecomendadosDatasourceImpl());
+    getIt.registerFactory<CategoriaDatasource>(() => CategoriaDatasourceImpl());
+
     //Repository
-    getIt.registerFactory<HomeRepository>(
-      () => HomeRepositoryImpl(getIt()));
+    getIt.registerFactory<HomeRepository>(() => HomeRepositoryImpl(getIt()));
     getIt.registerFactory<CategoriaRepository>(
-      () => CategoriaRepositoryImpl(getIt()));
+        () => CategoriaRepositoryImpl(getIt()));
 
     //Usecases
-    getIt.registerFactory<GetRecomendados>(
-      () => GetRecomendadosImpl(getIt()));
-    getIt.registerFactory<SearchData>(
-      () => SearchDataImpl(getIt()));
-    getIt.registerFactory<GetCategorias>(
-      () => GetCategoriasImpl(getIt()));
+    getIt.registerFactory<GetRecomendados>(() => GetRecomendadosImpl(getIt()));
+    getIt.registerFactory<SearchData>(() => SearchDataImpl(getIt()));
+    getIt.registerFactory<GetCategorias>(() => GetCategoriasImpl(getIt()));
 
     //Controllers
-    getIt.registerFactory<HomeEnableFilterCubit>(
-      () => HomeEnableFilterCubit());
-    getIt.registerFactory<SearchCubit>(
-      () => SearchCubit(getIt()));
+    getIt.registerFactory<SearchCubit>(() => SearchCubit(getIt()));
     getIt.registerFactory<CategoriaFilterCubit>(
-      () => CategoriaFilterCubit(getIt()));
+        () => CategoriaFilterCubit(getIt()));
     getIt.registerSingleton<HomeRecomendadosCubit>(
-      HomeRecomendadosCubit(getIt())
-    );
-
+        HomeRecomendadosCubit(getIt()));
   }
-
 }

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:marajoar/app/modules/home/domain/dto/categoria_dto.dart';
 import 'package:marajoar/app/modules/home/infra/datasource/categoria_datasource.dart';
 import 'package:marajoar/app/shared/data/data.dart';
-import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
+import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 
-class CategoriaDatasourceImpl implements CategoriaDatasource{
+class CategoriaDatasourceImpl implements CategoriaDatasource {
   @override
   Future<List<ArModel>> selectCategoriaList(CategoriaDto categoriaDto) async {
     switch (categoriaDto.categoriasEnum) {
@@ -20,18 +20,22 @@ class CategoriaDatasourceImpl implements CategoriaDatasource{
 
   @override
   Future<List<ArModel>> getAnimais(BuildContext context) async {
-    return DataArModel.getDataListArModel(context).where((element) => element.categoriasEnum == CategoriasEnum.animais).toList();
+    return DataArModel.getDataListArModel(context)
+        .where((element) => element.categoriasEnum == CategoriasEnum.animais)
+        .toList();
   }
 
   @override
   Future<List<ArModel>> getArtesanato(BuildContext context) async {
-    return DataArModel.getDataListArModel(context).where((element) => element.categoriasEnum == CategoriasEnum.artesanato).toList();
+    return DataArModel.getDataListArModel(context)
+        .where((element) => element.categoriasEnum == CategoriasEnum.artesanato)
+        .toList();
   }
 
   @override
   Future<List<ArModel>> getComidas(BuildContext context) async {
-    return DataArModel.getDataListArModel(context).where((element) => element.categoriasEnum == CategoriasEnum.comidas).toList();
+    return DataArModel.getDataListArModel(context)
+        .where((element) => element.categoriasEnum == CategoriasEnum.comidas)
+        .toList();
   }
-
-  
 }
