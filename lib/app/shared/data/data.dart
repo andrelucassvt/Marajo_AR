@@ -13,8 +13,7 @@ class DataArModel {
           nome: locale.CoreDataListBuffaloName,
           foto: 'assets/animais/buffalo.png',
           descricao: locale.CoreDataListBuffaloDesc,
-          objeto:
-              Platform.isIOS ? 'models.scnassets/bufalo5.usdz' : 'bufalo.sfb',
+          objeto: Platform.isIOS ? 'bufalo5' : 'bufalo.sfb',
           isfavorito: true,
           categoriasEnum: CategoriasEnum.animais,
           listaImagens: [
@@ -26,9 +25,7 @@ class DataArModel {
           nome: locale.CoreDataListQueijoName,
           foto: 'assets/comidas/queijo.jpg',
           descricao: locale.CoreDataListQueijoDesc,
-          objeto: Platform.isIOS
-              ? 'models.scnassets/queijomara.usdz'
-              : 'queijo.sfb',
+          objeto: Platform.isIOS ? 'queijomara' : 'queijo.sfb',
           isfavorito: true,
           categoriasEnum: CategoriasEnum.comidas,
           listaImagens: [
@@ -40,8 +37,7 @@ class DataArModel {
           nome: locale.CoreDataListAbacaxiName,
           foto: 'assets/comidas/abacaxi.jpeg',
           descricao: locale.CoreDataListAbacaxiDesc,
-          objeto:
-              Platform.isIOS ? 'models.scnassets/abacaxi.usdz' : 'abacaxi.sfb',
+          objeto: Platform.isIOS ? 'abacaxi' : 'abacaxi.sfb',
           isfavorito: true,
           categoriasEnum: CategoriasEnum.comidas,
           listaImagens: [
@@ -52,7 +48,7 @@ class DataArModel {
           nome: locale.CoreDataListVasoName,
           foto: 'assets/objetos/vaso_marajoara.jpg',
           descricao: locale.CoreDataListVasoDesc,
-          objeto: Platform.isIOS ? 'models.scnassets/vaso1.usdz' : 'vaso.sfb',
+          objeto: Platform.isIOS ? 'vaso1' : 'vaso.sfb',
           isfavorito: true,
           categoriasEnum: CategoriasEnum.artesanato,
           listaImagens: [
@@ -64,9 +60,7 @@ class DataArModel {
           nome: 'Pirarucu',
           foto: 'assets/animais/pirarucu.jpeg',
           descricao: locale.CoreDataListPirarucuDesc,
-          objeto: Platform.isIOS
-              ? 'models.scnassets/pirarucu.usdz'
-              : 'pirarucu.sfb',
+          objeto: Platform.isIOS ? 'pirarucu' : 'pirarucu.sfb',
           isfavorito: false,
           categoriasEnum: CategoriasEnum.animais,
           listaImagens: [
@@ -78,9 +72,7 @@ class DataArModel {
           nome: locale.CoreDataListCaranguejoName,
           foto: 'assets/animais/caranguejo.jpeg',
           descricao: locale.CoreDataListCaranguejoDesc,
-          objeto: Platform.isIOS
-              ? 'models.scnassets/caranguejo3.usdz'
-              : 'caranguejo.sfb',
+          objeto: Platform.isIOS ? 'caranguejo3' : 'caranguejo.sfb',
           isfavorito: false,
           categoriasEnum: CategoriasEnum.animais,
           listaImagens: [

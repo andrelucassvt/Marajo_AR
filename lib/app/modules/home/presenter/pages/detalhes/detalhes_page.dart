@@ -1,9 +1,9 @@
+//import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'dart:io';
 
-//import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/material.dart';
+import 'package:instant_preview_arkit_arcore/instant_preview_arkit_arcore.dart';
 import 'package:marajoar/app/modules/arview/presenter/pages/arcore/arcore_page.dart';
-import 'package:marajoar/app/modules/arview/presenter/pages/arkit/arkit_page.dart';
 import 'package:marajoar/app/modules/home/presenter/widgets/card_image.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 import 'package:marajoar/app/shared/widgets/border_text.dart';
@@ -17,6 +17,7 @@ class DetalhesPage extends StatefulWidget {
 }
 
 class DetalhesPageState extends State<DetalhesPage> {
+  final quickLook = InstantPreviewArkitArcore();
   @override
   Widget build(BuildContext context) {
     LocaleProvider localeProvider = LocaleProvider.of(context);
@@ -125,22 +126,14 @@ class DetalhesPageState extends State<DetalhesPage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
           label: Text(localeProvider.HomePagesDatalhesFloatingButton),
-          onPressed: Platform.isIOS
-              ? () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => ArkitPage(widget.model)))
-              : () async {
-                  // if (await ArCoreController.checkArCoreAvailability() == false) {
-                  //   return showDialog(
-                  //     context: context,
-                  //     builder: (_)=> ShowDialogWidget(
-                  //       title: localeProvider.DialogTitle,
-                  //       content: localeProvider.ArcoreErrorMessageContent,
-                  //     ),
-                  //   );
-                  // }
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => ArcorePage(widget.model)));
-                }),
+          onPressed: () async {
+            if (Platform.isIOS) {
+              quickLook.showPreviewArLocal(path: widget.model.objeto);
+            } else {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => ArcorePage(widget.model)));
+            }
+          }),
     );
   }
 }

@@ -38,13 +38,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.3.1"
-  arkit_plugin:
-    dependency: "direct main"
-    description:
-      name: arkit_plugin
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.5"
   async:
     dependency: transitive
     description:
@@ -338,6 +331,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.0"
+  instant_preview_arkit_arcore:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: main
+      resolved-ref: c90f6874f1eceab8195c56f6a3e141680c3bef51
+      url: "https://github.com/andrelucassvt/Instant_preview_arkit_arcore"
+    source: git
+    version: "0.0.1"
   intl:
     dependency: transitive
     description:
@@ -715,5 +717,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.18.0 <3.0.0"
+  dart: ">=2.18.4 <3.0.0"
   flutter: ">=3.0.0"
