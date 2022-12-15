@@ -52,7 +52,7 @@ android {
         applicationId "com.andre.marajoar"
         minSdkVersion 24
         // TODO: Ativar targetSdkVersion 30 APENAS para rodar no emulador
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -91,5 +91,4 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.google.ar:core:1.28.0'
 }
