@@ -1,9 +1,7 @@
 //import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:instant_preview_arkit_arcore/instant_preview_arkit_arcore.dart';
-import 'package:marajoar/app/modules/arview/presenter/pages/arcore/arcore_page.dart';
 import 'package:marajoar/app/modules/home/presenter/widgets/card_image.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 import 'package:marajoar/app/shared/widgets/border_text.dart';
@@ -127,12 +125,7 @@ class DetalhesPageState extends State<DetalhesPage> {
       floatingActionButton: FloatingActionButton.extended(
           label: Text(localeProvider.HomePagesDatalhesFloatingButton),
           onPressed: () async {
-            if (Platform.isIOS) {
-              quickLook.showPreviewArLocal(path: widget.model.objeto);
-            } else {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => ArcorePage(widget.model)));
-            }
+            quickLook.showPreviewArLocal(path: widget.model.objeto);
           }),
     );
   }

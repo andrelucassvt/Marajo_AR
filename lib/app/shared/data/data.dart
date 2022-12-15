@@ -13,7 +13,9 @@ class DataArModel {
           nome: locale.CoreDataListBuffaloName,
           foto: 'assets/animais/buffalo.png',
           descricao: locale.CoreDataListBuffaloDesc,
-          objeto: Platform.isIOS ? 'bufalo5' : 'bufalo.sfb',
+          objeto: Platform.isIOS
+              ? 'bufalo5'
+              : 'https://firebasestorage.googleapis.com/v0/b/armaterial-94d57.appspot.com/o/arMarajo%2Fbufalo5.gltf?alt=media&token=9f4baf6d-ae4f-4d1c-ba53-0a8dcbc916c8',
           isfavorito: true,
           categoriasEnum: CategoriasEnum.animais,
           listaImagens: [
@@ -25,7 +27,9 @@ class DataArModel {
           nome: locale.CoreDataListQueijoName,
           foto: 'assets/comidas/queijo.jpg',
           descricao: locale.CoreDataListQueijoDesc,
-          objeto: Platform.isIOS ? 'queijomara' : 'queijo.sfb',
+          objeto: Platform.isIOS
+              ? 'queijomara'
+              : 'https://firebasestorage.googleapis.com/v0/b/armaterial-94d57.appspot.com/o/arMarajo%2Fqueijomara.gltf?alt=media&token=910aabfb-a5e0-41dd-ad20-d8a0d93cd3b2',
           isfavorito: true,
           categoriasEnum: CategoriasEnum.comidas,
           listaImagens: [
@@ -37,7 +41,9 @@ class DataArModel {
           nome: locale.CoreDataListAbacaxiName,
           foto: 'assets/comidas/abacaxi.jpeg',
           descricao: locale.CoreDataListAbacaxiDesc,
-          objeto: Platform.isIOS ? 'abacaxi' : 'abacaxi.sfb',
+          objeto: Platform.isIOS
+              ? 'abacaxi'
+              : 'https://firebasestorage.googleapis.com/v0/b/armaterial-94d57.appspot.com/o/arMarajo%2Fpineapple.glb?alt=media&token=26cb6916-f357-4967-bd89-d40632662b85',
           isfavorito: true,
           categoriasEnum: CategoriasEnum.comidas,
           listaImagens: [
@@ -48,7 +54,9 @@ class DataArModel {
           nome: locale.CoreDataListVasoName,
           foto: 'assets/objetos/vaso_marajoara.jpg',
           descricao: locale.CoreDataListVasoDesc,
-          objeto: Platform.isIOS ? 'vaso1' : 'vaso.sfb',
+          objeto: Platform.isIOS
+              ? 'vaso1'
+              : 'https://firebasestorage.googleapis.com/v0/b/armaterial-94d57.appspot.com/o/arMarajo%2Fvaso3.gltf?alt=media&token=34356e95-1d46-4139-88c1-6b7c00b6ce49',
           isfavorito: true,
           categoriasEnum: CategoriasEnum.artesanato,
           listaImagens: [
@@ -60,7 +68,9 @@ class DataArModel {
           nome: 'Pirarucu',
           foto: 'assets/animais/pirarucu.jpeg',
           descricao: locale.CoreDataListPirarucuDesc,
-          objeto: Platform.isIOS ? 'pirarucu' : 'pirarucu.sfb',
+          objeto: Platform.isIOS
+              ? 'pirarucu'
+              : 'https://firebasestorage.googleapis.com/v0/b/armaterial-94d57.appspot.com/o/arMarajo%2Fpineapple.glb?alt=media&token=26cb6916-f357-4967-bd89-d40632662b85',
           isfavorito: false,
           categoriasEnum: CategoriasEnum.animais,
           listaImagens: [
@@ -68,17 +78,19 @@ class DataArModel {
             'assets/animais/pirarucu/pirarucu_2.jpeg',
             'assets/animais/pirarucu/pirarucu_3.jpeg',
           ]),
-      ArModel(
-          nome: locale.CoreDataListCaranguejoName,
-          foto: 'assets/animais/caranguejo.jpeg',
-          descricao: locale.CoreDataListCaranguejoDesc,
-          objeto: Platform.isIOS ? 'caranguejo3' : 'caranguejo.sfb',
-          isfavorito: false,
-          categoriasEnum: CategoriasEnum.animais,
-          listaImagens: [
-            'assets/animais/caranguejo/crab_1.jpeg',
-            'assets/animais/caranguejo/crab_2.jpeg',
-          ]),
+      // ArModel(
+      //     nome: locale.CoreDataListCaranguejoName,
+      //     foto: 'assets/animais/caranguejo.jpeg',
+      //     descricao: locale.CoreDataListCaranguejoDesc,
+      //     objeto: Platform.isIOS
+      //         ? 'caranguejo3'
+      //         : 'https://firebasestorage.googleapis.com/v0/b/armaterial-94d57.appspot.com/o/arMarajo%2Fblue_crab.glb?alt=media&token=182beb35-788a-4fbe-ab45-a83c200c677c',
+      //     isfavorito: false,
+      //     categoriasEnum: CategoriasEnum.animais,
+      //     listaImagens: [
+      //       'assets/animais/caranguejo/crab_1.jpeg',
+      //       'assets/animais/caranguejo/crab_2.jpeg',
+      //     ]),
     ];
   }
 }

@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.1.5+22
+version: 2.0.0+1
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -35,10 +35,6 @@ dependencies:
     git:
       url: https://github.com/andrelucassvt/Instant_preview_arkit_arcore
       ref: main
-  arcore_flutter_plugin: 
-    git:
-      url: https://github.com/KARIM2M/arcore_flutter_plugin
-      ref: master
   intl_utils: ^2.4.0
   shared_preferences: ^2.0.7
   share: ^2.0.4
