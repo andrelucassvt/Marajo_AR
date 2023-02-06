@@ -70,7 +70,7 @@ class DataArModel {
           descricao: locale.CoreDataListPirarucuDesc,
           objeto: Platform.isIOS
               ? 'pirarucu'
-              : 'https://firebasestorage.googleapis.com/v0/b/armaterial-94d57.appspot.com/o/arMarajo%2Fpineapple.glb?alt=media&token=26cb6916-f357-4967-bd89-d40632662b85',
+              : 'https://firebasestorage.googleapis.com/v0/b/armaterial-94d57.appspot.com/o/arMarajo%2Fpirarocu.glb?alt=media&token=c2269386-f62f-4229-b693-554bc776d701',
           isfavorito: false,
           categoriasEnum: CategoriasEnum.animais,
           listaImagens: [
