@@ -7,12 +7,7 @@ class IconWidgetCategoria extends StatelessWidget {
   final VoidCallback ontap;
 
   IconWidgetCategoria(
-    {
-      @required this.nome, 
-      @required this.icone,  
-      @required this.ontap
-    }
-  );
+      {required this.nome, required this.icone, required this.ontap});
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -22,19 +17,16 @@ class IconWidgetCategoria extends StatelessWidget {
         padding: EdgeInsets.all(10),
         margin: EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: Theme.of(context).primaryColor,
-            width: 1,
-          )
-        ),
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: Theme.of(context).primaryColor,
+              width: 1,
+            )),
         child: Column(
           children: [
             Text(
               icone,
-              style: TextStyle(
-                fontSize: 40
-              ),
+              style: TextStyle(fontSize: 40),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 10),

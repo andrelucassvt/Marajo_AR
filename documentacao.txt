@@ -1,0 +1,2 @@
+// Atualizar as strings de locale
+flutter pub run intl_utils:generate --no-sound-null-safety
