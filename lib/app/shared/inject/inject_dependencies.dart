@@ -1,43 +1,27 @@
 import 'package:get_it/get_it.dart';
-import 'package:marajoar/app/modules/home/domain/repository/categoria_repository.dart';
-import 'package:marajoar/app/modules/home/domain/repository/home_repository.dart';
-import 'package:marajoar/app/modules/home/domain/usecases/get_categorias.dart';
-import 'package:marajoar/app/modules/home/domain/usecases/get_recomendados.dart';
-import 'package:marajoar/app/modules/home/domain/usecases/seach_data.dart';
-import 'package:marajoar/app/modules/home/external/datasource/categoria_datasource_impl.dart';
-import 'package:marajoar/app/modules/home/external/datasource/home_recomendados_datasource_impl.dart';
-import 'package:marajoar/app/modules/home/infra/datasource/categoria_datasource.dart';
-import 'package:marajoar/app/modules/home/infra/datasource/home_recomendados_datasource.dart';
-import 'package:marajoar/app/modules/home/infra/repository/categoria_repository_impl.dart';
-import 'package:marajoar/app/modules/home/infra/repository/home_repository_impl.dart';
-import 'package:marajoar/app/modules/home/presenter/blocs/categoria_filter/categoria_filter_cubit.dart';
-import 'package:marajoar/app/modules/home/presenter/blocs/home_recomendados/home_recomendados_cubit.dart';
-import 'package:marajoar/app/modules/home/presenter/blocs/search/search_cubit.dart';
+import 'package:marajoar/app/features/home/data/datasource/home_datasource.dart';
+import 'package:marajoar/app/features/home/data/repository/home_repository.dart';
+import 'package:marajoar/app/features/home/domain/repository/ihome_repository.dart';
+import 'package:marajoar/app/features/home/domain/usecase/get_all_objects_usecase.dart';
+import 'package:marajoar/app/features/home/presenter/cubit/home_cubit.dart';
 
 class InjectDependencies {
   static void init() {
     final getIt = GetIt.instance;
 
     //Datasource
-    getIt.registerFactory<HomeRecomendadosDatasource>(
-        () => HomeRecomendadosDatasourceImpl());
-    getIt.registerFactory<CategoriaDatasource>(() => CategoriaDatasourceImpl());
+    getIt.registerFactory<HomeDatasource>(() => HomeDatasource());
 
     //Repository
-    getIt.registerFactory<HomeRepository>(() => HomeRepositoryImpl(getIt()));
-    getIt.registerFactory<CategoriaRepository>(
-        () => CategoriaRepositoryImpl(getIt()));
+    getIt.registerFactory<IHomeRepository>(
+        () => HomeRepository(datasource: getIt()));
 
     //Usecases
-    getIt.registerFactory<GetRecomendados>(() => GetRecomendadosImpl(getIt()));
-    getIt.registerFactory<SearchData>(() => SearchDataImpl(getIt()));
-    getIt.registerFactory<GetCategorias>(() => GetCategoriasImpl(getIt()));
+    getIt.registerFactory<GetAllObjectsUsecase>(
+        () => GetAllObjectsUsecase(repository: getIt()));
 
     //Controllers
-    getIt.registerFactory<SearchCubit>(() => SearchCubit(getIt()));
-    getIt.registerFactory<CategoriaFilterCubit>(
-        () => CategoriaFilterCubit(getIt()));
-    getIt.registerSingleton<HomeRecomendadosCubit>(
-        HomeRecomendadosCubit(getIt()));
+    getIt
+        .registerSingleton<HomeCubit>(HomeCubit(getAllObjectsUsecase: getIt()));
   }
 }

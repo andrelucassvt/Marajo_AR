@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class BorderTextMarajo extends StatelessWidget {
-
   final StrokeCap strokeCap;
   final StrokeJoin strokeJoin;
   final double strokeWidth;
@@ -9,19 +8,18 @@ class BorderTextMarajo extends StatelessWidget {
   final Text child;
 
   BorderTextMarajo({
-    @required this.child,
+    required this.child,
     this.strokeCap = StrokeCap.round,
     this.strokeJoin = StrokeJoin.round,
     this.strokeWidth = 3.0,
     this.strokeColor = Colors.black,
   }) : assert(child is Text);
 
-
   @override
   Widget build(BuildContext context) {
     TextStyle style;
     if (child.style != null) {
-      style = child.style.copyWith(
+      style = child.style!.copyWith(
         foreground: Paint()
           ..style = PaintingStyle.stroke
           ..strokeCap = strokeCap
@@ -45,7 +43,7 @@ class BorderTextMarajo extends StatelessWidget {
       textDirection: child.textDirection,
       children: <Widget>[
         Text(
-          child.data,
+          child.data!,
           style: style,
           maxLines: child.maxLines,
           overflow: child.overflow,

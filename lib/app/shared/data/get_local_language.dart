@@ -6,7 +6,6 @@ enum LanguagesApp {
 }
 
 class GetLocalLanguage {
-
   static LanguagesApp getLanguage(BuildContext context) {
     var result = Localizations.localeOf(context).toString();
     if (result == 'en') {

@@ -15,12 +15,12 @@ import 'intl/messages_all.dart';
 class LocaleProvider {
   LocaleProvider();
 
-  static LocaleProvider _current;
+  static LocaleProvider? _current;
 
   static LocaleProvider get current {
     assert(_current != null,
         'No instance of LocaleProvider was loaded. Try to initialize the LocaleProvider delegate before accessing LocaleProvider.current.');
-    return _current;
+    return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
@@ -43,10 +43,10 @@ class LocaleProvider {
     final instance = LocaleProvider.maybeOf(context);
     assert(instance != null,
         'No instance of LocaleProvider present in the widget tree. Did you add LocaleProvider.delegate in localizationsDelegates?');
-    return instance;
+    return instance!;
   }
 
-  static LocaleProvider maybeOf(BuildContext context) {
+  static LocaleProvider? maybeOf(BuildContext context) {
     return Localizations.of<LocaleProvider>(context, LocaleProvider);
   }
 

@@ -56,8 +56,9 @@ PODS:
   - PromisesObjC (2.1.1)
   - share (0.0.1):
     - Flutter
-  - shared_preferences_ios (0.0.1):
+  - shared_preferences_foundation (0.0.1):
     - Flutter
+    - FlutterMacOS
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -65,7 +66,7 @@ DEPENDENCIES:
   - instant_preview_arkit_arcore (from `.symlinks/plugins/instant_preview_arkit_arcore/ios`)
   - native_screenshot (from `.symlinks/plugins/native_screenshot/ios`)
   - share (from `.symlinks/plugins/share/ios`)
-  - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/ios`)
 
 SPEC REPOS:
   trunk:
@@ -87,8 +88,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/native_screenshot/ios"
   share:
     :path: ".symlinks/plugins/share/ios"
-  shared_preferences_ios:
-    :path: ".symlinks/plugins/shared_preferences_ios/ios"
+  shared_preferences_foundation:
+    :path: ".symlinks/plugins/shared_preferences_foundation/ios"
 
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
@@ -102,7 +103,7 @@ SPEC CHECKSUMS:
   native_screenshot: 70900984bca8d5f42acf68611b8214b32a9f0deb
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   share: 0b2c3e82132f5888bccca3351c504d0003b3b410
-  shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
+  shared_preferences_foundation: 297b3ebca31b34ec92be11acd7fb0ba932c822ca
 
 PODFILE CHECKSUM: 03e726dd13ea7f7a9c2509c4c890d1ed34e58830
 

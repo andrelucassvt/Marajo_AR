@@ -1,13 +1,14 @@
 import 'dart:io';
 
-import 'package:flutter/material.dart';
+import 'package:marajoar/app/shared/data/navigation_service.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
 import 'package:marajoar/app/shared/domain/enums/categoria_enum.dart';
 import 'package:marajoar/generated/l10n.dart';
 
 class DataArModel {
-  static List<ArModel> getDataListArModel(BuildContext context) {
-    LocaleProvider locale = LocaleProvider.of(context);
+  var currentContext = NavigationService.navigatorKey.currentContext;
+  List<ArModel> getDataListArModel() {
+    LocaleProvider locale = LocaleProvider.of(currentContext!);
     return [
       ArModel(
           nome: locale.CoreDataListBuffaloName,
