@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 30), () {
-      //_interstitialAd.show();
+      _interstitialAd.show();
     });
   }
 
