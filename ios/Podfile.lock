@@ -103,7 +103,7 @@ SPEC CHECKSUMS:
   native_screenshot: 70900984bca8d5f42acf68611b8214b32a9f0deb
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   share: 0b2c3e82132f5888bccca3351c504d0003b3b410
-  shared_preferences_foundation: 297b3ebca31b34ec92be11acd7fb0ba932c822ca
+  shared_preferences_foundation: 986fc17f3d3251412d18b0265f9c64113a8c2472
 
 PODFILE CHECKSUM: 03e726dd13ea7f7a9c2509c4c890d1ed34e58830
 

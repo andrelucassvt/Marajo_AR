@@ -79,19 +79,6 @@ class DataArModel {
             'assets/animais/pirarucu/pirarucu_2.jpeg',
             'assets/animais/pirarucu/pirarucu_3.jpeg',
           ]),
-      // ArModel(
-      //     nome: locale.CoreDataListCaranguejoName,
-      //     foto: 'assets/animais/caranguejo.jpeg',
-      //     descricao: locale.CoreDataListCaranguejoDesc,
-      //     objeto: Platform.isIOS
-      //         ? 'caranguejo3'
-      //         : 'https://firebasestorage.googleapis.com/v0/b/armaterial-94d57.appspot.com/o/arMarajo%2Fblue_crab.glb?alt=media&token=182beb35-788a-4fbe-ab45-a83c200c677c',
-      //     isfavorito: false,
-      //     categoriasEnum: CategoriasEnum.animais,
-      //     listaImagens: [
-      //       'assets/animais/caranguejo/crab_1.jpeg',
-      //       'assets/animais/caranguejo/crab_2.jpeg',
-      //     ]),
     ];
   }
 }
