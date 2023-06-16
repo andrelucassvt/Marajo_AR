@@ -15,23 +15,27 @@ class AppWidget extends StatelessWidget {
       navigatorKey: NavigationService.navigatorKey,
       theme: ThemeData(
           primaryColor: Colors.black,
+          useMaterial3: true,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           brightness: Brightness.light,
           appBarTheme: AppBarTheme(
-            color: Colors.red,
             systemOverlayStyle: SystemUiOverlayStyle.dark,
           ),
           floatingActionButtonTheme: FloatingActionButtonThemeData(
-              backgroundColor: Colors.red, foregroundColor: Colors.white),
+            backgroundColor: Colors.red,
+            foregroundColor: Colors.white,
+          ),
           iconTheme: IconThemeData(color: Colors.black)),
       darkTheme: ThemeData(
-          brightness: Brightness.dark,
-          primaryColor: Colors.white,
-          floatingActionButtonTheme: FloatingActionButtonThemeData(
-              backgroundColor: Colors.red, foregroundColor: Colors.white),
-          iconTheme: IconThemeData(
-            color: Colors.white,
-          )),
+        brightness: Brightness.dark,
+        primaryColor: Colors.white,
+        useMaterial3: true,
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: Colors.red, foregroundColor: Colors.white),
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+      ),
       localizationsDelegates: [
         LocaleProvider.delegate,
         GlobalMaterialLocalizations.delegate,

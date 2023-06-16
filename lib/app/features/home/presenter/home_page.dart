@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:instant_preview_arkit_arcore/instant_preview_arkit_arcore.dart';
+import 'package:marajoar/app/features/detalhes/presenter/detalhes_page.dart';
 import 'package:marajoar/app/features/home/presenter/cubit/home_cubit.dart';
 import 'package:marajoar/app/shared/data/get_local_language.dart';
 import 'package:marajoar/app/shared/domain/entities/ar_model.dart';
@@ -18,12 +20,13 @@ class _HomePageState extends State<HomePage> {
   final homeCubit = GetIt.I.get<HomeCubit>();
 
   late InterstitialAd _interstitialAd;
+  final quickLook = InstantPreviewArkitArcore();
 
   @override
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 30), () {
-      _interstitialAd.show();
+      //_interstitialAd.show();
     });
   }
 
@@ -42,23 +45,26 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final Orientation deviceOrientation = MediaQuery.of(context).orientation;
+    final bool isLandscape = deviceOrientation == Orientation.landscape;
     return Scaffold(
       appBar: AppBar(
-        centerTitle: false,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         actionsIconTheme: IconThemeData(
-            color: Theme.of(context).brightness == Brightness.light
-                ? Colors.black
-                : Colors.white),
+          color: Theme.of(context).brightness == Brightness.light
+              ? Colors.black
+              : Colors.white,
+        ),
         title: Text(
           'Marajó AR',
           style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: Theme.of(context).brightness == Brightness.light
-                  ? Colors.black
-                  : Colors.white),
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: Theme.of(context).brightness == Brightness.light
+                ? Colors.black
+                : Colors.white,
+          ),
         ),
         actions: [
           Tooltip(
@@ -75,40 +81,51 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SafeArea(
         bottom: false,
+        left: !isLandscape,
+        right: !isLandscape,
         child: Padding(
           padding: const EdgeInsets.only(top: 10, right: 15, left: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                  child: BlocBuilder<HomeCubit, HomeState>(
-                      bloc: homeCubit,
-                      builder: (context, state) {
-                        if (state is HomeFailure) {
-                          return Center(
-                            child: Text('Erro ao recarregar dados :('),
-                          );
-                        }
+          child: BlocBuilder<HomeCubit, HomeState>(
+            bloc: homeCubit,
+            builder: (context, state) {
+              if (state is HomeFailure) {
+                return Center(
+                  child: Text('Erro ao recarregar dados :('),
+                );
+              }
 
-                        if (state is HomeLoading) {
-                          return Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        }
+              if (state is HomeLoading) {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
 
-                        if (state is HomeSucess) {
-                          List<ArModel> dados = state.models;
-                          return ListView.builder(
-                            itemCount: dados.length,
-                            padding: EdgeInsets.only(bottom: 50),
-                            itemBuilder: (context, index) {
-                              return CardWidget(dados[index]);
-                            },
-                          );
-                        }
-                        return SizedBox.shrink();
-                      }))
-            ],
+              if (state is HomeSucess) {
+                List<ArModel> dados = state.models;
+                return ListView.builder(
+                  itemCount: dados.length,
+                  padding: EdgeInsets.only(
+                    bottom: 50,
+                  ),
+                  scrollDirection:
+                      isLandscape ? Axis.horizontal : Axis.vertical,
+                  itemBuilder: (context, index) {
+                    return CardWidget(
+                      model: dados[index],
+                      isLandscape: isLandscape,
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => DetalhesPage(dados[index]),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                );
+              }
+              return SizedBox.shrink();
+            },
           ),
         ),
       ),
