@@ -13,7 +13,7 @@ class BorderTextMarajo extends StatelessWidget {
     this.strokeJoin = StrokeJoin.round,
     this.strokeWidth = 3.0,
     this.strokeColor = Colors.black,
-  }) : assert(child is Text);
+  });
 
   @override
   Widget build(BuildContext context) {
